@@ -131,32 +131,34 @@ namespace MultiPowersSystem
             double reVlote = 0, reElect = 0;
 
             //设置电压和电流
-            error = N5769ADriver.SetVolAndEle(CGloabal.g_N5769AModule.nHandle, vlo, ele, strErrMsg);
-            if (error < 0)
-            {
-                CommonMethod.ShowHintInfor(eHintInfoType.error, strErrMsg);
-                return;
-            }
+            //error = N5769ADriver.SetVolAndEle(CGloabal.g_N5769AModule.nHandle, vlo, ele, strErrMsg);
+            //if (error < 0)
+            //{
+            //    CommonMethod.ShowHintInfor(eHintInfoType.error, strErrMsg);
+            //    return;
+            //}
 
              //读取应该间隔多少时间取一个点
              int OpenReadtimer = MixHelper.ReturnInterval(comboUnit1.Text, 1, open, close, point);
              int CloseReadTimer = MixHelper.ReturnInterval(comboUnit1.Text, 0, open, close, point);
 
             while (cyc>0)
-            {
-                if (OutSign1) {//为true时则终止测试
-                    return;
-                }
+            {               
                 cyc--;
                 //打开命令
-                error = N5769ADriver.SetOpenCommand(CGloabal.g_N5769AModule.nHandle, strErrMsg);
-                if (error < 0)
-                {
-                    CommonMethod.ShowHintInfor(eHintInfoType.error, strErrMsg);
-                    return;
-                }
+                //error = N5769ADriver.SetOpenCommand(CGloabal.g_N5769AModule.nHandle, strErrMsg);
+                //if (error < 0)
+                //{
+                //    CommonMethod.ShowHintInfor(eHintInfoType.error, strErrMsg);
+                //    return;
+                //}
                 for (int i = 0; i < point; i++)
                 {
+                    if (OutSign1)
+                    {//为true时则终止测试
+                        return;
+                    }
+
                     Thread.Sleep(OpenReadtimer);
                     //读取电压和电流        
                     N5769ADriver.ReadVolAndEleCommand(CGloabal.g_N5769AModule.nHandle, ref reVlote, ref reElect);
@@ -165,14 +167,19 @@ namespace MultiPowersSystem
                 }
 
                 //发送关闭指令
-                 error = N5769ADriver.SetCloseCommand(CGloabal.g_N5769AModule.nHandle, strErrMsg);
-                if (error < 0)
-                {
-                    CommonMethod.ShowHintInfor(eHintInfoType.error, strErrMsg);
-                    return;
-                }
+                // error = N5769ADriver.SetCloseCommand(CGloabal.g_N5769AModule.nHandle, strErrMsg);
+                //if (error < 0)
+                //{
+                //    CommonMethod.ShowHintInfor(eHintInfoType.error, strErrMsg);
+                //    return;
+                //}
                 for (int i = 0; i < point; i++)
                 {
+                    if (OutSign1)
+                    {//为true时则终止测试
+                        return;
+                    }
+
                     Thread.Sleep(CloseReadTimer);
                     //读取电压和电流        
                     N5769ADriver.ReadVolAndEleCommand(CGloabal.g_N5769AModule.nHandle, ref reVlote, ref reElect);
@@ -229,7 +236,6 @@ namespace MultiPowersSystem
                     btnOpen2.Text = "打开";
                 }
             }
-
         }
 
         private void volteVal2_ValueChanged(object sender, EventArgs e)
@@ -274,11 +280,7 @@ namespace MultiPowersSystem
             int CloseReadTimer = MixHelper.ReturnInterval(comboUnit2.Text, 0, open, close, point);
 
             while (cyc > 0)
-            {
-                if (OutSign2)
-                {//为true时则终止测试
-                    return;
-                }
+            {                
                 cyc--;
                 //打开命令
                 error = N5769ADriver.SetOpenCommand(CGloabal.g_N5751AModule.nHandle, strErrMsg);
@@ -289,6 +291,11 @@ namespace MultiPowersSystem
                 }
                 for (int i = 0; i < point; i++)
                 {
+                    if (OutSign2)
+                    {//为true时则终止测试
+                        return;
+                    }
+
                     Thread.Sleep(OpenReadtimer);
                     //读取电压和电流        
                     N5769ADriver.ReadVolAndEleCommand(CGloabal.g_N5751AModule.nHandle, ref reVlote, ref reElect);
@@ -305,6 +312,11 @@ namespace MultiPowersSystem
                 }
                 for (int i = 0; i < point; i++)
                 {
+                    if (OutSign2)
+                    {//为true时则终止测试
+                        return;
+                    }
+
                     Thread.Sleep(CloseReadTimer);
                     //读取电压和电流        
                     N5769ADriver.ReadVolAndEleCommand(CGloabal.g_N5751AModule.nHandle, ref reVlote, ref reElect);
@@ -320,6 +332,277 @@ namespace MultiPowersSystem
         }
 
         private void btnSave2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnOpen3_Click(object sender, EventArgs e)
+        {//N5752A
+            string strIP;
+            UInt32 nPort;
+            string resourceName;
+            int error = 0;
+            if (btnOpen3.Text == "打开")//用户要连接仪器
+            {
+                strIP = this.ipAddress3.Text;
+                nPort = 8080;
+                //连接设备
+                resourceName = "TCPIP0::" + strIP + "::inst0::INSTR";
+
+                error = CommonMethod.ConnectSpecificInstrument(CGloabal.g_N5752AModule.strInstruName, resourceName);
+                if (error < 0)//连接失败
+                {
+                    CommonMethod.ShowHintInfor(eHintInfoType.error, "电源打开失败！");
+                    btnOpen3.Text = "打开";
+                }
+                else//连接成功,则要将当前用户输入的IP地址和端口号保存到ini文件中
+                {
+                    CommonMethod.SaveInputNetInforsToIniFile(CGloabal.g_N5752AModule.strInstruName, strIP, nPort);
+                    btnOpen3.Text = "关闭";
+                }
+            }
+            else//此时用户要断开连接
+            {
+                error = CommonMethod.CloseSpecificInstrument(CGloabal.g_N5752AModule.strInstruName);
+                if (error < 0)//断开失败，则还要将switchConnect恢复为连接状态      
+                {
+                    btnOpen3.Text = "关闭";
+                }
+                else
+                {
+                    btnOpen3.Text = "打开";
+                }
+            }
+        }
+
+        private void volteVal3_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnStart3_Click(object sender, EventArgs e)
+        {
+            OutSign3 = false;
+            Thread t = new Thread(new ThreadStart(TestProcess3));
+            t.IsBackground = true;
+            t.Start();
+        }
+        bool OutSign3 = false;
+        private void TestProcess3()
+        {
+            volChart3.Series[0].Points.Clear();
+            eleChart3.Series[0].Points.Clear();
+
+            double vlo = (double)volteVal3.Value;
+            double ele = (double)eleVal3.Value;
+            var cyc = cycleNum3.Value;
+            var open = openTime3.Value;
+            var close = closeTime3.Value;
+            int point = (int)getPoint3.Value;
+
+            int error = 0;
+            string strErrMsg = "";
+            double reVlote = 0, reElect = 0;
+
+            //设置电压和电流
+            error = N5751ADriver.SetVolAndEle(CGloabal.g_N5752AModule.nHandle, vlo, ele, strErrMsg);
+            if (error < 0)
+            {
+                CommonMethod.ShowHintInfor(eHintInfoType.error, strErrMsg);
+                return;
+            }
+
+            //读取应该间隔多少时间取一个点
+            int OpenReadtimer = MixHelper.ReturnInterval(comboUnit3.Text, 1, open, close, point);
+            int CloseReadTimer = MixHelper.ReturnInterval(comboUnit3.Text, 0, open, close, point);
+
+            while (cyc > 0)
+            {               
+                cyc--;
+                //打开命令
+                error = N5769ADriver.SetOpenCommand(CGloabal.g_N5752AModule.nHandle, strErrMsg);
+                if (error < 0)
+                {
+                    CommonMethod.ShowHintInfor(eHintInfoType.error, strErrMsg);
+                    return;
+                }
+                for (int i = 0; i < point; i++)
+                {
+                    if (OutSign3)
+                    {//为true时则终止测试
+                        return;
+                    }
+                    Thread.Sleep(OpenReadtimer);
+                    //读取电压和电流        
+                    N5769ADriver.ReadVolAndEleCommand(CGloabal.g_N5752AModule.nHandle, ref reVlote, ref reElect);
+                    volChart3.Series[0].Points.AddXY(DateTime.Now.ToString("mm:ss"), reVlote);
+                    eleChart3.Series[0].Points.AddXY(DateTime.Now.ToString("mm:ss"), reElect);
+                }
+
+                //发送关闭指令
+                error = N5769ADriver.SetCloseCommand(CGloabal.g_N5752AModule.nHandle, strErrMsg);
+                if (error < 0)
+                {
+                    CommonMethod.ShowHintInfor(eHintInfoType.error, strErrMsg);
+                    return;
+                }
+                for (int i = 0; i < point; i++)
+                {
+                    if (OutSign3)
+                    {//为true时则终止测试
+                        return;
+                    }
+                    Thread.Sleep(CloseReadTimer);
+                    //读取电压和电流        
+                    N5769ADriver.ReadVolAndEleCommand(CGloabal.g_N5752AModule.nHandle, ref reVlote, ref reElect);
+                    volChart3.Series[0].Points.AddXY(DateTime.Now.ToString("mm:ss"), reVlote);
+                    eleChart3.Series[0].Points.AddXY(DateTime.Now.ToString("mm:ss"), reElect);
+                }
+            }
+        }
+
+        private void btnStop3_Click(object sender, EventArgs e)
+        {
+            OutSign3 = true;
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnOpen4_Click(object sender, EventArgs e)
+        {
+            //N5772A
+            string strIP;
+            UInt32 nPort;
+            string resourceName;
+            int error = 0;
+            if (btnOpen4.Text == "打开")//用户要连接仪器
+            {
+                strIP = this.ipAddress4.Text;
+                nPort = 8080;
+                //连接设备
+                resourceName = "TCPIP0::" + strIP + "::inst0::INSTR";
+
+                error = CommonMethod.ConnectSpecificInstrument(CGloabal.g_N5772AModule.strInstruName, resourceName);
+                if (error < 0)//连接失败
+                {
+                    CommonMethod.ShowHintInfor(eHintInfoType.error, "电源打开失败！");
+                    btnOpen4.Text = "打开";
+                }
+                else//连接成功,则要将当前用户输入的IP地址和端口号保存到ini文件中
+                {
+                    CommonMethod.SaveInputNetInforsToIniFile(CGloabal.g_N5772AModule.strInstruName, strIP, nPort);
+                    btnOpen4.Text = "关闭";
+                }
+            }
+            else//此时用户要断开连接
+            {
+                error = CommonMethod.CloseSpecificInstrument(CGloabal.g_N5772AModule.strInstruName);
+                if (error < 0)//断开失败，则还要将switchConnect恢复为连接状态      
+                {
+                    btnOpen4.Text = "关闭";
+                }
+                else
+                {
+                    btnOpen4.Text = "打开";
+                }
+            }
+        }
+
+        private void volteVal4_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnStart4_Click(object sender, EventArgs e)
+        {
+            OutSign4 = false;
+            Thread t = new Thread(new ThreadStart(TestProcess4));
+            t.IsBackground = true;
+            t.Start();
+        }
+        bool OutSign4 = false;
+        private void TestProcess4()
+        {
+            volChart4.Series[0].Points.Clear();
+            eleChart4.Series[0].Points.Clear();
+
+            double vlo = (double)volteVal4.Value;
+            double ele = (double)eleVal4.Value;
+            var cyc = cycleNum4.Value;
+            var open = openTime4.Value;
+            var close = closeTime4.Value;
+            int point = (int)getPoint4.Value;
+
+            int error = 0;
+            string strErrMsg = "";
+            double reVlote = 0, reElect = 0;
+
+            //设置电压和电流
+            error = N5751ADriver.SetVolAndEle(CGloabal.g_N5772AModule.nHandle, vlo, ele, strErrMsg);
+            if (error < 0)
+            {
+                CommonMethod.ShowHintInfor(eHintInfoType.error, strErrMsg);
+                return;
+            }
+
+            //读取应该间隔多少时间取一个点
+            int OpenReadtimer = MixHelper.ReturnInterval(comboUnit4.Text, 1, open, close, point);
+            int CloseReadTimer = MixHelper.ReturnInterval(comboUnit4.Text, 0, open, close, point);
+
+            while (cyc > 0)
+            {                
+                cyc--;
+                //打开命令
+                error = N5769ADriver.SetOpenCommand(CGloabal.g_N5772AModule.nHandle, strErrMsg);
+                if (error < 0)
+                {
+                    CommonMethod.ShowHintInfor(eHintInfoType.error, strErrMsg);
+                    return;
+                }
+                for (int i = 0; i < point; i++)
+                {
+                    if (OutSign4)
+                    {//为true时则终止测试
+                        return;
+                    }
+                    Thread.Sleep(OpenReadtimer);
+                    //读取电压和电流        
+                    N5769ADriver.ReadVolAndEleCommand(CGloabal.g_N5772AModule.nHandle, ref reVlote, ref reElect);
+                    volChart4.Series[0].Points.AddXY(DateTime.Now.ToString("mm:ss"), reVlote);
+                    eleChart4.Series[0].Points.AddXY(DateTime.Now.ToString("mm:ss"), reElect);
+                }
+
+                //发送关闭指令
+                error = N5769ADriver.SetCloseCommand(CGloabal.g_N5772AModule.nHandle, strErrMsg);
+                if (error < 0)
+                {
+                    CommonMethod.ShowHintInfor(eHintInfoType.error, strErrMsg);
+                    return;
+                }
+                for (int i = 0; i < point; i++)
+                {
+                    if (OutSign4)
+                    {//为true时则终止测试
+                        return;
+                    }
+                    Thread.Sleep(CloseReadTimer);
+                    //读取电压和电流        
+                    N5769ADriver.ReadVolAndEleCommand(CGloabal.g_N5772AModule.nHandle, ref reVlote, ref reElect);
+                    volChart4.Series[0].Points.AddXY(DateTime.Now.ToString("mm:ss"), reVlote);
+                    eleChart4.Series[0].Points.AddXY(DateTime.Now.ToString("mm:ss"), reElect);
+                }
+            }
+        }
+
+        private void btnStop4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnSave4_Click(object sender, EventArgs e)
         {
 
         }

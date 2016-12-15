@@ -159,27 +159,27 @@ namespace MultiPowersSystem.DriverCommon
             string strVal;
             byte[] byteArray = new byte[100];
 
-            commands = "MEAS:VOLT?";//返回电压
-            status = visa32.viWrite(nInstrumentHandle, System.Text.Encoding.Default.GetBytes(commands), commands.Length, out retCnt);
-            if (status < 0)
-            {
-                strErrMsg = "VISA函数错误!";
-                return status;
-            }
+            //commands = "MEAS:VOLT?";//返回电压
+            //status = visa32.viWrite(nInstrumentHandle, System.Text.Encoding.Default.GetBytes(commands), commands.Length, out retCnt);
+            //if (status < 0)
+            //{
+            //    strErrMsg = "VISA函数错误!";
+            //    return status;
+            //}
 
-            status = visa32.viRead(nInstrumentHandle, byteArray, BUFF_SIZE, out retCnt);
-            if (status < 0)
-            {
-                strErrMsg = "VISA函数错误!";
-                return status;
-            }
-            strVal = System.Text.Encoding.Default.GetString(byteArray);
-            reVlote = Convert.ToDouble(strVal);
-            if (reVlote < 0.0001)
-                reVlote = 0;
+            //status = visa32.viRead(nInstrumentHandle, byteArray, BUFF_SIZE, out retCnt);
+            //if (status < 0)
+            //{
+            //    strErrMsg = "VISA函数错误!";
+            //    return status;
+            //}
+            //strVal = System.Text.Encoding.Default.GetString(byteArray);
+            //reVlote = Convert.ToDouble(strVal);
+            //if (reVlote < 0.0001)
+            //    reVlote = 0;
 
             //模拟数据
-            //reVlote = new Random().Next(0, 20);
+            reVlote = new Random().Next(0, 20);
 
             return status;
         }
@@ -192,27 +192,27 @@ namespace MultiPowersSystem.DriverCommon
             string strVal;
             byte[] byteArray = new byte[100];
 
-            commands = "MEAS:CURR?";//返回电流
-            status = visa32.viWrite(nInstrumentHandle, System.Text.Encoding.Default.GetBytes(commands), commands.Length, out retCnt);
-            if (status < 0)
-            {
-                strErrMsg = "VISA函数错误!";
-                return status;
-            }
+            //commands = "MEAS:CURR?";//返回电流
+            //status = visa32.viWrite(nInstrumentHandle, System.Text.Encoding.Default.GetBytes(commands), commands.Length, out retCnt);
+            //if (status < 0)
+            //{
+            //    strErrMsg = "VISA函数错误!";
+            //    return status;
+            //}
 
-            status = visa32.viRead(nInstrumentHandle, byteArray, BUFF_SIZE, out retCnt);
-            if (status < 0)
-            {
-                strErrMsg = "VISA函数错误!";
-                return status;
-            }
-            strVal = System.Text.Encoding.Default.GetString(byteArray);
-            reElect = Convert.ToDouble(strVal);
-            if (reElect < 0.0001)
-                reElect = 0;
+            //status = visa32.viRead(nInstrumentHandle, byteArray, BUFF_SIZE, out retCnt);
+            //if (status < 0)
+            //{
+            //    strErrMsg = "VISA函数错误!";
+            //    return status;
+            //}
+            //strVal = System.Text.Encoding.Default.GetString(byteArray);
+            //reElect = Convert.ToDouble(strVal);
+            //if (reElect < 0.0001)
+            //    reElect = 0;
 
             //模拟数据
-            //reElect = new Random().Next(0, 5);
+            reElect = new Random().Next(0, 5);
             return status;
         }
 
