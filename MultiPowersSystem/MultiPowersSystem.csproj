@@ -51,8 +51,8 @@
   <ItemGroup>
     <Compile Include="DAL\CGloabal.cs" />
     <Compile Include="DAL\CommonMethod.cs" />
+    <Compile Include="DAL\MixHelper.cs" />
     <Compile Include="DAL\visa32.cs" />
-    <Compile Include="DriverCommon\IDriver.cs" />
     <Compile Include="DriverCommon\N5751ADriver.cs" />
     <Compile Include="DriverCommon\N5752ADriver.cs" />
     <Compile Include="DriverCommon\N5769ADriver.cs" />

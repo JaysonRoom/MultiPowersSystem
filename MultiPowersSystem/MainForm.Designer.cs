@@ -30,24 +30,24 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea21 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend21 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series21 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea22 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend22 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series22 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea23 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend23 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series23 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea24 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend24 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series24 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.mainTab = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.btnOpen1 = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
-            this.ip1 = new IPAddressControlLib.IPAddressControl();
+            this.ipAddress1 = new IPAddressControlLib.IPAddressControl();
             this.label11 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
@@ -58,93 +58,83 @@
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.tabPage5 = new System.Windows.Forms.TabPage();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btnOpen2 = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.post2 = new System.Windows.Forms.NumericUpDown();
-            this.ip2 = new IPAddressControlLib.IPAddressControl();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnSave1 = new System.Windows.Forms.Button();
             this.btnStop1 = new System.Windows.Forms.Button();
             this.comboUnit1 = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.getPoint = new System.Windows.Forms.NumericUpDown();
+            this.getPoint1 = new System.Windows.Forms.NumericUpDown();
             this.label14 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.btnStart1 = new System.Windows.Forms.Button();
-            this.closeTime = new System.Windows.Forms.NumericUpDown();
-            this.openTime = new System.Windows.Forms.NumericUpDown();
-            this.cycleNum = new System.Windows.Forms.NumericUpDown();
-            this.eleVal = new System.Windows.Forms.NumericUpDown();
-            this.volteVal = new System.Windows.Forms.NumericUpDown();
+            this.closeTime1 = new System.Windows.Forms.NumericUpDown();
+            this.openTime1 = new System.Windows.Forms.NumericUpDown();
+            this.cycleNum1 = new System.Windows.Forms.NumericUpDown();
+            this.eleVal1 = new System.Windows.Forms.NumericUpDown();
+            this.volteVal1 = new System.Windows.Forms.NumericUpDown();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.chart2 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.volChart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.eleChart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.tabPage6 = new System.Windows.Forms.TabPage();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.btnSave2 = new System.Windows.Forms.Button();
+            this.btnStop2 = new System.Windows.Forms.Button();
+            this.comboUnit2 = new System.Windows.Forms.ComboBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.getPoint2 = new System.Windows.Forms.NumericUpDown();
             this.label16 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
-            this.button4 = new System.Windows.Forms.Button();
-            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDown3 = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDown4 = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDown5 = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDown6 = new System.Windows.Forms.NumericUpDown();
+            this.btnStart2 = new System.Windows.Forms.Button();
+            this.closeTime2 = new System.Windows.Forms.NumericUpDown();
+            this.openTime2 = new System.Windows.Forms.NumericUpDown();
+            this.cycleNum2 = new System.Windows.Forms.NumericUpDown();
+            this.eleVal2 = new System.Windows.Forms.NumericUpDown();
+            this.volteVal2 = new System.Windows.Forms.NumericUpDown();
             this.label19 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
-            this.button5 = new System.Windows.Forms.Button();
+            this.btnOpen2 = new System.Windows.Forms.Button();
             this.label24 = new System.Windows.Forms.Label();
-            this.ipAddressControl1 = new IPAddressControlLib.IPAddressControl();
+            this.ipAddress2 = new IPAddressControlLib.IPAddressControl();
             this.label25 = new System.Windows.Forms.Label();
-            this.chart3 = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.chart4 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.eleChart2 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.volChart2 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.mainTab.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.tabPage2.SuspendLayout();
-            this.tabPage4.SuspendLayout();
-            this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.post2)).BeginInit();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.getPoint)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.closeTime)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.openTime)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cycleNum)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.eleVal)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.volteVal)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.getPoint1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.closeTime1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.openTime1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cycleNum1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.eleVal1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.volteVal1)).BeginInit();
             this.groupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chart2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.volChart1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.eleChart1)).BeginInit();
             this.groupBox5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.getPoint2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.closeTime2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.openTime2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cycleNum2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.eleVal2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.volteVal2)).BeginInit();
             this.groupBox6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chart3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chart4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.eleChart2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.volChart2)).BeginInit();
             this.groupBox7.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -181,7 +171,7 @@
             // 
             this.groupBox4.Controls.Add(this.btnOpen1);
             this.groupBox4.Controls.Add(this.label9);
-            this.groupBox4.Controls.Add(this.ip1);
+            this.groupBox4.Controls.Add(this.ipAddress1);
             this.groupBox4.Controls.Add(this.label11);
             this.groupBox4.Location = new System.Drawing.Point(6, 6);
             this.groupBox4.Name = "groupBox4";
@@ -209,16 +199,16 @@
             this.label9.TabIndex = 4;
             this.label9.Text = "连接";
             // 
-            // ip1
+            // ipAddress1
             // 
-            this.ip1.BackColor = System.Drawing.SystemColors.Window;
-            this.ip1.Location = new System.Drawing.Point(114, 41);
-            this.ip1.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
-            this.ip1.MinimumSize = new System.Drawing.Size(207, 29);
-            this.ip1.Name = "ip1";
-            this.ip1.ReadOnly = false;
-            this.ip1.Size = new System.Drawing.Size(207, 29);
-            this.ip1.TabIndex = 2;
+            this.ipAddress1.BackColor = System.Drawing.SystemColors.Window;
+            this.ipAddress1.Location = new System.Drawing.Point(114, 41);
+            this.ipAddress1.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
+            this.ipAddress1.MinimumSize = new System.Drawing.Size(207, 29);
+            this.ipAddress1.Name = "ipAddress1";
+            this.ipAddress1.ReadOnly = false;
+            this.ipAddress1.Size = new System.Drawing.Size(207, 29);
+            this.ipAddress1.TabIndex = 2;
             // 
             // label11
             // 
@@ -298,7 +288,6 @@
             // tabPage4
             // 
             this.tabPage4.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.tabPage4.Controls.Add(this.groupBox1);
             this.tabPage4.Location = new System.Drawing.Point(4, 44);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Size = new System.Drawing.Size(1199, 639);
@@ -314,101 +303,22 @@
             this.tabPage5.Text = "N6702A电源";
             this.tabPage5.UseVisualStyleBackColor = true;
             // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.btnOpen2);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.post2);
-            this.groupBox1.Controls.Add(this.ip2);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Location = new System.Drawing.Point(13, 16);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(382, 194);
-            this.groupBox1.TabIndex = 7;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "N6702A配置";
-            // 
-            // btnOpen2
-            // 
-            this.btnOpen2.Location = new System.Drawing.Point(123, 148);
-            this.btnOpen2.Name = "btnOpen2";
-            this.btnOpen2.Size = new System.Drawing.Size(75, 31);
-            this.btnOpen2.TabIndex = 5;
-            this.btnOpen2.Text = "打开";
-            this.btnOpen2.UseVisualStyleBackColor = true;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(42, 153);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(49, 19);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "连接";
-            // 
-            // post2
-            // 
-            this.post2.Location = new System.Drawing.Point(123, 95);
-            this.post2.Maximum = new decimal(new int[] {
-            10000,
-            0,
-            0,
-            0});
-            this.post2.Name = "post2";
-            this.post2.Size = new System.Drawing.Size(207, 29);
-            this.post2.TabIndex = 3;
-            this.post2.Value = new decimal(new int[] {
-            8080,
-            0,
-            0,
-            0});
-            // 
-            // ip2
-            // 
-            this.ip2.BackColor = System.Drawing.SystemColors.Window;
-            this.ip2.Location = new System.Drawing.Point(123, 41);
-            this.ip2.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
-            this.ip2.MinimumSize = new System.Drawing.Size(207, 29);
-            this.ip2.Name = "ip2";
-            this.ip2.ReadOnly = false;
-            this.ip2.Size = new System.Drawing.Size(207, 29);
-            this.ip2.TabIndex = 2;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(22, 97);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(89, 19);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "端口号：";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(22, 43);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(91, 19);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "IP地址：";
-            // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.btnSave1);
             this.groupBox2.Controls.Add(this.btnStop1);
             this.groupBox2.Controls.Add(this.comboUnit1);
             this.groupBox2.Controls.Add(this.label4);
-            this.groupBox2.Controls.Add(this.getPoint);
+            this.groupBox2.Controls.Add(this.getPoint1);
             this.groupBox2.Controls.Add(this.label14);
             this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Controls.Add(this.label6);
             this.groupBox2.Controls.Add(this.btnStart1);
-            this.groupBox2.Controls.Add(this.closeTime);
-            this.groupBox2.Controls.Add(this.openTime);
-            this.groupBox2.Controls.Add(this.cycleNum);
-            this.groupBox2.Controls.Add(this.eleVal);
-            this.groupBox2.Controls.Add(this.volteVal);
+            this.groupBox2.Controls.Add(this.closeTime1);
+            this.groupBox2.Controls.Add(this.openTime1);
+            this.groupBox2.Controls.Add(this.cycleNum1);
+            this.groupBox2.Controls.Add(this.eleVal1);
+            this.groupBox2.Controls.Add(this.volteVal1);
             this.groupBox2.Controls.Add(this.label8);
             this.groupBox2.Controls.Add(this.label7);
             this.groupBox2.Controls.Add(this.label12);
@@ -428,6 +338,7 @@
             this.btnSave1.TabIndex = 20;
             this.btnSave1.Text = "保存";
             this.btnSave1.UseVisualStyleBackColor = true;
+            this.btnSave1.Click += new System.EventHandler(this.btnSave1_Click);
             // 
             // btnStop1
             // 
@@ -437,6 +348,7 @@
             this.btnStop1.TabIndex = 19;
             this.btnStop1.Text = "停止";
             this.btnStop1.UseVisualStyleBackColor = true;
+            this.btnStop1.Click += new System.EventHandler(this.btnStop1_Click);
             // 
             // comboUnit1
             // 
@@ -459,18 +371,18 @@
             this.label4.TabIndex = 17;
             this.label4.Text = "时间单位：";
             // 
-            // getPoint
+            // getPoint1
             // 
-            this.getPoint.Location = new System.Drawing.Point(115, 341);
-            this.getPoint.Maximum = new decimal(new int[] {
+            this.getPoint1.Location = new System.Drawing.Point(115, 341);
+            this.getPoint1.Maximum = new decimal(new int[] {
             10000,
             0,
             0,
             0});
-            this.getPoint.Name = "getPoint";
-            this.getPoint.Size = new System.Drawing.Size(120, 29);
-            this.getPoint.TabIndex = 16;
-            this.getPoint.Value = new decimal(new int[] {
+            this.getPoint1.Name = "getPoint1";
+            this.getPoint1.Size = new System.Drawing.Size(120, 29);
+            this.getPoint1.TabIndex = 16;
+            this.getPoint1.Value = new decimal(new int[] {
             2,
             0,
             0,
@@ -511,67 +423,69 @@
             this.btnStart1.TabIndex = 10;
             this.btnStart1.Text = "执行";
             this.btnStart1.UseVisualStyleBackColor = true;
+            this.btnStart1.Click += new System.EventHandler(this.btnStart1_Click);
             // 
-            // closeTime
+            // closeTime1
             // 
-            this.closeTime.Location = new System.Drawing.Point(115, 249);
-            this.closeTime.Maximum = new decimal(new int[] {
+            this.closeTime1.Location = new System.Drawing.Point(115, 249);
+            this.closeTime1.Maximum = new decimal(new int[] {
             10000,
             0,
             0,
             0});
-            this.closeTime.Name = "closeTime";
-            this.closeTime.Size = new System.Drawing.Size(120, 29);
-            this.closeTime.TabIndex = 9;
+            this.closeTime1.Name = "closeTime1";
+            this.closeTime1.Size = new System.Drawing.Size(120, 29);
+            this.closeTime1.TabIndex = 9;
             // 
-            // openTime
+            // openTime1
             // 
-            this.openTime.Location = new System.Drawing.Point(115, 196);
-            this.openTime.Maximum = new decimal(new int[] {
+            this.openTime1.Location = new System.Drawing.Point(115, 196);
+            this.openTime1.Maximum = new decimal(new int[] {
             10000,
             0,
             0,
             0});
-            this.openTime.Name = "openTime";
-            this.openTime.Size = new System.Drawing.Size(120, 29);
-            this.openTime.TabIndex = 8;
+            this.openTime1.Name = "openTime1";
+            this.openTime1.Size = new System.Drawing.Size(120, 29);
+            this.openTime1.TabIndex = 8;
             // 
-            // cycleNum
+            // cycleNum1
             // 
-            this.cycleNum.Location = new System.Drawing.Point(115, 140);
-            this.cycleNum.Maximum = new decimal(new int[] {
+            this.cycleNum1.Location = new System.Drawing.Point(115, 140);
+            this.cycleNum1.Maximum = new decimal(new int[] {
             100000,
             0,
             0,
             0});
-            this.cycleNum.Name = "cycleNum";
-            this.cycleNum.Size = new System.Drawing.Size(120, 29);
-            this.cycleNum.TabIndex = 7;
+            this.cycleNum1.Name = "cycleNum1";
+            this.cycleNum1.Size = new System.Drawing.Size(120, 29);
+            this.cycleNum1.TabIndex = 7;
             // 
-            // eleVal
+            // eleVal1
             // 
-            this.eleVal.Location = new System.Drawing.Point(117, 85);
-            this.eleVal.Name = "eleVal";
-            this.eleVal.Size = new System.Drawing.Size(120, 29);
-            this.eleVal.TabIndex = 6;
+            this.eleVal1.Location = new System.Drawing.Point(117, 85);
+            this.eleVal1.Name = "eleVal1";
+            this.eleVal1.Size = new System.Drawing.Size(120, 29);
+            this.eleVal1.TabIndex = 6;
             // 
-            // volteVal
+            // volteVal1
             // 
-            this.volteVal.DecimalPlaces = 2;
-            this.volteVal.Increment = new decimal(new int[] {
+            this.volteVal1.DecimalPlaces = 2;
+            this.volteVal1.Increment = new decimal(new int[] {
             1,
             0,
             0,
             65536});
-            this.volteVal.Location = new System.Drawing.Point(117, 33);
-            this.volteVal.Maximum = new decimal(new int[] {
+            this.volteVal1.Location = new System.Drawing.Point(117, 33);
+            this.volteVal1.Maximum = new decimal(new int[] {
             200,
             0,
             0,
             0});
-            this.volteVal.Name = "volteVal";
-            this.volteVal.Size = new System.Drawing.Size(120, 29);
-            this.volteVal.TabIndex = 5;
+            this.volteVal1.Name = "volteVal1";
+            this.volteVal1.Size = new System.Drawing.Size(120, 29);
+            this.volteVal1.TabIndex = 5;
+            this.volteVal1.ValueChanged += new System.EventHandler(this.volteVal1_ValueChanged);
             // 
             // label8
             // 
@@ -620,51 +534,58 @@
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.chart2);
-            this.groupBox3.Controls.Add(this.chart1);
+            this.groupBox3.Controls.Add(this.eleChart1);
+            this.groupBox3.Controls.Add(this.volChart1);
             this.groupBox3.Location = new System.Drawing.Point(350, 5);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(841, 630);
             this.groupBox3.TabIndex = 6;
             this.groupBox3.TabStop = false;
             // 
-            // chart1
+            // volChart1
             // 
-            this.chart1.BackColor = System.Drawing.Color.WhiteSmoke;
-            chartArea2.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea2);
-            legend2.DockedToChartArea = "ChartArea1";
-            legend2.Name = "Legend1";
-            this.chart1.Legends.Add(legend2);
-            this.chart1.Location = new System.Drawing.Point(1, 17);
-            this.chart1.Name = "chart1";
-            series2.ChartArea = "ChartArea1";
-            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series2.Legend = "Legend1";
-            series2.Name = "电压";
-            this.chart1.Series.Add(series2);
-            this.chart1.Size = new System.Drawing.Size(841, 304);
-            this.chart1.TabIndex = 0;
-            this.chart1.Text = "chart1";
+            this.volChart1.BackColor = System.Drawing.Color.WhiteSmoke;
+            chartArea21.Name = "ChartArea1";
+            this.volChart1.ChartAreas.Add(chartArea21);
+            legend21.BorderWidth = 3;
+            legend21.DockedToChartArea = "ChartArea1";
+            legend21.Name = "Legend1";
+            this.volChart1.Legends.Add(legend21);
+            this.volChart1.Location = new System.Drawing.Point(1, 17);
+            this.volChart1.Name = "volChart1";
+            series21.BorderWidth = 3;
+            series21.ChartArea = "ChartArea1";
+            series21.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series21.Legend = "Legend1";
+            series21.Name = "电压";
+            series21.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Time;
+            this.volChart1.Series.Add(series21);
+            this.volChart1.Size = new System.Drawing.Size(841, 304);
+            this.volChart1.TabIndex = 0;
+            this.volChart1.Text = "chart1";
             // 
-            // chart2
+            // eleChart1
             // 
-            this.chart2.BackColor = System.Drawing.Color.WhiteSmoke;
-            chartArea1.Name = "ChartArea1";
-            this.chart2.ChartAreas.Add(chartArea1);
-            legend1.DockedToChartArea = "ChartArea1";
-            legend1.Name = "Legend1";
-            this.chart2.Legends.Add(legend1);
-            this.chart2.Location = new System.Drawing.Point(2, 341);
-            this.chart2.Name = "chart2";
-            series1.ChartArea = "ChartArea1";
-            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series1.Legend = "Legend1";
-            series1.Name = "电流";
-            this.chart2.Series.Add(series1);
-            this.chart2.Size = new System.Drawing.Size(841, 286);
-            this.chart2.TabIndex = 1;
-            this.chart2.Text = "chart2";
+            this.eleChart1.BackColor = System.Drawing.Color.WhiteSmoke;
+            chartArea22.AxisY.Maximum = 2D;
+            chartArea22.Name = "ChartArea1";
+            this.eleChart1.ChartAreas.Add(chartArea22);
+            legend22.DockedToChartArea = "ChartArea1";
+            legend22.Name = "Legend1";
+            this.eleChart1.Legends.Add(legend22);
+            this.eleChart1.Location = new System.Drawing.Point(2, 341);
+            this.eleChart1.Name = "eleChart1";
+            series22.BorderWidth = 3;
+            series22.ChartArea = "ChartArea1";
+            series22.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series22.Color = System.Drawing.Color.Red;
+            series22.Legend = "Legend1";
+            series22.Name = "电流";
+            series22.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Time;
+            this.eleChart1.Series.Add(series22);
+            this.eleChart1.Size = new System.Drawing.Size(841, 286);
+            this.eleChart1.TabIndex = 1;
+            this.eleChart1.Text = "chart2";
             // 
             // tabPage6
             // 
@@ -677,20 +598,20 @@
             // 
             // groupBox5
             // 
-            this.groupBox5.Controls.Add(this.button2);
-            this.groupBox5.Controls.Add(this.button3);
-            this.groupBox5.Controls.Add(this.comboBox1);
+            this.groupBox5.Controls.Add(this.btnSave2);
+            this.groupBox5.Controls.Add(this.btnStop2);
+            this.groupBox5.Controls.Add(this.comboUnit2);
             this.groupBox5.Controls.Add(this.label10);
-            this.groupBox5.Controls.Add(this.numericUpDown1);
+            this.groupBox5.Controls.Add(this.getPoint2);
             this.groupBox5.Controls.Add(this.label16);
             this.groupBox5.Controls.Add(this.label17);
             this.groupBox5.Controls.Add(this.label18);
-            this.groupBox5.Controls.Add(this.button4);
-            this.groupBox5.Controls.Add(this.numericUpDown2);
-            this.groupBox5.Controls.Add(this.numericUpDown3);
-            this.groupBox5.Controls.Add(this.numericUpDown4);
-            this.groupBox5.Controls.Add(this.numericUpDown5);
-            this.groupBox5.Controls.Add(this.numericUpDown6);
+            this.groupBox5.Controls.Add(this.btnStart2);
+            this.groupBox5.Controls.Add(this.closeTime2);
+            this.groupBox5.Controls.Add(this.openTime2);
+            this.groupBox5.Controls.Add(this.cycleNum2);
+            this.groupBox5.Controls.Add(this.eleVal2);
+            this.groupBox5.Controls.Add(this.volteVal2);
             this.groupBox5.Controls.Add(this.label19);
             this.groupBox5.Controls.Add(this.label20);
             this.groupBox5.Controls.Add(this.label21);
@@ -702,35 +623,37 @@
             this.groupBox5.TabIndex = 8;
             this.groupBox5.TabStop = false;
             // 
-            // button2
+            // btnSave2
             // 
-            this.button2.Location = new System.Drawing.Point(252, 341);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(74, 31);
-            this.button2.TabIndex = 20;
-            this.button2.Text = "保存";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnSave2.Location = new System.Drawing.Point(252, 341);
+            this.btnSave2.Name = "btnSave2";
+            this.btnSave2.Size = new System.Drawing.Size(74, 31);
+            this.btnSave2.TabIndex = 20;
+            this.btnSave2.Text = "保存";
+            this.btnSave2.UseVisualStyleBackColor = true;
+            this.btnSave2.Click += new System.EventHandler(this.btnSave2_Click);
             // 
-            // button3
+            // btnStop2
             // 
-            this.button3.Location = new System.Drawing.Point(252, 294);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(74, 31);
-            this.button3.TabIndex = 19;
-            this.button3.Text = "停止";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnStop2.Location = new System.Drawing.Point(252, 294);
+            this.btnStop2.Name = "btnStop2";
+            this.btnStop2.Size = new System.Drawing.Size(74, 31);
+            this.btnStop2.TabIndex = 19;
+            this.btnStop2.Text = "停止";
+            this.btnStop2.UseVisualStyleBackColor = true;
+            this.btnStop2.Click += new System.EventHandler(this.btnStop2_Click);
             // 
-            // comboBox1
+            // comboUnit2
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.comboUnit2.FormattingEnabled = true;
+            this.comboUnit2.Items.AddRange(new object[] {
             "小时",
             "分钟",
             "秒"});
-            this.comboBox1.Location = new System.Drawing.Point(115, 297);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 27);
-            this.comboBox1.TabIndex = 18;
+            this.comboUnit2.Location = new System.Drawing.Point(115, 297);
+            this.comboUnit2.Name = "comboUnit2";
+            this.comboUnit2.Size = new System.Drawing.Size(121, 27);
+            this.comboUnit2.TabIndex = 18;
             // 
             // label10
             // 
@@ -741,18 +664,18 @@
             this.label10.TabIndex = 17;
             this.label10.Text = "时间单位：";
             // 
-            // numericUpDown1
+            // getPoint2
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(115, 341);
-            this.numericUpDown1.Maximum = new decimal(new int[] {
+            this.getPoint2.Location = new System.Drawing.Point(115, 341);
+            this.getPoint2.Maximum = new decimal(new int[] {
             10000,
             0,
             0,
             0});
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(120, 29);
-            this.numericUpDown1.TabIndex = 16;
-            this.numericUpDown1.Value = new decimal(new int[] {
+            this.getPoint2.Name = "getPoint2";
+            this.getPoint2.Size = new System.Drawing.Size(120, 29);
+            this.getPoint2.TabIndex = 16;
+            this.getPoint2.Value = new decimal(new int[] {
             2,
             0,
             0,
@@ -785,75 +708,77 @@
             this.label18.TabIndex = 6;
             this.label18.Text = "V";
             // 
-            // button4
+            // btnStart2
             // 
-            this.button4.Location = new System.Drawing.Point(252, 248);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(74, 31);
-            this.button4.TabIndex = 10;
-            this.button4.Text = "执行";
-            this.button4.UseVisualStyleBackColor = true;
+            this.btnStart2.Location = new System.Drawing.Point(252, 248);
+            this.btnStart2.Name = "btnStart2";
+            this.btnStart2.Size = new System.Drawing.Size(74, 31);
+            this.btnStart2.TabIndex = 10;
+            this.btnStart2.Text = "执行";
+            this.btnStart2.UseVisualStyleBackColor = true;
+            this.btnStart2.Click += new System.EventHandler(this.btnStart2_Click);
             // 
-            // numericUpDown2
+            // closeTime2
             // 
-            this.numericUpDown2.Location = new System.Drawing.Point(115, 249);
-            this.numericUpDown2.Maximum = new decimal(new int[] {
+            this.closeTime2.Location = new System.Drawing.Point(115, 249);
+            this.closeTime2.Maximum = new decimal(new int[] {
             10000,
             0,
             0,
             0});
-            this.numericUpDown2.Name = "numericUpDown2";
-            this.numericUpDown2.Size = new System.Drawing.Size(120, 29);
-            this.numericUpDown2.TabIndex = 9;
+            this.closeTime2.Name = "closeTime2";
+            this.closeTime2.Size = new System.Drawing.Size(120, 29);
+            this.closeTime2.TabIndex = 9;
             // 
-            // numericUpDown3
+            // openTime2
             // 
-            this.numericUpDown3.Location = new System.Drawing.Point(115, 196);
-            this.numericUpDown3.Maximum = new decimal(new int[] {
+            this.openTime2.Location = new System.Drawing.Point(115, 196);
+            this.openTime2.Maximum = new decimal(new int[] {
             10000,
             0,
             0,
             0});
-            this.numericUpDown3.Name = "numericUpDown3";
-            this.numericUpDown3.Size = new System.Drawing.Size(120, 29);
-            this.numericUpDown3.TabIndex = 8;
+            this.openTime2.Name = "openTime2";
+            this.openTime2.Size = new System.Drawing.Size(120, 29);
+            this.openTime2.TabIndex = 8;
             // 
-            // numericUpDown4
+            // cycleNum2
             // 
-            this.numericUpDown4.Location = new System.Drawing.Point(115, 140);
-            this.numericUpDown4.Maximum = new decimal(new int[] {
+            this.cycleNum2.Location = new System.Drawing.Point(115, 140);
+            this.cycleNum2.Maximum = new decimal(new int[] {
             100000,
             0,
             0,
             0});
-            this.numericUpDown4.Name = "numericUpDown4";
-            this.numericUpDown4.Size = new System.Drawing.Size(120, 29);
-            this.numericUpDown4.TabIndex = 7;
+            this.cycleNum2.Name = "cycleNum2";
+            this.cycleNum2.Size = new System.Drawing.Size(120, 29);
+            this.cycleNum2.TabIndex = 7;
             // 
-            // numericUpDown5
+            // eleVal2
             // 
-            this.numericUpDown5.Location = new System.Drawing.Point(117, 85);
-            this.numericUpDown5.Name = "numericUpDown5";
-            this.numericUpDown5.Size = new System.Drawing.Size(120, 29);
-            this.numericUpDown5.TabIndex = 6;
+            this.eleVal2.Location = new System.Drawing.Point(117, 85);
+            this.eleVal2.Name = "eleVal2";
+            this.eleVal2.Size = new System.Drawing.Size(120, 29);
+            this.eleVal2.TabIndex = 6;
             // 
-            // numericUpDown6
+            // volteVal2
             // 
-            this.numericUpDown6.DecimalPlaces = 2;
-            this.numericUpDown6.Increment = new decimal(new int[] {
+            this.volteVal2.DecimalPlaces = 2;
+            this.volteVal2.Increment = new decimal(new int[] {
             1,
             0,
             0,
             65536});
-            this.numericUpDown6.Location = new System.Drawing.Point(117, 33);
-            this.numericUpDown6.Maximum = new decimal(new int[] {
+            this.volteVal2.Location = new System.Drawing.Point(117, 33);
+            this.volteVal2.Maximum = new decimal(new int[] {
             200,
             0,
             0,
             0});
-            this.numericUpDown6.Name = "numericUpDown6";
-            this.numericUpDown6.Size = new System.Drawing.Size(120, 29);
-            this.numericUpDown6.TabIndex = 5;
+            this.volteVal2.Name = "volteVal2";
+            this.volteVal2.Size = new System.Drawing.Size(120, 29);
+            this.volteVal2.TabIndex = 5;
+            this.volteVal2.ValueChanged += new System.EventHandler(this.volteVal2_ValueChanged);
             // 
             // label19
             // 
@@ -902,9 +827,9 @@
             // 
             // groupBox6
             // 
-            this.groupBox6.Controls.Add(this.button5);
+            this.groupBox6.Controls.Add(this.btnOpen2);
             this.groupBox6.Controls.Add(this.label24);
-            this.groupBox6.Controls.Add(this.ipAddressControl1);
+            this.groupBox6.Controls.Add(this.ipAddress2);
             this.groupBox6.Controls.Add(this.label25);
             this.groupBox6.Location = new System.Drawing.Point(7, 5);
             this.groupBox6.Name = "groupBox6";
@@ -913,14 +838,15 @@
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "N5751A配置";
             // 
-            // button5
+            // btnOpen2
             // 
-            this.button5.Location = new System.Drawing.Point(114, 107);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(75, 31);
-            this.button5.TabIndex = 5;
-            this.button5.Text = "打开";
-            this.button5.UseVisualStyleBackColor = true;
+            this.btnOpen2.Location = new System.Drawing.Point(114, 107);
+            this.btnOpen2.Name = "btnOpen2";
+            this.btnOpen2.Size = new System.Drawing.Size(75, 31);
+            this.btnOpen2.TabIndex = 5;
+            this.btnOpen2.Text = "打开";
+            this.btnOpen2.UseVisualStyleBackColor = true;
+            this.btnOpen2.Click += new System.EventHandler(this.btnOpen2_Click);
             // 
             // label24
             // 
@@ -931,16 +857,16 @@
             this.label24.TabIndex = 4;
             this.label24.Text = "连接";
             // 
-            // ipAddressControl1
+            // ipAddress2
             // 
-            this.ipAddressControl1.BackColor = System.Drawing.SystemColors.Window;
-            this.ipAddressControl1.Location = new System.Drawing.Point(114, 41);
-            this.ipAddressControl1.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
-            this.ipAddressControl1.MinimumSize = new System.Drawing.Size(207, 29);
-            this.ipAddressControl1.Name = "ipAddressControl1";
-            this.ipAddressControl1.ReadOnly = false;
-            this.ipAddressControl1.Size = new System.Drawing.Size(207, 29);
-            this.ipAddressControl1.TabIndex = 2;
+            this.ipAddress2.BackColor = System.Drawing.SystemColors.Window;
+            this.ipAddress2.Location = new System.Drawing.Point(114, 41);
+            this.ipAddress2.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
+            this.ipAddress2.MinimumSize = new System.Drawing.Size(207, 29);
+            this.ipAddress2.Name = "ipAddress2";
+            this.ipAddress2.ReadOnly = false;
+            this.ipAddress2.Size = new System.Drawing.Size(207, 29);
+            this.ipAddress2.TabIndex = 2;
             // 
             // label25
             // 
@@ -951,48 +877,53 @@
             this.label25.TabIndex = 0;
             this.label25.Text = "IP地址：";
             // 
-            // chart3
+            // eleChart2
             // 
-            this.chart3.BackColor = System.Drawing.Color.WhiteSmoke;
-            chartArea3.Name = "ChartArea1";
-            this.chart3.ChartAreas.Add(chartArea3);
-            legend3.DockedToChartArea = "ChartArea1";
-            legend3.Name = "Legend1";
-            this.chart3.Legends.Add(legend3);
-            this.chart3.Location = new System.Drawing.Point(2, 341);
-            this.chart3.Name = "chart3";
-            series3.ChartArea = "ChartArea1";
-            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series3.Legend = "Legend1";
-            series3.Name = "电流";
-            this.chart3.Series.Add(series3);
-            this.chart3.Size = new System.Drawing.Size(841, 286);
-            this.chart3.TabIndex = 1;
-            this.chart3.Text = "chart3";
+            this.eleChart2.BackColor = System.Drawing.Color.WhiteSmoke;
+            chartArea23.Name = "ChartArea1";
+            this.eleChart2.ChartAreas.Add(chartArea23);
+            legend23.DockedToChartArea = "ChartArea1";
+            legend23.Name = "Legend1";
+            this.eleChart2.Legends.Add(legend23);
+            this.eleChart2.Location = new System.Drawing.Point(2, 341);
+            this.eleChart2.Name = "eleChart2";
+            series23.BorderWidth = 3;
+            series23.ChartArea = "ChartArea1";
+            series23.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series23.Color = System.Drawing.Color.Red;
+            series23.Legend = "Legend1";
+            series23.Name = "电流";
+            series23.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Time;
+            this.eleChart2.Series.Add(series23);
+            this.eleChart2.Size = new System.Drawing.Size(841, 286);
+            this.eleChart2.TabIndex = 1;
+            this.eleChart2.Text = "chart3";
             // 
-            // chart4
+            // volChart2
             // 
-            this.chart4.BackColor = System.Drawing.Color.WhiteSmoke;
-            chartArea4.Name = "ChartArea1";
-            this.chart4.ChartAreas.Add(chartArea4);
-            legend4.DockedToChartArea = "ChartArea1";
-            legend4.Name = "Legend1";
-            this.chart4.Legends.Add(legend4);
-            this.chart4.Location = new System.Drawing.Point(1, 17);
-            this.chart4.Name = "chart4";
-            series4.ChartArea = "ChartArea1";
-            series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series4.Legend = "Legend1";
-            series4.Name = "电压";
-            this.chart4.Series.Add(series4);
-            this.chart4.Size = new System.Drawing.Size(841, 304);
-            this.chart4.TabIndex = 0;
-            this.chart4.Text = "chart4";
+            this.volChart2.BackColor = System.Drawing.Color.WhiteSmoke;
+            chartArea24.Name = "ChartArea1";
+            this.volChart2.ChartAreas.Add(chartArea24);
+            legend24.DockedToChartArea = "ChartArea1";
+            legend24.Name = "Legend1";
+            this.volChart2.Legends.Add(legend24);
+            this.volChart2.Location = new System.Drawing.Point(1, 17);
+            this.volChart2.Name = "volChart2";
+            series24.BorderWidth = 3;
+            series24.ChartArea = "ChartArea1";
+            series24.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series24.Legend = "Legend1";
+            series24.Name = "电压";
+            series24.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Time;
+            this.volChart2.Series.Add(series24);
+            this.volChart2.Size = new System.Drawing.Size(841, 304);
+            this.volChart2.TabIndex = 0;
+            this.volChart2.Text = "chart4";
             // 
             // groupBox7
             // 
-            this.groupBox7.Controls.Add(this.chart3);
-            this.groupBox7.Controls.Add(this.chart4);
+            this.groupBox7.Controls.Add(this.eleChart2);
+            this.groupBox7.Controls.Add(this.volChart2);
             this.groupBox7.Location = new System.Drawing.Point(351, 4);
             this.groupBox7.Name = "groupBox7";
             this.groupBox7.Size = new System.Drawing.Size(841, 630);
@@ -1020,33 +951,29 @@
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
             this.tabPage2.ResumeLayout(false);
-            this.tabPage4.ResumeLayout(false);
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.post2)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.getPoint)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.closeTime)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.openTime)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cycleNum)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.eleVal)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.volteVal)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.getPoint1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.closeTime1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.openTime1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cycleNum1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.eleVal1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.volteVal1)).EndInit();
             this.groupBox3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chart2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.volChart1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.eleChart1)).EndInit();
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.getPoint2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.closeTime2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.openTime2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cycleNum2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.eleVal2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.volteVal2)).EndInit();
             this.groupBox6.ResumeLayout(false);
             this.groupBox6.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chart3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chart4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.eleChart2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.volChart2)).EndInit();
             this.groupBox7.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -1060,7 +987,6 @@
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.Button btnOpen1;
         private System.Windows.Forms.Label label9;
-        private IPAddressControlLib.IPAddressControl ip1;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.StatusStrip statusStrip1;
@@ -1068,23 +994,23 @@
         private System.Windows.Forms.ListView listViewMenu;
         private System.Windows.Forms.ImageList imageList1;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.DataVisualization.Charting.Chart chart2;
-        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
+        private System.Windows.Forms.DataVisualization.Charting.Chart eleChart1;
+        private System.Windows.Forms.DataVisualization.Charting.Chart volChart1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button btnSave1;
         private System.Windows.Forms.Button btnStop1;
         private System.Windows.Forms.ComboBox comboUnit1;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.NumericUpDown getPoint;
+        private System.Windows.Forms.NumericUpDown getPoint1;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button btnStart1;
-        private System.Windows.Forms.NumericUpDown closeTime;
-        private System.Windows.Forms.NumericUpDown openTime;
-        private System.Windows.Forms.NumericUpDown cycleNum;
-        private System.Windows.Forms.NumericUpDown eleVal;
-        private System.Windows.Forms.NumericUpDown volteVal;
+        private System.Windows.Forms.NumericUpDown closeTime1;
+        private System.Windows.Forms.NumericUpDown openTime1;
+        private System.Windows.Forms.NumericUpDown cycleNum1;
+        private System.Windows.Forms.NumericUpDown eleVal1;
+        private System.Windows.Forms.NumericUpDown volteVal1;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label12;
@@ -1093,43 +1019,37 @@
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.TabPage tabPage4;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button btnOpen2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.NumericUpDown post2;
-        private IPAddressControlLib.IPAddressControl ip2;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TabPage tabPage5;
         private System.Windows.Forms.TabPage tabPage6;
         private System.Windows.Forms.GroupBox groupBox5;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Button btnSave2;
+        private System.Windows.Forms.Button btnStop2;
+        private System.Windows.Forms.ComboBox comboUnit2;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.NumericUpDown getPoint2;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.NumericUpDown numericUpDown2;
-        private System.Windows.Forms.NumericUpDown numericUpDown3;
-        private System.Windows.Forms.NumericUpDown numericUpDown4;
-        private System.Windows.Forms.NumericUpDown numericUpDown5;
-        private System.Windows.Forms.NumericUpDown numericUpDown6;
+        private System.Windows.Forms.Button btnStart2;
+        private System.Windows.Forms.NumericUpDown closeTime2;
+        private System.Windows.Forms.NumericUpDown openTime2;
+        private System.Windows.Forms.NumericUpDown cycleNum2;
+        private System.Windows.Forms.NumericUpDown eleVal2;
+        private System.Windows.Forms.NumericUpDown volteVal2;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.GroupBox groupBox6;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button btnOpen2;
         private System.Windows.Forms.Label label24;
-        private IPAddressControlLib.IPAddressControl ipAddressControl1;
+        private IPAddressControlLib.IPAddressControl ipAddress2;
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.GroupBox groupBox7;
-        private System.Windows.Forms.DataVisualization.Charting.Chart chart3;
-        private System.Windows.Forms.DataVisualization.Charting.Chart chart4;
+        private System.Windows.Forms.DataVisualization.Charting.Chart eleChart2;
+        private System.Windows.Forms.DataVisualization.Charting.Chart volChart2;
+        private IPAddressControlLib.IPAddressControl ipAddress1;
     }
 }
 

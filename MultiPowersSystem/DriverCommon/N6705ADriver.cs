@@ -6,11 +6,11 @@ using System.Text;
 
 namespace MultiPowersSystem.DriverCommon
 {
-    public class N6705ADriver:IDriver
+    public class N6705ADriver
     {
         static int PowerDefaultRM;
         const int BUFF_SIZE = 512;
-        public int Init(string resourceName, ref int nHandle, string pErrMsg)
+        public static int Init(string resourceName, ref int nHandle, string pErrMsg)
         {
             int nReturnStatus; //模块化电源底层初始化函数返回状态
 
@@ -33,7 +33,7 @@ namespace MultiPowersSystem.DriverCommon
 
             return 0;
         }
-        public int IDNQuery(int nInstrumentHandle, ref string pErrMsg)
+        public static int IDNQuery(int nInstrumentHandle, ref string pErrMsg)
         {
             int error = 0;
             int retCnt;
@@ -62,7 +62,7 @@ namespace MultiPowersSystem.DriverCommon
             }
             return error;
         }
-        public int Reset(int nInstrumentHandle, string strErrMsg)
+        public static int Reset(int nInstrumentHandle, string strErrMsg)
         {
             int status = 0;
             string commands;
@@ -78,7 +78,7 @@ namespace MultiPowersSystem.DriverCommon
             return status;
         }
 
-        public int Close(int nInstrumentHandle, string strErrMsg)
+        public static int Close(int nInstrumentHandle, string strErrMsg)
         {
             if (nInstrumentHandle == 0)
             {
@@ -95,7 +95,7 @@ namespace MultiPowersSystem.DriverCommon
             }
             return 0;
         }
-        public int SetVolAndEle(int nInstrumentHandle, double vloVal, double eleVal, string strErrMsg)
+        public static int SetVolAndEle(int nInstrumentHandle, double vloVal, double eleVal, string strErrMsg)
         {
             int status = 0;
             string commands;
@@ -119,7 +119,7 @@ namespace MultiPowersSystem.DriverCommon
             return status;
         }
 
-        public int SetOpenCommand(int nInstrumentHandle, string strErrMsg)
+        public static int SetOpenCommand(int nInstrumentHandle, string strErrMsg)
         {
             int status = 0;
             string commands;
@@ -135,7 +135,7 @@ namespace MultiPowersSystem.DriverCommon
             return status;
         }
 
-        public  int SetCloseCommand(int nInstrumentHandle, string strErrMsg)
+        public static int SetCloseCommand(int nInstrumentHandle, string strErrMsg)
         {
             int status = 0;
             string commands;
@@ -151,7 +151,7 @@ namespace MultiPowersSystem.DriverCommon
             return status;
         }
 
-        public  int ReadVolteCommand(int nInstrumentHandle, ref double reVlote, string strErrMsg)
+        public static int ReadVolteCommand(int nInstrumentHandle, ref double reVlote, string strErrMsg)
         {
             int status = 0;
             string commands;
@@ -184,7 +184,7 @@ namespace MultiPowersSystem.DriverCommon
             return status;
         }
 
-        public  int ReadElectCommand(int nInstrumentHandle, ref double reElect, string strErrMsg)
+        public static int ReadElectCommand(int nInstrumentHandle, ref double reElect, string strErrMsg)
         {
             int status = 0;
             string commands;
@@ -217,7 +217,7 @@ namespace MultiPowersSystem.DriverCommon
         }
 
         //读取电压电流值
-        public  int ReadVolAndEleCommand(int nInstrumentHandle, ref double reVlote, ref double reElect)
+        public static int ReadVolAndEleCommand(int nInstrumentHandle, ref double reVlote, ref double reElect)
         {
             int status = 0;
 

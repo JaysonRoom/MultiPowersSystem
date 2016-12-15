@@ -30,19 +30,22 @@ namespace MultiPowersSystem.DAL
             }
         };
 
-        List<InstrMentsParas> g_InstrModule = new List<InstrMentsParas>() {
-            new InstrMentsParas("N5769A"),
-            new InstrMentsParas("N5751A"),
-            new InstrMentsParas("N5752A"),
-            new InstrMentsParas("N5772A"),
-            new InstrMentsParas("N6702A"),
-            new InstrMentsParas("N6705A")
-        };
+        //List<InstrMentsParas> g_InstrModule = new List<InstrMentsParas>() {
+        //    new InstrMentsParas("N5769A"),
+        //    new InstrMentsParas("N5751A"),
+        //    new InstrMentsParas("N5752A"),
+        //    new InstrMentsParas("N5772A"),
+        //    new InstrMentsParas("N6702A"),
+        //    new InstrMentsParas("N6705A")
+        //};
         
 
-        //定义三个仪器的对象
-        public static InstrMentsParas g_InstrPowerModule = new InstrMentsParas("电源");
-
-        public static InstrMentsParas g_InstrPowerModule2 = new InstrMentsParas("电源2");
+        //定义六个仪器的对象
+        public static InstrMentsParas g_N5769AModule = new InstrMentsParas("N5769A");
+        public static InstrMentsParas g_N5751AModule = new InstrMentsParas("N5751A");
+        public static InstrMentsParas g_N5752AModule = new InstrMentsParas("N5752A");
+        public static InstrMentsParas g_N5772AModule = new InstrMentsParas("N5772A");
+        public static InstrMentsParas g_N6702AModule = new InstrMentsParas("N6702A");
+        public static InstrMentsParas g_N6705AModule = new InstrMentsParas("N6705A");
     }
 }
