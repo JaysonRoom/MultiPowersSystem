@@ -28,7 +28,50 @@ namespace MultiPowersSystem
             listViewMenu.Items.Add("N6705A", "N6705A", 0);
 
             comboUnit1.SelectedIndex = 1;
+            comboUnit2.SelectedIndex = 1;
+            comboUnit3.SelectedIndex = 1;
+            comboUnit4.SelectedIndex = 1;
+            comboUnit5.SelectedIndex = 1;
+            comboUnit6.SelectedIndex = 1;
+
+            listViewMenu.Items[0].Selected = true;
+
+            initChart();
         }
+
+        private void initChart()
+        {
+            volChart1.ChartAreas[0].AxisX.LabelStyle.Format = "mm:ss";
+            volChart1.ChartAreas[0].AxisX.ScaleView.Size = 20;
+            eleChart1.ChartAreas[0].AxisX.LabelStyle.Format = "mm:ss";
+            eleChart1.ChartAreas[0].AxisX.ScaleView.Size = 20;
+
+            volChart2.ChartAreas[0].AxisX.LabelStyle.Format = "mm:ss";
+            volChart2.ChartAreas[0].AxisX.ScaleView.Size = 20;
+            eleChart2.ChartAreas[0].AxisX.LabelStyle.Format = "mm:ss";
+            eleChart2.ChartAreas[0].AxisX.ScaleView.Size = 20;
+
+            volChart3.ChartAreas[0].AxisX.LabelStyle.Format = "mm:ss";
+            volChart3.ChartAreas[0].AxisX.ScaleView.Size = 20;
+            eleChart3.ChartAreas[0].AxisX.LabelStyle.Format = "mm:ss";
+            eleChart3.ChartAreas[0].AxisX.ScaleView.Size = 20;
+
+            volChart4.ChartAreas[0].AxisX.LabelStyle.Format = "mm:ss";
+            volChart4.ChartAreas[0].AxisX.ScaleView.Size = 20;
+            eleChart4.ChartAreas[0].AxisX.LabelStyle.Format = "mm:ss";
+            eleChart4.ChartAreas[0].AxisX.ScaleView.Size = 20;
+
+            volChart5.ChartAreas[0].AxisX.LabelStyle.Format = "mm:ss";
+            volChart5.ChartAreas[0].AxisX.ScaleView.Size = 20;
+            eleChart5.ChartAreas[0].AxisX.LabelStyle.Format = "mm:ss";
+            eleChart5.ChartAreas[0].AxisX.ScaleView.Size = 20;
+
+            volChart6.ChartAreas[0].AxisX.LabelStyle.Format = "mm:ss";
+            volChart6.ChartAreas[0].AxisX.ScaleView.Size = 20;
+            eleChart6.ChartAreas[0].AxisX.LabelStyle.Format = "mm:ss";
+            eleChart6.ChartAreas[0].AxisX.ScaleView.Size = 20;
+        }
+
         private void volteVal1_ValueChanged(object sender, EventArgs e)
         {
 
@@ -196,7 +239,7 @@ namespace MultiPowersSystem
 
         private void btnSave1_Click(object sender, EventArgs e)
         {
-
+            MixHelper.SaveCSVFile(volChart1, eleChart1);
         }
 
         private void btnOpen2_Click(object sender, EventArgs e)
@@ -333,7 +376,7 @@ namespace MultiPowersSystem
 
         private void btnSave2_Click(object sender, EventArgs e)
         {
-
+            MixHelper.SaveCSVFile(volChart2, eleChart2);
         }
 
         private void btnOpen3_Click(object sender, EventArgs e)
@@ -465,10 +508,9 @@ namespace MultiPowersSystem
         {
             OutSign3 = true;
         }
-
-        private void btnSave_Click(object sender, EventArgs e)
+        private void btnSave3_Click(object sender, EventArgs e)
         {
-
+            MixHelper.SaveCSVFile(volChart3, eleChart3);
         }
 
         private void btnOpen4_Click(object sender, EventArgs e)
@@ -599,12 +641,284 @@ namespace MultiPowersSystem
 
         private void btnStop4_Click(object sender, EventArgs e)
         {
-
+            OutSign4 = true;
         }
 
         private void btnSave4_Click(object sender, EventArgs e)
         {
+            MixHelper.SaveCSVFile(volChart4, eleChart4);
+        }
 
+        private void btnOpen5_Click(object sender, EventArgs e)
+        {
+            //N6702A
+            string strIP;
+            UInt32 nPort;
+            string resourceName;
+            int error = 0;
+            if (btnOpen5.Text == "打开")//用户要连接仪器
+            {
+                strIP = this.ipAddress5.Text;
+                nPort = 8080;
+                //连接设备
+                resourceName = "TCPIP0::" + strIP + "::inst0::INSTR";
+
+                error = CommonMethod.ConnectSpecificInstrument(CGloabal.g_N6702AModule.strInstruName, resourceName);
+                if (error < 0)//连接失败
+                {
+                    CommonMethod.ShowHintInfor(eHintInfoType.error, "电源打开失败！");
+                    btnOpen5.Text = "打开";
+                }
+                else//连接成功,则要将当前用户输入的IP地址和端口号保存到ini文件中
+                {
+                    CommonMethod.SaveInputNetInforsToIniFile(CGloabal.g_N6702AModule.strInstruName, strIP, nPort);
+                    btnOpen5.Text = "关闭";
+                }
+            }
+            else//此时用户要断开连接
+            {
+                error = CommonMethod.CloseSpecificInstrument(CGloabal.g_N6702AModule.strInstruName);
+                if (error < 0)//断开失败，则还要将switchConnect恢复为连接状态      
+                {
+                    btnOpen5.Text = "关闭";
+                }
+                else
+                {
+                    btnOpen5.Text = "打开";
+                }
+            }
+        }
+
+        private void volteVal5_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnStart_Click(object sender, EventArgs e)
+        {
+            OutSign5 = false;
+            Thread t = new Thread(new ThreadStart(TestProcess5));
+            t.IsBackground = true;
+            t.Start();
+        }
+        bool OutSign5 = false;
+        private void TestProcess5()
+        {
+            volChart5.Series[0].Points.Clear();
+            eleChart5.Series[0].Points.Clear();
+
+            double vlo = (double)volteVal5.Value;
+            double ele = (double)eleVal5.Value;
+            var cyc = cycleNum5.Value;
+            var open = openTime5.Value;
+            var close = closeTime5.Value;
+            int point = (int)getPoint5.Value;
+
+            int error = 0;
+            string strErrMsg = "";
+            double reVlote = 0, reElect = 0;
+
+            //设置电压和电流
+            error = N6702ADriver.SetVolAndEle(CGloabal.g_N6702AModule.nHandle, vlo, ele, strErrMsg);
+            if (error < 0)
+            {
+                CommonMethod.ShowHintInfor(eHintInfoType.error, strErrMsg);
+                return;
+            }
+
+            //读取应该间隔多少时间取一个点
+            int OpenReadtimer = MixHelper.ReturnInterval(comboUnit5.Text, 1, open, close, point);
+            int CloseReadTimer = MixHelper.ReturnInterval(comboUnit5.Text, 0, open, close, point);
+
+            while (cyc > 0)
+            {
+                cyc--;
+                //打开命令
+                error = N6702ADriver.SetOpenCommand(CGloabal.g_N6702AModule.nHandle, strErrMsg);
+                if (error < 0)
+                {
+                    CommonMethod.ShowHintInfor(eHintInfoType.error, strErrMsg);
+                    return;
+                }
+                for (int i = 0; i < point; i++)
+                {
+                    if (OutSign5)
+                    {//为true时则终止测试
+                        return;
+                    }
+                    Thread.Sleep(OpenReadtimer);
+                    //读取电压和电流        
+                    N6702ADriver.ReadVolAndEleCommand(CGloabal.g_N6702AModule.nHandle, ref reVlote, ref reElect);
+                    volChart5.Series[0].Points.AddXY(DateTime.Now.ToString("mm:ss"), reVlote);
+                    eleChart5.Series[0].Points.AddXY(DateTime.Now.ToString("mm:ss"), reElect);
+                }
+
+                //发送关闭指令
+                error = N6702ADriver.SetCloseCommand(CGloabal.g_N6702AModule.nHandle, strErrMsg);
+                if (error < 0)
+                {
+                    CommonMethod.ShowHintInfor(eHintInfoType.error, strErrMsg);
+                    return;
+                }
+                for (int i = 0; i < point; i++)
+                {
+                    if (OutSign5)
+                    {//为true时则终止测试
+                        return;
+                    }
+                    Thread.Sleep(CloseReadTimer);
+                    //读取电压和电流        
+                    N6702ADriver.ReadVolAndEleCommand(CGloabal.g_N6702AModule.nHandle, ref reVlote, ref reElect);
+                    volChart5.Series[0].Points.AddXY(DateTime.Now.ToString("mm:ss"), reVlote);
+                    eleChart5.Series[0].Points.AddXY(DateTime.Now.ToString("mm:ss"), reElect);
+                }
+            }
+        }
+
+        private void btnStop_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnSave5_Click(object sender, EventArgs e)
+        {
+            MixHelper.SaveCSVFile(volChart5, eleChart5);
+        }
+
+        private void btnOpen6_Click(object sender, EventArgs e)
+        {
+            //N6705A
+            string strIP;
+            UInt32 nPort;
+            string resourceName;
+            int error = 0;
+            if (btnOpen6.Text == "打开")//用户要连接仪器
+            {
+                strIP = this.ipAddress6.Text;
+                nPort = 8080;
+                //连接设备
+                resourceName = "TCPIP0::" + strIP + "::inst0::INSTR";
+
+                error = CommonMethod.ConnectSpecificInstrument(CGloabal.g_N6705AModule.strInstruName, resourceName);
+                if (error < 0)//连接失败
+                {
+                    CommonMethod.ShowHintInfor(eHintInfoType.error, "电源打开失败！");
+                    btnOpen6.Text = "打开";
+                }
+                else//连接成功,则要将当前用户输入的IP地址和端口号保存到ini文件中
+                {
+                    CommonMethod.SaveInputNetInforsToIniFile(CGloabal.g_N6705AModule.strInstruName, strIP, nPort);
+                    btnOpen6.Text = "关闭";
+                }
+            }
+            else//此时用户要断开连接
+            {
+                error = CommonMethod.CloseSpecificInstrument(CGloabal.g_N6705AModule.strInstruName);
+                if (error < 0)//断开失败，则还要将switchConnect恢复为连接状态      
+                {
+                    btnOpen6.Text = "关闭";
+                }
+                else
+                {
+                    btnOpen6.Text = "打开";
+                }
+            }
+        }
+
+        private void volteVal6_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnStart6_Click(object sender, EventArgs e)
+        {
+            OutSign6 = false;
+            Thread t = new Thread(new ThreadStart(TestProcess6));
+            t.IsBackground = true;
+            t.Start();
+        }
+        bool OutSign6 = false;
+        private void TestProcess6()
+        {
+            volChart6.Series[0].Points.Clear();
+            eleChart6.Series[0].Points.Clear();
+
+            double vlo = (double)volteVal6.Value;
+            double ele = (double)eleVal6.Value;
+            var cyc = cycleNum6.Value;
+            var open = openTime6.Value;
+            var close = closeTime6.Value;
+            int point = (int)getPoint6.Value;
+
+            int error = 0;
+            string strErrMsg = "";
+            double reVlote = 0, reElect = 0;
+
+            //设置电压和电流
+            error = N6705ADriver.SetVolAndEle(CGloabal.g_N6705AModule.nHandle, vlo, ele, strErrMsg);
+            if (error < 0)
+            {
+                CommonMethod.ShowHintInfor(eHintInfoType.error, strErrMsg);
+                return;
+            }
+
+            //读取应该间隔多少时间取一个点
+            int OpenReadtimer = MixHelper.ReturnInterval(comboUnit6.Text, 1, open, close, point);
+            int CloseReadTimer = MixHelper.ReturnInterval(comboUnit6.Text, 0, open, close, point);
+
+            while (cyc > 0)
+            {
+                cyc--;
+                //打开命令
+                error = N6705ADriver.SetOpenCommand(CGloabal.g_N6705AModule.nHandle, strErrMsg);
+                if (error < 0)
+                {
+                    CommonMethod.ShowHintInfor(eHintInfoType.error, strErrMsg);
+                    return;
+                }
+                for (int i = 0; i < point; i++)
+                {
+                    if (OutSign6)
+                    {//为true时则终止测试
+                        return;
+                    }
+                    Thread.Sleep(OpenReadtimer);
+                    //读取电压和电流        
+                    N6705ADriver.ReadVolAndEleCommand(CGloabal.g_N6705AModule.nHandle, ref reVlote, ref reElect);
+                    volChart6.Series[0].Points.AddXY(DateTime.Now.ToString("mm:ss"), reVlote);
+                    eleChart6.Series[0].Points.AddXY(DateTime.Now.ToString("mm:ss"), reElect);
+                }
+
+                //发送关闭指令
+                error = N6705ADriver.SetCloseCommand(CGloabal.g_N6705AModule.nHandle, strErrMsg);
+                if (error < 0)
+                {
+                    CommonMethod.ShowHintInfor(eHintInfoType.error, strErrMsg);
+                    return;
+                }
+                for (int i = 0; i < point; i++)
+                {
+                    if (OutSign6)
+                    {//为true时则终止测试
+                        return;
+                    }
+                    Thread.Sleep(CloseReadTimer);
+                    //读取电压和电流        
+                    N6705ADriver.ReadVolAndEleCommand(CGloabal.g_N6705AModule.nHandle, ref reVlote, ref reElect);
+                    volChart6.Series[0].Points.AddXY(DateTime.Now.ToString("mm:ss"), reVlote);
+                    eleChart6.Series[0].Points.AddXY(DateTime.Now.ToString("mm:ss"), reElect);
+                }
+            }
+        }
+
+        private void btnStop6_Click(object sender, EventArgs e)
+        {
+            OutSign6 = true;
+        }
+
+        private void btnSave6_Click(object sender, EventArgs e)
+        {
+            MixHelper.SaveCSVFile(volChart6, eleChart6);
         }
     }
 }
