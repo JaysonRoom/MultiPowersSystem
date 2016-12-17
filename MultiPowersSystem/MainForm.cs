@@ -37,6 +37,10 @@ namespace MultiPowersSystem
             listViewMenu.Items[0].Selected = true;
 
             initChart();
+
+            mainTab.TabPages.Clear();
+            mainTab.TabPages.Add(tabPage1);
+
         }
 
         private void initChart()
@@ -152,12 +156,14 @@ namespace MultiPowersSystem
 
         private void btnStart1_Click(object sender, EventArgs e)
         {
+            x1Time = DateTime.Now;
             OutSign1 = false;
             Thread t = new Thread(new ThreadStart(TestProcess));
             t.IsBackground = true;
             t.Start();
         }
         bool OutSign1 = false;//停止标志
+        DateTime x1Time;
         private void TestProcess() {
             volChart1.Series[0].Points.Clear();
             eleChart1.Series[0].Points.Clear();
@@ -203,10 +209,13 @@ namespace MultiPowersSystem
                     }
 
                     Thread.Sleep(OpenReadtimer);
+
+                    TimeSpan ts = DateTime.Now - x1Time;
+                    string xOpenVal = ts.Minutes + ":" + ts.Seconds;
                     //读取电压和电流        
                     N5769ADriver.ReadVolAndEleCommand(CGloabal.g_N5769AModule.nHandle, ref reVlote, ref reElect);
-                    volChart1.Series[0].Points.AddXY(DateTime.Now.ToString("mm:ss"), reVlote);
-                    eleChart1.Series[0].Points.AddXY(DateTime.Now.ToString("mm:ss"), reElect);
+                    volChart1.Series[0].Points.AddXY(xOpenVal, reVlote);
+                    eleChart1.Series[0].Points.AddXY(xOpenVal, reElect);
                 }
 
                 //发送关闭指令
@@ -224,10 +233,12 @@ namespace MultiPowersSystem
                     }
 
                     Thread.Sleep(CloseReadTimer);
+                    TimeSpan ts = DateTime.Now - x1Time;
+                    string xCloseVal = ts.Minutes + ":" + ts.Seconds;
                     //读取电压和电流        
                     N5769ADriver.ReadVolAndEleCommand(CGloabal.g_N5769AModule.nHandle, ref reVlote, ref reElect);
-                    volChart1.Series[0].Points.AddXY(DateTime.Now.ToString("mm:ss"), reVlote);
-                    eleChart1.Series[0].Points.AddXY(DateTime.Now.ToString("mm:ss"), reElect);
+                    volChart1.Series[0].Points.AddXY(xCloseVal, reVlote);
+                    eleChart1.Series[0].Points.AddXY(xCloseVal, reElect);
                 }
             }
         }
@@ -288,12 +299,14 @@ namespace MultiPowersSystem
 
         private void btnStart2_Click(object sender, EventArgs e)
         {
+            x2Time = DateTime.Now;
             OutSign2 = false;
             Thread t = new Thread(new ThreadStart(TestProcess2));
             t.IsBackground = true;
             t.Start();
         }
         bool OutSign2 = false;
+        DateTime x2Time;
         private void TestProcess2()
         {
             volChart2.Series[0].Points.Clear();
@@ -341,9 +354,12 @@ namespace MultiPowersSystem
 
                     Thread.Sleep(OpenReadtimer);
                     //读取电压和电流        
+                    TimeSpan ts = DateTime.Now - x2Time;
+                    string xOpenVal2 = ts.Minutes + ":" + ts.Seconds;
+
                     N5769ADriver.ReadVolAndEleCommand(CGloabal.g_N5751AModule.nHandle, ref reVlote, ref reElect);
-                    volChart2.Series[0].Points.AddXY(DateTime.Now.ToString("mm:ss"), reVlote);
-                    eleChart2.Series[0].Points.AddXY(DateTime.Now.ToString("mm:ss"), reElect);
+                    volChart2.Series[0].Points.AddXY(xOpenVal2, reVlote);
+                    eleChart2.Series[0].Points.AddXY(xOpenVal2, reElect);
                 }
 
                 //发送关闭指令
@@ -361,10 +377,12 @@ namespace MultiPowersSystem
                     }
 
                     Thread.Sleep(CloseReadTimer);
+                    TimeSpan ts = DateTime.Now - x2Time;
+                    string xCloseVal2 = ts.Minutes + ":" + ts.Seconds;
                     //读取电压和电流        
                     N5769ADriver.ReadVolAndEleCommand(CGloabal.g_N5751AModule.nHandle, ref reVlote, ref reElect);
-                    volChart2.Series[0].Points.AddXY(DateTime.Now.ToString("mm:ss"), reVlote);
-                    eleChart2.Series[0].Points.AddXY(DateTime.Now.ToString("mm:ss"), reElect);
+                    volChart2.Series[0].Points.AddXY(xCloseVal2, reVlote);
+                    eleChart2.Series[0].Points.AddXY(xCloseVal2, reElect);
                 }
             }
         }
