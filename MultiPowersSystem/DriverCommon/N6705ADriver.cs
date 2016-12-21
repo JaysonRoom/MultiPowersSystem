@@ -101,7 +101,8 @@ namespace MultiPowersSystem.DriverCommon
             string commands;
             int retCnt;
 
-            commands = ":VOLT " + vloVal; //输出电压电平设置
+            // commands = ":VOLT " + vloVal; //输出电压电平设置
+            commands = string.Format("VOLT {0},(@{1})", vloVal, 1);
             status = visa32.viWrite(nInstrumentHandle, System.Text.Encoding.Default.GetBytes(commands), commands.Length, out retCnt);
             if (status < 0)
             {
@@ -109,7 +110,8 @@ namespace MultiPowersSystem.DriverCommon
                 return status;
             }
 
-            commands = ":CURR " + eleVal; //输出电流电平设置
+            //commands = ":CURR " + eleVal; //输出电流电平设置           
+            commands = string.Format("CURR {0},(@{1})", eleVal, 1);
             status = visa32.viWrite(nInstrumentHandle, System.Text.Encoding.Default.GetBytes(commands), commands.Length, out retCnt);
             if (status < 0)
             {
@@ -125,7 +127,8 @@ namespace MultiPowersSystem.DriverCommon
             string commands;
             int retCnt;
 
-            commands = ":OUTP ON";
+            //commands = ":OUTP ON";
+            commands = string.Format("OUTP ON,(@{0})", 1);
             status = visa32.viWrite(nInstrumentHandle, System.Text.Encoding.Default.GetBytes(commands), commands.Length, out retCnt);
             if (status < 0)
             {
@@ -141,7 +144,8 @@ namespace MultiPowersSystem.DriverCommon
             string commands;
             int retCnt;
 
-            commands = ":OUTP OFF";
+            //commands = ":OUTP OFF";
+            commands = string.Format("OUTP OFF,(@{0})", 1);
             status = visa32.viWrite(nInstrumentHandle, System.Text.Encoding.Default.GetBytes(commands), commands.Length, out retCnt);
             if (status < 0)
             {
@@ -159,7 +163,7 @@ namespace MultiPowersSystem.DriverCommon
             string strVal;
             byte[] byteArray = new byte[100];
 
-            commands = "MEAS:VOLT?";//返回电压
+            commands = string.Format("MEAS:VOLT? (@{0})",1);//返回电压
             status = visa32.viWrite(nInstrumentHandle, System.Text.Encoding.Default.GetBytes(commands), commands.Length, out retCnt);
             if (status < 0)
             {
@@ -192,7 +196,8 @@ namespace MultiPowersSystem.DriverCommon
             string strVal;
             byte[] byteArray = new byte[100];
 
-            commands = "MEAS:CURR?";//返回电流
+            //commands = "MEAS:CURR?";//返回电流
+            commands = string.Format("MEAS:CURR? (@{0})", 1);
             status = visa32.viWrite(nInstrumentHandle, System.Text.Encoding.Default.GetBytes(commands), commands.Length, out retCnt);
             if (status < 0)
             {

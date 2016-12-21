@@ -20,6 +20,69 @@ namespace MultiPowersSystem.DAL
         //filePath: INI文件的完整路径和文件名
         private static extern int GetPrivateProfileString(string section, string key, string defVal, StringBuilder retVal, int size, string filePath);
 
+        /*************************************************
+    * 函数原型：private void GetAlltheInstumentsParasFromImiFile()
+    * 函数功能：从ini文件中获取所有的仪器的参数信息.
+    * 输入参数：
+    * 输出参数：
+    * 创 建 者：yzx
+    * 创建日期：2016.7.23
+    * 修改说明：
+   */
+        public static void GetAlltheInstumentsParasFromIniFile()
+        {
+            string strPort;
+            string strFilePath;
+            string strBusType;
+
+            //获取ini文件的相对路径
+            strFilePath = System.Windows.Forms.Application.StartupPath + "\\APP_INFOS.ini";
+            if (File.Exists(strFilePath))//首先判读INI文件是否存在
+            {
+
+                CGloabal.g_N5769AModule.ipAdress = GetValueFromIniFile(strFilePath, "N5769A", "IP地址");
+                strPort = GetValueFromIniFile(strFilePath, "N5769A", "端口号");
+                //CGloabal.g_N5769AModule.port = int.Parse(strPort);
+
+                CGloabal.g_N5751AModule.ipAdress = GetValueFromIniFile(strFilePath, "N5751A", "IP地址");
+                strPort = GetValueFromIniFile(strFilePath, "N5751A", "端口号");
+                //CGloabal.g_N5751AModule.port = int.Parse(strPort);
+
+                CGloabal.g_N6705AModule.ipAdress = GetValueFromIniFile(strFilePath, "N6705A", "IP地址");
+                strPort = GetValueFromIniFile(strFilePath, "N6705A", "端口号");
+            }
+            else
+            {
+                CommonMethod.ShowHintInfor(eHintInfoType.error, "APP_INFOS.ini文件不存在！");
+            }
+        }
+
+        /*************************************************
+* 函数原型：private string GetContentValueFromFile(string strFilePath,string Section, string key)
+* 函数功能：从ini文件的指定段中指定的key中获取字符串数值信息
+* 输入参数：strFilePath，ini文件的路径信息；Section，段信息；key，key信息。
+* 输出参数：返回获得字符串类型的数值信息
+* 创 建 者：yzx
+* 创建日期：2016.7.23
+* 修改说明：
+*/
+        public static string GetValueFromIniFile(string strFilePath, string Section, string key)
+        {
+            int nRntCount;
+            StringBuilder temp = new StringBuilder(1024);
+            nRntCount = GetPrivateProfileString(Section, key, "", temp, 1024, strFilePath);
+            if (nRntCount == 0)
+            {
+                return null;
+            }
+            else
+            {
+                return temp.ToString();
+            }
+
+        }
+
+
         [DllImport("kernel32")]
         //section: 要写入的段落名
         //key: 要写入的键，如果该key存在则覆盖写入
@@ -51,6 +114,114 @@ namespace MultiPowersSystem.DAL
                 {
                     CommonMethod.ShowHintInfor(eHintInfoType.hint, CGloabal.g_N5769AModule.strInstruName + "已经处于连接状态");
                 }
+            }
+            else if (strInstruName == "N5751A")
+            {
+                if (CGloabal.g_N5751AModule.nHandle == 0)
+                {
+                    error = N6705ADriver.Init(resourceName, ref CGloabal.g_N5751AModule.nHandle, strError);
+                    if (error < 0)
+                    {
+                        CGloabal.g_N5751AModule.bInternet = false;
+                        CommonMethod.ShowHintInfor(eHintInfoType.error, CGloabal.g_N5751AModule.strInstruName + "连接失败");
+                    }
+                    else
+                    {
+
+                        CGloabal.g_N5751AModule.bInternet = true;
+                    }
+                }
+                else
+                {
+                    CommonMethod.ShowHintInfor(eHintInfoType.hint, CGloabal.g_N5751AModule.strInstruName + "已经处于连接状态");
+                }
+
+            }
+            else if (strInstruName == "N5752A")
+            {
+                if (CGloabal.g_N5752AModule.nHandle == 0)
+                {
+                    error = N5769ADriver.Init(resourceName, ref CGloabal.g_N5752AModule.nHandle, strError);
+                    if (error < 0)
+                    {
+                        CGloabal.g_N5752AModule.bInternet = false;
+                        CommonMethod.ShowHintInfor(eHintInfoType.error, CGloabal.g_N5752AModule.strInstruName + "连接失败");
+                    }
+                    else
+                    {
+
+                        CGloabal.g_N5752AModule.bInternet = true;
+                    }
+                }
+                else
+                {
+                    CommonMethod.ShowHintInfor(eHintInfoType.hint, CGloabal.g_N5751AModule.strInstruName + "已经处于连接状态");
+                }
+            }
+            else if (strInstruName == "N5772A")
+            {
+                if (CGloabal.g_N5772AModule.nHandle == 0)
+                {
+                    error = N5769ADriver.Init(resourceName, ref CGloabal.g_N5772AModule.nHandle, strError);
+                    if (error < 0)
+                    {
+                        CGloabal.g_N5772AModule.bInternet = false;
+                        CommonMethod.ShowHintInfor(eHintInfoType.error, CGloabal.g_N5772AModule.strInstruName + "连接失败");
+                    }
+                    else
+                    {
+
+                        CGloabal.g_N5772AModule.bInternet = true;
+                    }
+                }
+                else
+                {
+                    CommonMethod.ShowHintInfor(eHintInfoType.hint, CGloabal.g_N5772AModule.strInstruName + "已经处于连接状态");
+                }
+
+            }
+            else if (strInstruName == "N6702A")
+            {
+                if (CGloabal.g_N6702AModule.nHandle == 0)
+                {
+                    error = N6705ADriver.Init(resourceName, ref CGloabal.g_N6702AModule.nHandle, strError);
+                    if (error < 0)
+                    {
+                        CGloabal.g_N6702AModule.bInternet = false;
+                        CommonMethod.ShowHintInfor(eHintInfoType.error, CGloabal.g_N6702AModule.strInstruName + "连接失败");
+                    }
+                    else
+                    {
+
+                        CGloabal.g_N6702AModule.bInternet = true;
+                    }
+                }
+                else
+                {
+                    CommonMethod.ShowHintInfor(eHintInfoType.hint, CGloabal.g_N6702AModule.strInstruName + "已经处于连接状态");
+                }
+
+            }
+            else if (strInstruName == "N6705A")
+            {
+                if (CGloabal.g_N6705AModule.nHandle == 0)
+                {
+                    error = N6705ADriver.Init(resourceName, ref CGloabal.g_N6705AModule.nHandle, strError);
+                    if (error < 0)
+                    {
+                        CGloabal.g_N6705AModule.bInternet = false;
+                        CommonMethod.ShowHintInfor(eHintInfoType.error, CGloabal.g_N6705AModule.strInstruName + "连接失败");
+                    }
+                    else
+                    {
+
+                        CGloabal.g_N6705AModule.bInternet = true;
+                    }
+                }
+                else
+                {
+                    CommonMethod.ShowHintInfor(eHintInfoType.hint, CGloabal.g_N6705AModule.strInstruName + "已经处于连接状态");
+                }
 
             }
             else
@@ -81,7 +252,66 @@ namespace MultiPowersSystem.DAL
                         CGloabal.g_N5769AModule.bInternet = false;
                     }
                 }
-
+            }
+            else if(strInstruName == "N5751A")
+            {
+                if (CGloabal.g_N5751AModule.nHandle > 0)
+                {
+                    error = N5769ADriver.Close(CGloabal.g_N5751AModule.nHandle, strError);
+                    if (error < 0)
+                    {
+                        CommonMethod.ShowHintInfor(eHintInfoType.error, "电源断开失败");
+                    }
+                    else//断开成功，要将此时的连接状态更新到仪器参数中
+                    {
+                        CGloabal.g_N5751AModule.bInternet = false;
+                    }
+                }
+            }
+            else if (strInstruName == "N5772A")
+            {
+                if (CGloabal.g_N5772AModule.nHandle > 0)
+                {
+                    error = N5769ADriver.Close(CGloabal.g_N5772AModule.nHandle, strError);
+                    if (error < 0)
+                    {
+                        CommonMethod.ShowHintInfor(eHintInfoType.error, "电源断开失败");
+                    }
+                    else//断开成功，要将此时的连接状态更新到仪器参数中
+                    {
+                        CGloabal.g_N5772AModule.bInternet = false;
+                    }
+                }
+            }
+            else if (strInstruName == "N6702A")
+            {
+                if (CGloabal.g_N6702AModule.nHandle > 0)
+                {
+                    error = N5769ADriver.Close(CGloabal.g_N6702AModule.nHandle, strError);
+                    if (error < 0)
+                    {
+                        CommonMethod.ShowHintInfor(eHintInfoType.error, "电源断开失败");
+                    }
+                    else//断开成功，要将此时的连接状态更新到仪器参数中
+                    {
+                        CGloabal.g_N6702AModule.bInternet = false;
+                    }
+                }
+            }
+            else if (strInstruName == "N6705A")
+            {
+                if (CGloabal.g_N6705AModule.nHandle > 0)
+                {
+                    error = N5769ADriver.Close(CGloabal.g_N6705AModule.nHandle, strError);
+                    if (error < 0)
+                    {
+                        CommonMethod.ShowHintInfor(eHintInfoType.error, "电源断开失败");
+                    }
+                    else//断开成功，要将此时的连接状态更新到仪器参数中
+                    {
+                        CGloabal.g_N6705AModule.bInternet = false;
+                    }
+                }
             }
             else
             {
@@ -119,7 +349,7 @@ namespace MultiPowersSystem.DAL
                     CGloabal.g_N5769AModule.port = (int)port;
                     CGloabal.g_N5769AModule.bInternet = true;
                 }
-                if (strInstruName == "N5751A")
+                else if (strInstruName == "N5751A")
                 {
                     //保存到ini文件
                     CommonMethod.WriteValueToIniFile(strFilePath, "N5751A", "IP地址", strIP);
@@ -128,6 +358,36 @@ namespace MultiPowersSystem.DAL
                     CGloabal.g_N5751AModule.ipAdress = strIP;
                     CGloabal.g_N5751AModule.port = (int)port;
                     CGloabal.g_N5751AModule.bInternet = true;
+                }
+                else if (strInstruName == "N5752A")
+                {
+                    //保存到ini文件
+                    CommonMethod.WriteValueToIniFile(strFilePath, "N5752A", "IP地址", strIP);
+                    CommonMethod.WriteValueToIniFile(strFilePath, "N5752A", "端口号", port.ToString());
+                    //更新当前仪器的参数信息
+                    CGloabal.g_N5752AModule.ipAdress = strIP;
+                    CGloabal.g_N5752AModule.port = (int)port;
+                    CGloabal.g_N5752AModule.bInternet = true;
+                }
+                else if (strInstruName == "N6702A")
+                {
+                    //保存到ini文件
+                    CommonMethod.WriteValueToIniFile(strFilePath, "N6702A", "IP地址", strIP);
+                    CommonMethod.WriteValueToIniFile(strFilePath, "N6702A", "端口号", port.ToString());
+                    //更新当前仪器的参数信息
+                    CGloabal.g_N6702AModule.ipAdress = strIP;
+                    CGloabal.g_N6702AModule.port = (int)port;
+                    CGloabal.g_N6702AModule.bInternet = true;
+                }
+                else if (strInstruName == "N6705A")
+                {
+                    //保存到ini文件
+                    CommonMethod.WriteValueToIniFile(strFilePath, "N6705A", "IP地址", strIP);
+                    CommonMethod.WriteValueToIniFile(strFilePath, "N6705A", "端口号", port.ToString());
+                    //更新当前仪器的参数信息
+                    CGloabal.g_N6705AModule.ipAdress = strIP;
+                    CGloabal.g_N6705AModule.port = (int)port;
+                    CGloabal.g_N6705AModule.bInternet = true;
                 }
                 else
                 {

@@ -72,6 +72,7 @@
             this.eleChart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.volChart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btnView1 = new System.Windows.Forms.Button();
             this.btnSave1 = new System.Windows.Forms.Button();
             this.btnStop1 = new System.Windows.Forms.Button();
             this.comboUnit1 = new System.Windows.Forms.ComboBox();
@@ -98,6 +99,7 @@
             this.label11 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.btnView2 = new System.Windows.Forms.Button();
             this.btnSave2 = new System.Windows.Forms.Button();
             this.btnStop2 = new System.Windows.Forms.Button();
             this.comboUnit2 = new System.Windows.Forms.ComboBox();
@@ -127,6 +129,7 @@
             this.volChart2 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnView3 = new System.Windows.Forms.Button();
             this.btnSave3 = new System.Windows.Forms.Button();
             this.btnStop3 = new System.Windows.Forms.Button();
             this.comboUnit3 = new System.Windows.Forms.ComboBox();
@@ -156,6 +159,7 @@
             this.volChart3 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.groupBox10 = new System.Windows.Forms.GroupBox();
+            this.btnView4 = new System.Windows.Forms.Button();
             this.btnSave4 = new System.Windows.Forms.Button();
             this.btnStop4 = new System.Windows.Forms.Button();
             this.comboUnit4 = new System.Windows.Forms.ComboBox();
@@ -185,6 +189,7 @@
             this.volChart4 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.groupBox13 = new System.Windows.Forms.GroupBox();
+            this.btnView5 = new System.Windows.Forms.Button();
             this.btnSave5 = new System.Windows.Forms.Button();
             this.btnStop = new System.Windows.Forms.Button();
             this.comboUnit5 = new System.Windows.Forms.ComboBox();
@@ -214,6 +219,7 @@
             this.volChart5 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.tabPage6 = new System.Windows.Forms.TabPage();
             this.groupBox16 = new System.Windows.Forms.GroupBox();
+            this.btnView6 = new System.Windows.Forms.Button();
             this.btnSave6 = new System.Windows.Forms.Button();
             this.btnStop6 = new System.Windows.Forms.Button();
             this.comboUnit6 = new System.Windows.Forms.ComboBox();
@@ -375,7 +381,7 @@
             this.eleChart1.Name = "eleChart1";
             series1.BorderWidth = 3;
             series1.ChartArea = "ChartArea1";
-            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
             series1.Color = System.Drawing.Color.Red;
             series1.Legend = "Legend1";
             series1.Name = "电流";
@@ -399,7 +405,7 @@
             this.volChart1.Name = "volChart1";
             series2.BorderWidth = 3;
             series2.ChartArea = "ChartArea1";
-            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
             series2.Legend = "Legend1";
             series2.Name = "电压";
             series2.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Time;
@@ -410,6 +416,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.btnView1);
             this.groupBox2.Controls.Add(this.btnSave1);
             this.groupBox2.Controls.Add(this.btnStop1);
             this.groupBox2.Controls.Add(this.comboUnit1);
@@ -434,6 +441,16 @@
             this.groupBox2.Size = new System.Drawing.Size(337, 417);
             this.groupBox2.TabIndex = 5;
             this.groupBox2.TabStop = false;
+            // 
+            // btnView1
+            // 
+            this.btnView1.Location = new System.Drawing.Point(252, 380);
+            this.btnView1.Name = "btnView1";
+            this.btnView1.Size = new System.Drawing.Size(74, 31);
+            this.btnView1.TabIndex = 21;
+            this.btnView1.Text = "汇总";
+            this.btnView1.UseVisualStyleBackColor = true;
+            this.btnView1.Click += new System.EventHandler(this.btnView1_Click);
             // 
             // btnSave1
             // 
@@ -568,7 +585,13 @@
             // 
             // eleVal1
             // 
+            this.eleVal1.DecimalPlaces = 1;
             this.eleVal1.Location = new System.Drawing.Point(117, 85);
+            this.eleVal1.Maximum = new decimal(new int[] {
+            15,
+            0,
+            0,
+            0});
             this.eleVal1.Name = "eleVal1";
             this.eleVal1.Size = new System.Drawing.Size(120, 29);
             this.eleVal1.TabIndex = 6;
@@ -582,11 +605,6 @@
             0,
             65536});
             this.volteVal1.Location = new System.Drawing.Point(117, 33);
-            this.volteVal1.Maximum = new decimal(new int[] {
-            200,
-            0,
-            0,
-            0});
             this.volteVal1.Name = "volteVal1";
             this.volteVal1.Size = new System.Drawing.Size(120, 29);
             this.volteVal1.TabIndex = 5;
@@ -703,6 +721,7 @@
             // 
             // groupBox5
             // 
+            this.groupBox5.Controls.Add(this.btnView2);
             this.groupBox5.Controls.Add(this.btnSave2);
             this.groupBox5.Controls.Add(this.btnStop2);
             this.groupBox5.Controls.Add(this.comboUnit2);
@@ -727,6 +746,16 @@
             this.groupBox5.Size = new System.Drawing.Size(337, 417);
             this.groupBox5.TabIndex = 8;
             this.groupBox5.TabStop = false;
+            // 
+            // btnView2
+            // 
+            this.btnView2.Location = new System.Drawing.Point(252, 378);
+            this.btnView2.Name = "btnView2";
+            this.btnView2.Size = new System.Drawing.Size(74, 31);
+            this.btnView2.TabIndex = 21;
+            this.btnView2.Text = "汇总";
+            this.btnView2.UseVisualStyleBackColor = true;
+            this.btnView2.Click += new System.EventHandler(this.btnView2_Click);
             // 
             // btnSave2
             // 
@@ -861,7 +890,13 @@
             // 
             // eleVal2
             // 
+            this.eleVal2.DecimalPlaces = 1;
             this.eleVal2.Location = new System.Drawing.Point(117, 85);
+            this.eleVal2.Maximum = new decimal(new int[] {
+            15,
+            0,
+            0,
+            0});
             this.eleVal2.Name = "eleVal2";
             this.eleVal2.Size = new System.Drawing.Size(120, 29);
             this.eleVal2.TabIndex = 6;
@@ -875,11 +910,6 @@
             0,
             65536});
             this.volteVal2.Location = new System.Drawing.Point(117, 33);
-            this.volteVal2.Maximum = new decimal(new int[] {
-            200,
-            0,
-            0,
-            0});
             this.volteVal2.Name = "volteVal2";
             this.volteVal2.Size = new System.Drawing.Size(120, 29);
             this.volteVal2.TabIndex = 5;
@@ -1049,6 +1079,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btnView3);
             this.groupBox1.Controls.Add(this.btnSave3);
             this.groupBox1.Controls.Add(this.btnStop3);
             this.groupBox1.Controls.Add(this.comboUnit3);
@@ -1073,6 +1104,16 @@
             this.groupBox1.Size = new System.Drawing.Size(337, 417);
             this.groupBox1.TabIndex = 11;
             this.groupBox1.TabStop = false;
+            // 
+            // btnView3
+            // 
+            this.btnView3.Location = new System.Drawing.Point(252, 380);
+            this.btnView3.Name = "btnView3";
+            this.btnView3.Size = new System.Drawing.Size(74, 31);
+            this.btnView3.TabIndex = 21;
+            this.btnView3.Text = "汇总";
+            this.btnView3.UseVisualStyleBackColor = true;
+            this.btnView3.Click += new System.EventHandler(this.btnView3_Click);
             // 
             // btnSave3
             // 
@@ -1207,7 +1248,13 @@
             // 
             // eleVal3
             // 
+            this.eleVal3.DecimalPlaces = 1;
             this.eleVal3.Location = new System.Drawing.Point(117, 85);
+            this.eleVal3.Maximum = new decimal(new int[] {
+            15,
+            0,
+            0,
+            0});
             this.eleVal3.Name = "eleVal3";
             this.eleVal3.Size = new System.Drawing.Size(120, 29);
             this.eleVal3.TabIndex = 6;
@@ -1221,11 +1268,6 @@
             0,
             65536});
             this.volteVal3.Location = new System.Drawing.Point(117, 33);
-            this.volteVal3.Maximum = new decimal(new int[] {
-            200,
-            0,
-            0,
-            0});
             this.volteVal3.Name = "volteVal3";
             this.volteVal3.Size = new System.Drawing.Size(120, 29);
             this.volteVal3.TabIndex = 5;
@@ -1395,6 +1437,7 @@
             // 
             // groupBox10
             // 
+            this.groupBox10.Controls.Add(this.btnView4);
             this.groupBox10.Controls.Add(this.btnSave4);
             this.groupBox10.Controls.Add(this.btnStop4);
             this.groupBox10.Controls.Add(this.comboUnit4);
@@ -1419,6 +1462,16 @@
             this.groupBox10.Size = new System.Drawing.Size(337, 417);
             this.groupBox10.TabIndex = 14;
             this.groupBox10.TabStop = false;
+            // 
+            // btnView4
+            // 
+            this.btnView4.Location = new System.Drawing.Point(252, 381);
+            this.btnView4.Name = "btnView4";
+            this.btnView4.Size = new System.Drawing.Size(74, 31);
+            this.btnView4.TabIndex = 21;
+            this.btnView4.Text = "汇总";
+            this.btnView4.UseVisualStyleBackColor = true;
+            this.btnView4.Click += new System.EventHandler(this.btnView4_Click);
             // 
             // btnSave4
             // 
@@ -1553,7 +1606,13 @@
             // 
             // eleVal4
             // 
+            this.eleVal4.DecimalPlaces = 1;
             this.eleVal4.Location = new System.Drawing.Point(117, 85);
+            this.eleVal4.Maximum = new decimal(new int[] {
+            15,
+            0,
+            0,
+            0});
             this.eleVal4.Name = "eleVal4";
             this.eleVal4.Size = new System.Drawing.Size(120, 29);
             this.eleVal4.TabIndex = 6;
@@ -1567,11 +1626,6 @@
             0,
             65536});
             this.volteVal4.Location = new System.Drawing.Point(117, 33);
-            this.volteVal4.Maximum = new decimal(new int[] {
-            200,
-            0,
-            0,
-            0});
             this.volteVal4.Name = "volteVal4";
             this.volteVal4.Size = new System.Drawing.Size(120, 29);
             this.volteVal4.TabIndex = 5;
@@ -1741,6 +1795,7 @@
             // 
             // groupBox13
             // 
+            this.groupBox13.Controls.Add(this.btnView5);
             this.groupBox13.Controls.Add(this.btnSave5);
             this.groupBox13.Controls.Add(this.btnStop);
             this.groupBox13.Controls.Add(this.comboUnit5);
@@ -1765,6 +1820,16 @@
             this.groupBox13.Size = new System.Drawing.Size(337, 417);
             this.groupBox13.TabIndex = 17;
             this.groupBox13.TabStop = false;
+            // 
+            // btnView5
+            // 
+            this.btnView5.Location = new System.Drawing.Point(252, 380);
+            this.btnView5.Name = "btnView5";
+            this.btnView5.Size = new System.Drawing.Size(74, 31);
+            this.btnView5.TabIndex = 21;
+            this.btnView5.Text = "汇总";
+            this.btnView5.UseVisualStyleBackColor = true;
+            this.btnView5.Click += new System.EventHandler(this.btnView5_Click);
             // 
             // btnSave5
             // 
@@ -1899,7 +1964,13 @@
             // 
             // eleVal5
             // 
+            this.eleVal5.DecimalPlaces = 1;
             this.eleVal5.Location = new System.Drawing.Point(117, 85);
+            this.eleVal5.Maximum = new decimal(new int[] {
+            15,
+            0,
+            0,
+            0});
             this.eleVal5.Name = "eleVal5";
             this.eleVal5.Size = new System.Drawing.Size(120, 29);
             this.eleVal5.TabIndex = 6;
@@ -1913,11 +1984,6 @@
             0,
             65536});
             this.volteVal5.Location = new System.Drawing.Point(117, 33);
-            this.volteVal5.Maximum = new decimal(new int[] {
-            200,
-            0,
-            0,
-            0});
             this.volteVal5.Name = "volteVal5";
             this.volteVal5.Size = new System.Drawing.Size(120, 29);
             this.volteVal5.TabIndex = 5;
@@ -2042,7 +2108,7 @@
             this.eleChart5.Name = "eleChart5";
             series9.BorderWidth = 3;
             series9.ChartArea = "ChartArea1";
-            series9.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series9.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
             series9.Color = System.Drawing.Color.Red;
             series9.Legend = "Legend1";
             series9.Name = "电流";
@@ -2064,7 +2130,7 @@
             this.volChart5.Name = "volChart5";
             series10.BorderWidth = 3;
             series10.ChartArea = "ChartArea1";
-            series10.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series10.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
             series10.Legend = "Legend1";
             series10.Name = "电压";
             series10.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Time;
@@ -2087,6 +2153,7 @@
             // 
             // groupBox16
             // 
+            this.groupBox16.Controls.Add(this.btnView6);
             this.groupBox16.Controls.Add(this.btnSave6);
             this.groupBox16.Controls.Add(this.btnStop6);
             this.groupBox16.Controls.Add(this.comboUnit6);
@@ -2111,6 +2178,16 @@
             this.groupBox16.Size = new System.Drawing.Size(337, 417);
             this.groupBox16.TabIndex = 17;
             this.groupBox16.TabStop = false;
+            // 
+            // btnView6
+            // 
+            this.btnView6.Location = new System.Drawing.Point(252, 380);
+            this.btnView6.Name = "btnView6";
+            this.btnView6.Size = new System.Drawing.Size(74, 31);
+            this.btnView6.TabIndex = 21;
+            this.btnView6.Text = "汇总";
+            this.btnView6.UseVisualStyleBackColor = true;
+            this.btnView6.Click += new System.EventHandler(this.btnView6_Click);
             // 
             // btnSave6
             // 
@@ -2245,7 +2322,13 @@
             // 
             // eleVal6
             // 
+            this.eleVal6.DecimalPlaces = 1;
             this.eleVal6.Location = new System.Drawing.Point(117, 85);
+            this.eleVal6.Maximum = new decimal(new int[] {
+            15,
+            0,
+            0,
+            0});
             this.eleVal6.Name = "eleVal6";
             this.eleVal6.Size = new System.Drawing.Size(120, 29);
             this.eleVal6.TabIndex = 6;
@@ -2259,11 +2342,6 @@
             0,
             65536});
             this.volteVal6.Location = new System.Drawing.Point(117, 33);
-            this.volteVal6.Maximum = new decimal(new int[] {
-            200,
-            0,
-            0,
-            0});
             this.volteVal6.Name = "volteVal6";
             this.volteVal6.Size = new System.Drawing.Size(120, 29);
             this.volteVal6.TabIndex = 5;
@@ -2379,6 +2457,8 @@
             // eleChart6
             // 
             this.eleChart6.BackColor = System.Drawing.Color.WhiteSmoke;
+            chartArea11.AxisX.Interval = 1D;
+            chartArea11.AxisY.Maximum = 2D;
             chartArea11.Name = "ChartArea1";
             this.eleChart6.ChartAreas.Add(chartArea11);
             legend11.DockedToChartArea = "ChartArea1";
@@ -2388,7 +2468,7 @@
             this.eleChart6.Name = "eleChart6";
             series11.BorderWidth = 3;
             series11.ChartArea = "ChartArea1";
-            series11.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series11.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
             series11.Color = System.Drawing.Color.Red;
             series11.Legend = "Legend1";
             series11.Name = "电流";
@@ -2401,6 +2481,7 @@
             // volChart6
             // 
             this.volChart6.BackColor = System.Drawing.Color.WhiteSmoke;
+            chartArea12.AxisX.Interval = 1D;
             chartArea12.Name = "ChartArea1";
             this.volChart6.ChartAreas.Add(chartArea12);
             legend12.DockedToChartArea = "ChartArea1";
@@ -2410,7 +2491,7 @@
             this.volChart6.Name = "volChart6";
             series12.BorderWidth = 3;
             series12.ChartArea = "ChartArea1";
-            series12.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series12.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
             series12.Legend = "Legend1";
             series12.Name = "电压";
             series12.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Time;
@@ -2478,6 +2559,7 @@
             this.Name = "MainForm";
             this.ShowIcon = false;
             this.Text = "多电源设备控制系统";
+            this.Load += new System.EventHandler(this.MainForm_Load);
             this.mainTab.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
@@ -2752,6 +2834,12 @@
         private System.Windows.Forms.GroupBox groupBox18;
         private System.Windows.Forms.DataVisualization.Charting.Chart eleChart6;
         private System.Windows.Forms.DataVisualization.Charting.Chart volChart6;
+        private System.Windows.Forms.Button btnView1;
+        private System.Windows.Forms.Button btnView5;
+        private System.Windows.Forms.Button btnView6;
+        private System.Windows.Forms.Button btnView2;
+        private System.Windows.Forms.Button btnView3;
+        private System.Windows.Forms.Button btnView4;
     }
 }
 

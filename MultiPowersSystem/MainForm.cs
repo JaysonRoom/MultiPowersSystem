@@ -43,6 +43,25 @@ namespace MultiPowersSystem
 
         }
 
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+            //居中显示
+            this.StartPosition = FormStartPosition.CenterScreen;
+            this.FormBorderStyle = FormBorderStyle.Fixed3D;
+            //显示应用程序在任务栏中的图标
+            this.ShowInTaskbar = true;
+
+            //首先要从ini文件读取仪器的参数信息
+            CommonMethod.GetAlltheInstumentsParasFromIniFile();
+            ipAddress1.Text = CGloabal.g_N5769AModule.ipAdress;
+            //port.Value = CGloabal.g_InstrPowerModule.port;
+
+            ipAddress2.Text = CGloabal.g_N5751AModule.ipAdress;
+            //port2.Value = CGloabal.g_InstrPowerModule2.port;
+            ipAddress5.Text = CGloabal.g_N6702AModule.ipAdress;
+            ipAddress6.Text = CGloabal.g_N6705AModule.ipAdress;
+        }
+
         private void initChart()
         {
             volChart1.ChartAreas[0].AxisX.LabelStyle.Format = "mm:ss";
@@ -180,31 +199,32 @@ namespace MultiPowersSystem
             double reVlote = 0, reElect = 0;
 
             //设置电压和电流
-            //error = N5769ADriver.SetVolAndEle(CGloabal.g_N5769AModule.nHandle, vlo, ele, strErrMsg);
-            //if (error < 0)
-            //{
-            //    CommonMethod.ShowHintInfor(eHintInfoType.error, strErrMsg);
-            //    return;
-            //}
+            error = N5769ADriver.SetVolAndEle(CGloabal.g_N5769AModule.nHandle, vlo, ele, strErrMsg);
+            if (error < 0)
+            {
+                CommonMethod.ShowHintInfor(eHintInfoType.error, strErrMsg);
+                return;
+            }
 
-             //读取应该间隔多少时间取一个点
-             int OpenReadtimer = MixHelper.ReturnInterval(comboUnit1.Text, 1, open, close, point);
+            //读取应该间隔多少时间取一个点
+            int OpenReadtimer = MixHelper.ReturnInterval(comboUnit1.Text, 1, open, close, point);
              int CloseReadTimer = MixHelper.ReturnInterval(comboUnit1.Text, 0, open, close, point);
 
             while (cyc>0)
             {               
                 cyc--;
                 //打开命令
-                //error = N5769ADriver.SetOpenCommand(CGloabal.g_N5769AModule.nHandle, strErrMsg);
-                //if (error < 0)
-                //{
-                //    CommonMethod.ShowHintInfor(eHintInfoType.error, strErrMsg);
-                //    return;
-                //}
+                error = N5769ADriver.SetOpenCommand(CGloabal.g_N5769AModule.nHandle, strErrMsg);
+                if (error < 0)
+                {
+                    CommonMethod.ShowHintInfor(eHintInfoType.error, strErrMsg);
+                    return;
+                }
                 for (int i = 0; i < point; i++)
                 {
                     if (OutSign1)
                     {//为true时则终止测试
+                        error = N5769ADriver.SetCloseCommand(CGloabal.g_N5769AModule.nHandle, strErrMsg);
                         return;
                     }
 
@@ -219,16 +239,17 @@ namespace MultiPowersSystem
                 }
 
                 //发送关闭指令
-                // error = N5769ADriver.SetCloseCommand(CGloabal.g_N5769AModule.nHandle, strErrMsg);
-                //if (error < 0)
-                //{
-                //    CommonMethod.ShowHintInfor(eHintInfoType.error, strErrMsg);
-                //    return;
-                //}
+                error = N5769ADriver.SetCloseCommand(CGloabal.g_N5769AModule.nHandle, strErrMsg);
+                if (error < 0)
+                {
+                    CommonMethod.ShowHintInfor(eHintInfoType.error, strErrMsg);
+                    return;
+                }
                 for (int i = 0; i < point; i++)
                 {
                     if (OutSign1)
                     {//为true时则终止测试
+                        error = N5769ADriver.SetCloseCommand(CGloabal.g_N5769AModule.nHandle, strErrMsg);
                         return;
                     }
 
@@ -349,6 +370,7 @@ namespace MultiPowersSystem
                 {
                     if (OutSign2)
                     {//为true时则终止测试
+                        error = N5769ADriver.SetCloseCommand(CGloabal.g_N5751AModule.nHandle, strErrMsg);
                         return;
                     }
 
@@ -373,6 +395,7 @@ namespace MultiPowersSystem
                 {
                     if (OutSign2)
                     {//为true时则终止测试
+                        error = N5769ADriver.SetCloseCommand(CGloabal.g_N5751AModule.nHandle, strErrMsg);
                         return;
                     }
 
@@ -493,6 +516,7 @@ namespace MultiPowersSystem
                 {
                     if (OutSign3)
                     {//为true时则终止测试
+                        error = N5769ADriver.SetCloseCommand(CGloabal.g_N5752AModule.nHandle, strErrMsg);
                         return;
                     }
                     Thread.Sleep(OpenReadtimer);
@@ -515,6 +539,7 @@ namespace MultiPowersSystem
                 {
                     if (OutSign3)
                     {//为true时则终止测试
+                        error = N5769ADriver.SetCloseCommand(CGloabal.g_N5752AModule.nHandle, strErrMsg);
                         return;
                     }
                     Thread.Sleep(CloseReadTimer);
@@ -634,6 +659,7 @@ namespace MultiPowersSystem
                 {
                     if (OutSign4)
                     {//为true时则终止测试
+                        error = N5769ADriver.SetCloseCommand(CGloabal.g_N5772AModule.nHandle, strErrMsg);
                         return;
                     }
                     Thread.Sleep(OpenReadtimer);
@@ -656,6 +682,7 @@ namespace MultiPowersSystem
                 {
                     if (OutSign4)
                     {//为true时则终止测试
+                        error = N5769ADriver.SetCloseCommand(CGloabal.g_N5772AModule.nHandle, strErrMsg);
                         return;
                     }
                     Thread.Sleep(CloseReadTimer);
@@ -776,6 +803,7 @@ namespace MultiPowersSystem
                 {
                     if (OutSign5)
                     {//为true时则终止测试
+                        error = N6702ADriver.SetCloseCommand(CGloabal.g_N6702AModule.nHandle, strErrMsg);
                         return;
                     }
                     Thread.Sleep(OpenReadtimer);
@@ -798,6 +826,7 @@ namespace MultiPowersSystem
                 {
                     if (OutSign5)
                     {//为true时则终止测试
+                        error = N6702ADriver.SetCloseCommand(CGloabal.g_N6702AModule.nHandle, strErrMsg);
                         return;
                     }
                     Thread.Sleep(CloseReadTimer);
@@ -917,7 +946,14 @@ namespace MultiPowersSystem
                 for (int i = 0; i < point; i++)
                 {
                     if (OutSign6)
-                    {//为true时则终止测试
+                    {//为true时则发送关闭指令，终止测试
+                        error = N6705ADriver.SetCloseCommand(CGloabal.g_N6705AModule.nHandle, strErrMsg);
+                        if (error < 0)
+                        {
+                            CommonMethod.ShowHintInfor(eHintInfoType.error, strErrMsg);
+                            return;
+                        }
+
                         return;
                     }
                     Thread.Sleep(OpenReadtimer);
@@ -940,6 +976,12 @@ namespace MultiPowersSystem
                 {
                     if (OutSign6)
                     {//为true时则终止测试
+                        error = N6705ADriver.SetCloseCommand(CGloabal.g_N6705AModule.nHandle, strErrMsg);
+                        if (error < 0)
+                        {
+                            CommonMethod.ShowHintInfor(eHintInfoType.error, strErrMsg);
+                            return;
+                        }
                         return;
                     }
                     Thread.Sleep(CloseReadTimer);
@@ -962,5 +1004,41 @@ namespace MultiPowersSystem
         {
             MixHelper.SaveCSVFile(volChart6, eleChart6);
         }
+
+        private void btnView1_Click(object sender, EventArgs e)
+        {
+            ViewForm VF = new ViewForm(volChart1, eleChart1);
+            VF.ShowDialog();
+        }
+        private void btnView2_Click(object sender, EventArgs e)
+        {
+            ViewForm VF = new ViewForm(volChart2, eleChart2);
+            VF.ShowDialog();
+        }
+
+        private void btnView3_Click(object sender, EventArgs e)
+        {
+            ViewForm VF = new ViewForm(volChart3, eleChart3);
+            VF.ShowDialog();
+        }
+
+        private void btnView4_Click(object sender, EventArgs e)
+        {
+            ViewForm VF = new ViewForm(volChart4, eleChart4);
+            VF.ShowDialog();
+        }
+
+        private void btnView5_Click(object sender, EventArgs e)
+        {
+            ViewForm VF = new ViewForm(volChart5, eleChart5);
+            VF.ShowDialog();
+        }
+        private void btnView6_Click(object sender, EventArgs e)
+        {
+            ViewForm VF = new ViewForm(volChart6,eleChart6);
+            VF.ShowDialog();
+        }
+
+       
     }
 }
