@@ -95,14 +95,14 @@ namespace MultiPowersSystem.DriverCommon
             }
             return 0;
         }
-        public static int SetVolAndEle(int nInstrumentHandle, double vloVal, double eleVal, string strErrMsg)
+        public static int SetVolAndEle(int nInstrumentHandle, double vloVal, double eleVal,int pathId, string strErrMsg)
         {
             int status = 0;
             string commands;
             int retCnt;
 
             // commands = ":VOLT " + vloVal; //输出电压电平设置
-            commands = string.Format("VOLT {0},(@{1})", vloVal, 1);
+            commands = string.Format("VOLT {0},(@{1})", vloVal, pathId);
             status = visa32.viWrite(nInstrumentHandle, System.Text.Encoding.Default.GetBytes(commands), commands.Length, out retCnt);
             if (status < 0)
             {
@@ -111,7 +111,7 @@ namespace MultiPowersSystem.DriverCommon
             }
 
             //commands = ":CURR " + eleVal; //输出电流电平设置           
-            commands = string.Format("CURR {0},(@{1})", eleVal, 1);
+            commands = string.Format("CURR {0},(@{1})", eleVal, pathId);
             status = visa32.viWrite(nInstrumentHandle, System.Text.Encoding.Default.GetBytes(commands), commands.Length, out retCnt);
             if (status < 0)
             {
@@ -121,14 +121,14 @@ namespace MultiPowersSystem.DriverCommon
             return status;
         }
 
-        public static int SetOpenCommand(int nInstrumentHandle, string strErrMsg)
+        public static int SetOpenCommand(int nInstrumentHandle,int pathId, string strErrMsg)
         {
             int status = 0;
             string commands;
             int retCnt;
 
             //commands = ":OUTP ON";
-            commands = string.Format("OUTP ON,(@{0})", 1);
+            commands = string.Format("OUTP ON,(@{0})", pathId);
             status = visa32.viWrite(nInstrumentHandle, System.Text.Encoding.Default.GetBytes(commands), commands.Length, out retCnt);
             if (status < 0)
             {
@@ -138,14 +138,14 @@ namespace MultiPowersSystem.DriverCommon
             return status;
         }
 
-        public static int SetCloseCommand(int nInstrumentHandle, string strErrMsg)
+        public static int SetCloseCommand(int nInstrumentHandle,int pathId, string strErrMsg)
         {
             int status = 0;
             string commands;
             int retCnt;
 
             //commands = ":OUTP OFF";
-            commands = string.Format("OUTP OFF,(@{0})", 1);
+            commands = string.Format("OUTP OFF,(@{0})", pathId);
             status = visa32.viWrite(nInstrumentHandle, System.Text.Encoding.Default.GetBytes(commands), commands.Length, out retCnt);
             if (status < 0)
             {
@@ -155,7 +155,7 @@ namespace MultiPowersSystem.DriverCommon
             return status;
         }
 
-        public static int ReadVolteCommand(int nInstrumentHandle, ref double reVlote, string strErrMsg)
+        public static int ReadVolteCommand(int nInstrumentHandle,int pathId, ref double reVlote, string strErrMsg)
         {
             int status = 0;
             string commands;
@@ -163,7 +163,7 @@ namespace MultiPowersSystem.DriverCommon
             string strVal;
             byte[] byteArray = new byte[100];
 
-            commands = string.Format("MEAS:VOLT? (@{0})",1);//返回电压
+            commands = string.Format("MEAS:VOLT? (@{0})", pathId);//返回电压
             status = visa32.viWrite(nInstrumentHandle, System.Text.Encoding.Default.GetBytes(commands), commands.Length, out retCnt);
             if (status < 0)
             {
@@ -188,7 +188,7 @@ namespace MultiPowersSystem.DriverCommon
             return status;
         }
 
-        public static int ReadElectCommand(int nInstrumentHandle, ref double reElect, string strErrMsg)
+        public static int ReadElectCommand(int nInstrumentHandle,int pathId, ref double reElect, string strErrMsg)
         {
             int status = 0;
             string commands;
@@ -197,7 +197,7 @@ namespace MultiPowersSystem.DriverCommon
             byte[] byteArray = new byte[100];
 
             //commands = "MEAS:CURR?";//返回电流
-            commands = string.Format("MEAS:CURR? (@{0})", 1);
+            commands = string.Format("MEAS:CURR? (@{0})", pathId);
             status = visa32.viWrite(nInstrumentHandle, System.Text.Encoding.Default.GetBytes(commands), commands.Length, out retCnt);
             if (status < 0)
             {
@@ -222,18 +222,14 @@ namespace MultiPowersSystem.DriverCommon
         }
 
         //读取电压电流值
-        public static int ReadVolAndEleCommand(int nInstrumentHandle, ref double reVlote, ref double reElect)
+        public static int ReadVolAndEleCommand(int nInstrumentHandle,int pathId, ref double reVlote, ref double reElect)
         {
             int status = 0;
-
-
             string strErrMsg = "";
             byte[] byteArray = new byte[100];
 
-            ReadVolteCommand(nInstrumentHandle, ref reVlote, strErrMsg);
-            ReadElectCommand(nInstrumentHandle, ref reElect, strErrMsg);
-
-            //模拟数据
+            ReadVolteCommand(nInstrumentHandle, pathId, ref reVlote, strErrMsg);
+            ReadElectCommand(nInstrumentHandle, pathId, ref reElect, strErrMsg);
 
             return status;
         }

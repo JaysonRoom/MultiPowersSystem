@@ -89,10 +89,10 @@ namespace MultiPowersSystem
             eleChart5.ChartAreas[0].AxisX.LabelStyle.Format = "mm:ss";
             eleChart5.ChartAreas[0].AxisX.ScaleView.Size = 20;
 
-            volChart6.ChartAreas[0].AxisX.LabelStyle.Format = "mm:ss";
-            volChart6.ChartAreas[0].AxisX.ScaleView.Size = 20;
-            eleChart6.ChartAreas[0].AxisX.LabelStyle.Format = "mm:ss";
-            eleChart6.ChartAreas[0].AxisX.ScaleView.Size = 20;
+            volChart61.ChartAreas[0].AxisX.LabelStyle.Format = "mm:ss";
+            volChart61.ChartAreas[0].AxisX.ScaleView.Size = 20;
+            eleChart61.ChartAreas[0].AxisX.LabelStyle.Format = "mm:ss";
+            eleChart61.ChartAreas[0].AxisX.ScaleView.Size = 20;
         }
 
         private void volteVal1_ValueChanged(object sender, EventArgs e)
@@ -897,18 +897,35 @@ namespace MultiPowersSystem
 
         private void btnStart6_Click(object sender, EventArgs e)
         {
-            x6Time = DateTime.Now;
-            OutSign6 = false;
-            Thread t = new Thread(new ThreadStart(TestProcess6));
-            t.IsBackground = true;
-            t.Start();
+            //通道数组
+            int[] pathArr = new int[4] { 0,0,0,0};
+            if (btnPath1.BackColor == Color.LightGreen)
+                pathArr[0] = 1;
+            if (btnPath2.BackColor == Color.LightGreen)
+                pathArr[1] = 1;
+            if (btnPath3.BackColor == Color.LightGreen)
+                pathArr[2] = 1;
+            if (btnPath4.BackColor == Color.LightGreen)
+                pathArr[3] = 1;
+
+            for (int i = 0; i < pathArr.Length; i++)
+            {
+                OutSign6 = false;
+                Thread t = new Thread(new ParameterizedThreadStart(TestProcess6));
+                t.IsBackground = true;
+              
+                t.Start(i);
+            }
         }
         bool OutSign6 = false;
         DateTime x6Time;
-        private void TestProcess6()
+        private void TestProcess6(object obj)
         {
-            volChart6.Series[0].Points.Clear();
-            eleChart6.Series[0].Points.Clear();
+            x6Time = DateTime.Now;
+
+            int chipId = Convert.ToInt32(obj.ToString());
+            volChart61.Series[0].Points.Clear();
+            eleChart61.Series[0].Points.Clear();
 
             double vlo = (double)volteVal6.Value;
             double ele = (double)eleVal6.Value;
@@ -922,7 +939,7 @@ namespace MultiPowersSystem
             double reVlote = 0, reElect = 0;
 
             //设置电压和电流
-            error = N6705ADriver.SetVolAndEle(CGloabal.g_N6705AModule.nHandle, vlo, ele, strErrMsg);
+            error = N6705ADriver.SetVolAndEle(CGloabal.g_N6705AModule.nHandle, vlo, ele, chipId, strErrMsg);
             if (error < 0)
             {
                 CommonMethod.ShowHintInfor(eHintInfoType.error, strErrMsg);
@@ -937,7 +954,7 @@ namespace MultiPowersSystem
             {
                 cyc--;
                 //打开命令
-                error = N6705ADriver.SetOpenCommand(CGloabal.g_N6705AModule.nHandle, strErrMsg);
+                error = N6705ADriver.SetOpenCommand(CGloabal.g_N6705AModule.nHandle, chipId, strErrMsg);
                 if (error < 0)
                 {
                     CommonMethod.ShowHintInfor(eHintInfoType.error, strErrMsg);
@@ -947,7 +964,7 @@ namespace MultiPowersSystem
                 {
                     if (OutSign6)
                     {//为true时则发送关闭指令，终止测试
-                        error = N6705ADriver.SetCloseCommand(CGloabal.g_N6705AModule.nHandle, strErrMsg);
+                        error = N6705ADriver.SetCloseCommand(CGloabal.g_N6705AModule.nHandle, chipId, strErrMsg);
                         if (error < 0)
                         {
                             CommonMethod.ShowHintInfor(eHintInfoType.error, strErrMsg);
@@ -960,13 +977,14 @@ namespace MultiPowersSystem
                     TimeSpan ts = DateTime.Now - x6Time;
                     string xOpenVal6 = ts.Minutes + ":" + ts.Seconds;
                     //读取电压和电流        
-                    N6705ADriver.ReadVolAndEleCommand(CGloabal.g_N6705AModule.nHandle, ref reVlote, ref reElect);
-                    volChart6.Series[0].Points.AddXY(xOpenVal6, reVlote);
-                    eleChart6.Series[0].Points.AddXY(xOpenVal6, reElect);
+                    N6705ADriver.ReadVolAndEleCommand(CGloabal.g_N6705AModule.nHandle, chipId, ref reVlote, ref reElect);
+                    N67SeriesSetChart(chipId, xOpenVal6, reVlote, reElect);
+                    //volChart61.Series[0].Points.AddXY(xOpenVal6, reVlote);
+                    //eleChart61.Series[0].Points.AddXY(xOpenVal6, reElect);
                 }
 
                 //发送关闭指令
-                error = N6705ADriver.SetCloseCommand(CGloabal.g_N6705AModule.nHandle, strErrMsg);
+                error = N6705ADriver.SetCloseCommand(CGloabal.g_N6705AModule.nHandle, chipId, strErrMsg);
                 if (error < 0)
                 {
                     CommonMethod.ShowHintInfor(eHintInfoType.error, strErrMsg);
@@ -976,7 +994,7 @@ namespace MultiPowersSystem
                 {
                     if (OutSign6)
                     {//为true时则终止测试
-                        error = N6705ADriver.SetCloseCommand(CGloabal.g_N6705AModule.nHandle, strErrMsg);
+                        error = N6705ADriver.SetCloseCommand(CGloabal.g_N6705AModule.nHandle, chipId, strErrMsg);
                         if (error < 0)
                         {
                             CommonMethod.ShowHintInfor(eHintInfoType.error, strErrMsg);
@@ -988,10 +1006,36 @@ namespace MultiPowersSystem
                     TimeSpan ts = DateTime.Now - x6Time;
                     string xCloseVal6 = ts.Minutes + ":" + ts.Seconds;
                     //读取电压和电流        
-                    N6705ADriver.ReadVolAndEleCommand(CGloabal.g_N6705AModule.nHandle, ref reVlote, ref reElect);
-                    volChart6.Series[0].Points.AddXY(xCloseVal6, reVlote);
-                    eleChart6.Series[0].Points.AddXY(xCloseVal6, reElect);
+                    N6705ADriver.ReadVolAndEleCommand(CGloabal.g_N6705AModule.nHandle, chipId, ref reVlote, ref reElect);
+                    N67SeriesSetChart(chipId, xCloseVal6, reVlote, reElect);
+                    //volChart61.Series[0].Points.AddXY(xCloseVal6, reVlote);
+                    //eleChart61.Series[0].Points.AddXY(xCloseVal6, reElect);
                 }
+            }
+        }
+
+        private void N67SeriesSetChart(int chipId,string xVal,double reVlote,double reElect) {
+            switch (chipId)
+            {
+                case 1:
+                    volChart61.Series[0].Points.AddXY(xVal, reVlote);
+                    eleChart61.Series[0].Points.AddXY(xVal, reElect);
+                    break;
+                case 2:
+                    volChart62.Series[0].Points.AddXY(xVal, reVlote);
+                    eleChart62.Series[0].Points.AddXY(xVal, reElect);
+                    break;
+                case 3:
+                    volChart63.Series[0].Points.AddXY(xVal, reVlote);
+                    eleChart63.Series[0].Points.AddXY(xVal, reElect);
+                    break;
+                case 4:
+                    volChart64.Series[0].Points.AddXY(xVal, reVlote);
+                    eleChart64.Series[0].Points.AddXY(xVal, reElect);
+                    break;
+                default:
+                    break;
+
             }
         }
 
@@ -1002,7 +1046,7 @@ namespace MultiPowersSystem
 
         private void btnSave6_Click(object sender, EventArgs e)
         {
-            MixHelper.SaveCSVFile(volChart6, eleChart6);
+            MixHelper.SaveCSVFile(volChart61, eleChart61);
         }
 
         private void btnView1_Click(object sender, EventArgs e)
@@ -1035,10 +1079,127 @@ namespace MultiPowersSystem
         }
         private void btnView6_Click(object sender, EventArgs e)
         {
-            ViewForm VF = new ViewForm(volChart6,eleChart6);
+            ViewForm VF = new ViewForm(volChart61,eleChart61);
             VF.ShowDialog();
         }
 
-       
+        private void btnPath1_Click(object sender, EventArgs e)
+        {
+            int error;
+            string strErrMsg = "";
+            if (btnPath1.BackColor == Color.WhiteSmoke)
+            {
+                //打开通道
+                error = N6705ADriver.SetOpenCommand(CGloabal.g_N6705AModule.nHandle, 1, strErrMsg);
+                if (error < 0)
+                {
+                    CommonMethod.ShowHintInfor(eHintInfoType.error, strErrMsg);
+                    return;
+                }
+                //改变颜色
+                btnPath1.BackColor = Color.LightGreen;
+            }
+            else {
+                //关闭通道
+                error = N6705ADriver.SetCloseCommand(CGloabal.g_N6705AModule.nHandle, 1, strErrMsg);
+                if (error < 0)
+                {
+                    CommonMethod.ShowHintInfor(eHintInfoType.error, strErrMsg);
+                    return;
+                }
+                //改变颜色
+                btnPath1.BackColor = Color.LightGreen;
+            }
+        }
+
+        private void btnPath2_Click(object sender, EventArgs e)
+        {
+            int error;
+            string strErrMsg = "";
+            if (btnPath2.BackColor == Color.WhiteSmoke)
+            {
+                //打开通道
+                error = N6705ADriver.SetOpenCommand(CGloabal.g_N6705AModule.nHandle, 2, strErrMsg);
+                if (error < 0)
+                {
+                    CommonMethod.ShowHintInfor(eHintInfoType.error, strErrMsg);
+                    return;
+                }
+                //改变颜色
+                btnPath2.BackColor = Color.LightGreen;
+            }
+            else
+            {
+                //关闭通道
+                error = N6705ADriver.SetCloseCommand(CGloabal.g_N6705AModule.nHandle, 2, strErrMsg);
+                if (error < 0)
+                {
+                    CommonMethod.ShowHintInfor(eHintInfoType.error, strErrMsg);
+                    return;
+                }
+                //改变颜色
+                btnPath2.BackColor = Color.LightGreen;
+            }
+        }
+
+        private void btnPath3_Click(object sender, EventArgs e)
+        {
+            int error;
+            string strErrMsg = "";
+            if (btnPath3.BackColor == Color.WhiteSmoke)
+            {
+                //打开通道
+                error = N6705ADriver.SetOpenCommand(CGloabal.g_N6705AModule.nHandle, 3, strErrMsg);
+                if (error < 0)
+                {
+                    CommonMethod.ShowHintInfor(eHintInfoType.error, strErrMsg);
+                    return;
+                }
+                //改变颜色
+                btnPath3.BackColor = Color.LightGreen;
+            }
+            else
+            {
+                //关闭通道
+                error = N6705ADriver.SetCloseCommand(CGloabal.g_N6705AModule.nHandle, 3, strErrMsg);
+                if (error < 0)
+                {
+                    CommonMethod.ShowHintInfor(eHintInfoType.error, strErrMsg);
+                    return;
+                }
+                //改变颜色
+                btnPath3.BackColor = Color.LightGreen;
+            }
+        }
+
+        private void btnPath4_Click(object sender, EventArgs e)
+        {
+            int error;
+            string strErrMsg = "";
+            if (btnPath4.BackColor == Color.WhiteSmoke)
+            {
+                //打开通道
+                error = N6705ADriver.SetOpenCommand(CGloabal.g_N6705AModule.nHandle, 4, strErrMsg);
+                if (error < 0)
+                {
+                    CommonMethod.ShowHintInfor(eHintInfoType.error, strErrMsg);
+                    return;
+                }
+                //改变颜色
+                btnPath4.BackColor = Color.LightGreen;
+            }
+            else
+            {
+                //关闭通道
+                error = N6705ADriver.SetCloseCommand(CGloabal.g_N6705AModule.nHandle,4, strErrMsg);
+                if (error < 0)
+                {
+                    CommonMethod.ShowHintInfor(eHintInfoType.error, strErrMsg);
+                    return;
+                }
+                //改变颜色
+                btnPath4.BackColor = Color.LightGreen;
+            }
+        }
     }
 }
