@@ -25,7 +25,7 @@ namespace MultiPowersSystem
             listViewMenu.Items.Add("N5752A", "N5752A",0);
             listViewMenu.Items.Add("N5772A", "N5772A",0);
             listViewMenu.Items.Add("N6702A", "N6702A", 0);
-            listViewMenu.Items.Add("N6705A", "N6705A", 0);
+            listViewMenu.Items.Add("N6705B", "N6705B", 0);
 
             comboUnit1.SelectedIndex = 1;
             comboUnit2.SelectedIndex = 1;
@@ -60,6 +60,9 @@ namespace MultiPowersSystem
             //port2.Value = CGloabal.g_InstrPowerModule2.port;
             ipAddress5.Text = CGloabal.g_N6702AModule.ipAdress;
             ipAddress6.Text = CGloabal.g_N6705AModule.ipAdress;
+
+            comboStyle1.SelectedIndex = 0;
+
         }
 
         private void initChart()
@@ -1356,5 +1359,21 @@ namespace MultiPowersSystem
             }
         }
 
+        private void comboStyle1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (comboStyle1.Text == "恒压")
+            {
+                eleVal1.Value = 15;
+                eleVal1.ReadOnly = true;
+                volteVal1.Value = 0;
+                volteVal1.ReadOnly = false;
+            }
+            else {
+                volteVal1.Value = 100;
+                volteVal1.ReadOnly = true;
+                eleVal1.Value = 0;
+                eleVal1.ReadOnly = false;
+            }
+        }
     }
 }
