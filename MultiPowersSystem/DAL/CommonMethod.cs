@@ -106,7 +106,7 @@ namespace MultiPowersSystem.DAL
                     }
                     else
                     {
-
+                        CGloabal.g_N5769AModule.nHandle = 1;
                         CGloabal.g_N5769AModule.bInternet = true;
                     }
                 }
@@ -127,7 +127,7 @@ namespace MultiPowersSystem.DAL
                     }
                     else
                     {
-
+                        CGloabal.g_N5751AModule.nHandle = 1;
                         CGloabal.g_N5751AModule.bInternet = true;
                     }
                 }
@@ -149,7 +149,7 @@ namespace MultiPowersSystem.DAL
                     }
                     else
                     {
-
+                        CGloabal.g_N5752AModule.nHandle = 1;
                         CGloabal.g_N5752AModule.bInternet = true;
                     }
                 }
@@ -170,7 +170,7 @@ namespace MultiPowersSystem.DAL
                     }
                     else
                     {
-
+                        CGloabal.g_N5772AModule.nHandle = 1;
                         CGloabal.g_N5772AModule.bInternet = true;
                     }
                 }
@@ -192,7 +192,7 @@ namespace MultiPowersSystem.DAL
                     }
                     else
                     {
-
+                        CGloabal.g_N6702AModule.nHandle = 1;
                         CGloabal.g_N6702AModule.bInternet = true;
                     }
                 }
@@ -214,7 +214,7 @@ namespace MultiPowersSystem.DAL
                     }
                     else
                     {
-
+                        CGloabal.g_N6705AModule.nHandle = 1;
                         CGloabal.g_N6705AModule.bInternet = true;
                     }
                 }
@@ -250,6 +250,7 @@ namespace MultiPowersSystem.DAL
                     else//断开成功，要将此时的连接状态更新到仪器参数中
                     {
                         CGloabal.g_N5769AModule.bInternet = false;
+                        CGloabal.g_N5769AModule.nHandle = 0;
                     }
                 }
             }
@@ -265,6 +266,7 @@ namespace MultiPowersSystem.DAL
                     else//断开成功，要将此时的连接状态更新到仪器参数中
                     {
                         CGloabal.g_N5751AModule.bInternet = false;
+                        CGloabal.g_N5751AModule.nHandle = 0;
                     }
                 }
             }
@@ -280,6 +282,7 @@ namespace MultiPowersSystem.DAL
                     else//断开成功，要将此时的连接状态更新到仪器参数中
                     {
                         CGloabal.g_N5772AModule.bInternet = false;
+                        CGloabal.g_N5772AModule.nHandle = 0;
                     }
                 }
             }
@@ -295,6 +298,7 @@ namespace MultiPowersSystem.DAL
                     else//断开成功，要将此时的连接状态更新到仪器参数中
                     {
                         CGloabal.g_N6702AModule.bInternet = false;
+                        CGloabal.g_N6702AModule.nHandle = 0;
                     }
                 }
             }
@@ -310,6 +314,7 @@ namespace MultiPowersSystem.DAL
                     else//断开成功，要将此时的连接状态更新到仪器参数中
                     {
                         CGloabal.g_N6705AModule.bInternet = false;
+                        CGloabal.g_N6705AModule.nHandle = 0;
                     }
                 }
             }

@@ -108,6 +108,8 @@
             this.eleChart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.volChart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.comboStyle1 = new System.Windows.Forms.ComboBox();
+            this.label69 = new System.Windows.Forms.Label();
             this.btnView1 = new System.Windows.Forms.Button();
             this.btnSave1 = new System.Windows.Forms.Button();
             this.btnStop1 = new System.Windows.Forms.Button();
@@ -320,8 +322,6 @@
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.listViewMenu = new System.Windows.Forms.ListView();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
-            this.label69 = new System.Windows.Forms.Label();
-            this.comboStyle1 = new System.Windows.Forms.ComboBox();
             this.mainTab.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -535,6 +535,27 @@
             this.groupBox2.Size = new System.Drawing.Size(337, 417);
             this.groupBox2.TabIndex = 5;
             this.groupBox2.TabStop = false;
+            // 
+            // comboStyle1
+            // 
+            this.comboStyle1.FormattingEnabled = true;
+            this.comboStyle1.Items.AddRange(new object[] {
+            "恒压",
+            "恒流"});
+            this.comboStyle1.Location = new System.Drawing.Point(114, 25);
+            this.comboStyle1.Name = "comboStyle1";
+            this.comboStyle1.Size = new System.Drawing.Size(121, 27);
+            this.comboStyle1.TabIndex = 23;
+            this.comboStyle1.SelectedIndexChanged += new System.EventHandler(this.comboStyle1_SelectedIndexChanged);
+            // 
+            // label69
+            // 
+            this.label69.AutoSize = true;
+            this.label69.Location = new System.Drawing.Point(44, 29);
+            this.label69.Name = "label69";
+            this.label69.Size = new System.Drawing.Size(69, 19);
+            this.label69.TabIndex = 22;
+            this.label69.Text = "模式：";
             // 
             // btnView1
             // 
@@ -3127,27 +3148,6 @@
             this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
             this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
             this.imageList1.Images.SetKeyName(0, "N5772A.jpg");
-            // 
-            // label69
-            // 
-            this.label69.AutoSize = true;
-            this.label69.Location = new System.Drawing.Point(44, 29);
-            this.label69.Name = "label69";
-            this.label69.Size = new System.Drawing.Size(69, 19);
-            this.label69.TabIndex = 22;
-            this.label69.Text = "模式：";
-            // 
-            // comboStyle1
-            // 
-            this.comboStyle1.FormattingEnabled = true;
-            this.comboStyle1.Items.AddRange(new object[] {
-            "恒压",
-            "恒流"});
-            this.comboStyle1.Location = new System.Drawing.Point(114, 25);
-            this.comboStyle1.Name = "comboStyle1";
-            this.comboStyle1.Size = new System.Drawing.Size(121, 27);
-            this.comboStyle1.TabIndex = 23;
-            this.comboStyle1.SelectedIndexChanged += new System.EventHandler(this.comboStyle1_SelectedIndexChanged);
             // 
             // MainForm
             // 

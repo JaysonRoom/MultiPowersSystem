@@ -128,7 +128,7 @@ namespace MultiPowersSystem
                     mainTab.TabPages.Clear();
                     mainTab.TabPages.Add(tabPage5);
                     break;
-                case "N6705A":
+                case "N6705B":
                     mainTab.TabPages.Clear();
                     mainTab.TabPages.Add(tabPage6);
                     break;
@@ -768,12 +768,14 @@ namespace MultiPowersSystem
 
             for (int i = 0; i < pathArr.Length; i++)
             {
-               
-                OutSign5 = false;
-                Thread t = new Thread(new ParameterizedThreadStart(TestProcess5));
-                t.IsBackground = true;
-                x5Time = DateTime.Now;
-                t.Start(i);
+                if (pathArr[i] == 1)
+                {
+                    OutSign5 = false;
+                    Thread t = new Thread(new ParameterizedThreadStart(TestProcess5));
+                    t.IsBackground = true;
+                    x5Time = DateTime.Now;
+                    t.Start(i+1);
+                }
             }
         }
         bool OutSign5 = false;
@@ -976,10 +978,13 @@ namespace MultiPowersSystem
             x6Time = DateTime.Now;
             for (int i = 0; i < pathArr.Length; i++)
             {
-                OutSign6 = false;
-                Thread t = new Thread(new ParameterizedThreadStart(TestProcess6));
-                t.IsBackground = true;               
-                t.Start(i);
+                if (pathArr[i] == 1) {
+                    OutSign6 = false;
+                    Thread t = new Thread(new ParameterizedThreadStart(TestProcess6));
+                    t.IsBackground = true;
+                    t.Start(i+1);
+                }
+               
             }
         }
         bool OutSign6 = false;
@@ -1212,7 +1217,7 @@ namespace MultiPowersSystem
                 //关闭通道
                 comPathClick(CGloabal.g_N6705AModule.nHandle, 1, 1);
                 //改变颜色
-                btnPath61.BackColor = Color.LightGreen;
+                btnPath61.BackColor = Color.WhiteSmoke;
             }
         }
 
@@ -1230,7 +1235,7 @@ namespace MultiPowersSystem
                 //关闭通道
                 comPathClick(CGloabal.g_N6705AModule.nHandle, 1, 2);
                 //改变颜色
-                btnPath62.BackColor = Color.LightGreen;
+                btnPath62.BackColor = Color.WhiteSmoke;
             }
         }
 
@@ -1248,7 +1253,7 @@ namespace MultiPowersSystem
                 //关闭通道
                 comPathClick(CGloabal.g_N6705AModule.nHandle, 1, 3);
                 //改变颜色
-                btnPath63.BackColor = Color.LightGreen;
+                btnPath63.BackColor = Color.WhiteSmoke;
             }
         }
 
@@ -1266,7 +1271,7 @@ namespace MultiPowersSystem
                 //关闭通道
                 comPathClick(CGloabal.g_N6705AModule.nHandle, 1, 4);
                 //改变颜色
-                btnPath64.BackColor = Color.LightGreen;
+                btnPath64.BackColor = Color.WhiteSmoke;
             }
         }
 
@@ -1282,7 +1287,7 @@ namespace MultiPowersSystem
             {   //关闭通道
                 comPathClick(CGloabal.g_N6702AModule.nHandle, 1, 1);
                 //改变颜色
-                btnPath64.BackColor = Color.LightGreen;
+                btnPath64.BackColor = Color.WhiteSmoke;
             }
         }
 
@@ -1298,7 +1303,7 @@ namespace MultiPowersSystem
             {   //关闭通道
                 comPathClick(CGloabal.g_N6702AModule.nHandle, 1, 2);
                 //改变颜色
-                btnPath64.BackColor = Color.LightGreen;
+                btnPath64.BackColor = Color.WhiteSmoke;
             }
         }
 
@@ -1314,7 +1319,7 @@ namespace MultiPowersSystem
             {   //关闭通道
                 comPathClick(CGloabal.g_N6702AModule.nHandle, 1, 3);
                 //改变颜色
-                btnPath64.BackColor = Color.LightGreen;
+                btnPath64.BackColor = Color.WhiteSmoke;
             }
         }
 
@@ -1330,7 +1335,7 @@ namespace MultiPowersSystem
             {   //关闭通道
                 comPathClick(CGloabal.g_N6702AModule.nHandle, 1, 4);
                 //改变颜色
-                btnPath64.BackColor = Color.LightGreen;
+                btnPath64.BackColor = Color.WhiteSmoke;
             }
         }
 
