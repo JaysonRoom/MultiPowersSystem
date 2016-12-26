@@ -65,9 +65,6 @@
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea12 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend12 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series12 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea13 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend13 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series13 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea14 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend14 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series14 = new System.Windows.Forms.DataVisualization.Charting.Series();
@@ -102,6 +99,9 @@
             System.Windows.Forms.DataVisualization.Charting.Legend legend24 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series24 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea13 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend13 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series13 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.mainTab = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
@@ -266,7 +266,6 @@
             this.volChart52 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.eleChart52 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.tabPage13 = new System.Windows.Forms.TabPage();
-            this.volChart53 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.eleChart53 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.tabPage14 = new System.Windows.Forms.TabPage();
             this.volChart54 = new System.Windows.Forms.DataVisualization.Charting.Chart();
@@ -280,25 +279,18 @@
             this.label56 = new System.Windows.Forms.Label();
             this.getPoint6 = new System.Windows.Forms.NumericUpDown();
             this.label57 = new System.Windows.Forms.Label();
-            this.label58 = new System.Windows.Forms.Label();
-            this.label59 = new System.Windows.Forms.Label();
             this.btnStart6 = new System.Windows.Forms.Button();
             this.closeTime6 = new System.Windows.Forms.NumericUpDown();
             this.openTime6 = new System.Windows.Forms.NumericUpDown();
             this.cycleNum6 = new System.Windows.Forms.NumericUpDown();
-            this.eleVal6 = new System.Windows.Forms.NumericUpDown();
-            this.volteVal6 = new System.Windows.Forms.NumericUpDown();
+            this.eleVal61 = new System.Windows.Forms.NumericUpDown();
+            this.volteVal61 = new System.Windows.Forms.NumericUpDown();
             this.label60 = new System.Windows.Forms.Label();
             this.label61 = new System.Windows.Forms.Label();
             this.label62 = new System.Windows.Forms.Label();
             this.label63 = new System.Windows.Forms.Label();
             this.label64 = new System.Windows.Forms.Label();
             this.groupBox17 = new System.Windows.Forms.GroupBox();
-            this.btnPath64 = new System.Windows.Forms.Button();
-            this.btnPath63 = new System.Windows.Forms.Button();
-            this.label67 = new System.Windows.Forms.Label();
-            this.btnPath62 = new System.Windows.Forms.Button();
-            this.btnPath61 = new System.Windows.Forms.Button();
             this.btnOpen6 = new System.Windows.Forms.Button();
             this.label65 = new System.Windows.Forms.Label();
             this.ipAddress6 = new IPAddressControlLib.IPAddressControl();
@@ -322,6 +314,18 @@
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.listViewMenu = new System.Windows.Forms.ListView();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.btnPath64 = new System.Windows.Forms.Button();
+            this.btnPath63 = new System.Windows.Forms.Button();
+            this.label67 = new System.Windows.Forms.Label();
+            this.btnPath62 = new System.Windows.Forms.Button();
+            this.btnPath61 = new System.Windows.Forms.Button();
+            this.eleVal62 = new System.Windows.Forms.NumericUpDown();
+            this.volteVal62 = new System.Windows.Forms.NumericUpDown();
+            this.eleVal63 = new System.Windows.Forms.NumericUpDown();
+            this.volteVal63 = new System.Windows.Forms.NumericUpDown();
+            this.eleVal64 = new System.Windows.Forms.NumericUpDown();
+            this.volteVal64 = new System.Windows.Forms.NumericUpDown();
+            this.volChart53 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.mainTab.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -389,7 +393,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.volChart52)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.eleChart52)).BeginInit();
             this.tabPage13.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.volChart53)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.eleChart53)).BeginInit();
             this.tabPage14.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.volChart54)).BeginInit();
@@ -400,8 +403,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.closeTime6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.openTime6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cycleNum6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.eleVal6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.volteVal6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.eleVal61)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.volteVal61)).BeginInit();
             this.groupBox17.SuspendLayout();
             this.groupBox18.SuspendLayout();
             this.N6705ATab.SuspendLayout();
@@ -418,6 +421,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.volChart64)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.eleChart64)).BeginInit();
             this.statusStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.eleVal62)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.volteVal62)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.eleVal63)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.volteVal63)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.eleVal64)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.volteVal64)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.volChart53)).BeginInit();
             this.SuspendLayout();
             // 
             // mainTab
@@ -433,7 +443,7 @@
             this.mainTab.Location = new System.Drawing.Point(137, 1);
             this.mainTab.Name = "mainTab";
             this.mainTab.SelectedIndex = 0;
-            this.mainTab.Size = new System.Drawing.Size(1207, 687);
+            this.mainTab.Size = new System.Drawing.Size(1260, 687);
             this.mainTab.TabIndex = 0;
             // 
             // tabPage1
@@ -445,7 +455,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 44);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1199, 639);
+            this.tabPage1.Size = new System.Drawing.Size(1252, 639);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "N5769A电源";
             // 
@@ -455,7 +465,7 @@
             this.groupBox3.Controls.Add(this.volChart1);
             this.groupBox3.Location = new System.Drawing.Point(350, 5);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(841, 630);
+            this.groupBox3.Size = new System.Drawing.Size(902, 630);
             this.groupBox3.TabIndex = 6;
             this.groupBox3.TabStop = false;
             // 
@@ -479,7 +489,7 @@
             series1.Name = "电流";
             series1.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Time;
             this.eleChart1.Series.Add(series1);
-            this.eleChart1.Size = new System.Drawing.Size(841, 286);
+            this.eleChart1.Size = new System.Drawing.Size(900, 286);
             this.eleChart1.TabIndex = 1;
             this.eleChart1.Text = "chart2";
             // 
@@ -502,7 +512,7 @@
             series2.Name = "电压";
             series2.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Time;
             this.volChart1.Series.Add(series2);
-            this.volChart1.Size = new System.Drawing.Size(841, 304);
+            this.volChart1.Size = new System.Drawing.Size(901, 304);
             this.volChart1.TabIndex = 0;
             this.volChart1.Text = "chart1";
             // 
@@ -830,7 +840,7 @@
             this.tabPage2.Controls.Add(this.groupBox7);
             this.tabPage2.Location = new System.Drawing.Point(4, 44);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Size = new System.Drawing.Size(1199, 639);
+            this.tabPage2.Size = new System.Drawing.Size(1252, 639);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "N5751A电源";
             // 
@@ -1133,7 +1143,7 @@
             this.groupBox7.Controls.Add(this.volChart2);
             this.groupBox7.Location = new System.Drawing.Point(351, 4);
             this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Size = new System.Drawing.Size(841, 630);
+            this.groupBox7.Size = new System.Drawing.Size(901, 630);
             this.groupBox7.TabIndex = 9;
             this.groupBox7.TabStop = false;
             // 
@@ -1155,7 +1165,7 @@
             series3.Name = "电流";
             series3.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Time;
             this.eleChart2.Series.Add(series3);
-            this.eleChart2.Size = new System.Drawing.Size(841, 286);
+            this.eleChart2.Size = new System.Drawing.Size(899, 286);
             this.eleChart2.TabIndex = 1;
             this.eleChart2.Text = "chart3";
             // 
@@ -1176,7 +1186,7 @@
             series4.Name = "电压";
             series4.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Time;
             this.volChart2.Series.Add(series4);
-            this.volChart2.Size = new System.Drawing.Size(841, 304);
+            this.volChart2.Size = new System.Drawing.Size(900, 304);
             this.volChart2.TabIndex = 0;
             this.volChart2.Text = "chart4";
             // 
@@ -1188,7 +1198,7 @@
             this.tabPage3.Controls.Add(this.groupBox9);
             this.tabPage3.Location = new System.Drawing.Point(4, 44);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(1199, 639);
+            this.tabPage3.Size = new System.Drawing.Size(1252, 639);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "N5752A电源";
             // 
@@ -1491,7 +1501,7 @@
             this.groupBox9.Controls.Add(this.volChart3);
             this.groupBox9.Location = new System.Drawing.Point(351, 4);
             this.groupBox9.Name = "groupBox9";
-            this.groupBox9.Size = new System.Drawing.Size(841, 630);
+            this.groupBox9.Size = new System.Drawing.Size(905, 630);
             this.groupBox9.TabIndex = 12;
             this.groupBox9.TabStop = false;
             // 
@@ -1513,7 +1523,7 @@
             series5.Name = "电流";
             series5.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Time;
             this.eleChart3.Series.Add(series5);
-            this.eleChart3.Size = new System.Drawing.Size(841, 286);
+            this.eleChart3.Size = new System.Drawing.Size(899, 286);
             this.eleChart3.TabIndex = 1;
             this.eleChart3.Text = "chart3";
             // 
@@ -1534,7 +1544,7 @@
             series6.Name = "电压";
             series6.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Time;
             this.volChart3.Series.Add(series6);
-            this.volChart3.Size = new System.Drawing.Size(841, 304);
+            this.volChart3.Size = new System.Drawing.Size(904, 304);
             this.volChart3.TabIndex = 0;
             this.volChart3.Text = "chart4";
             // 
@@ -1546,7 +1556,7 @@
             this.tabPage4.Controls.Add(this.groupBox12);
             this.tabPage4.Location = new System.Drawing.Point(4, 44);
             this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Size = new System.Drawing.Size(1199, 639);
+            this.tabPage4.Size = new System.Drawing.Size(1252, 639);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "N5772A电源";
             // 
@@ -1849,7 +1859,7 @@
             this.groupBox12.Controls.Add(this.volChart4);
             this.groupBox12.Location = new System.Drawing.Point(351, 4);
             this.groupBox12.Name = "groupBox12";
-            this.groupBox12.Size = new System.Drawing.Size(841, 630);
+            this.groupBox12.Size = new System.Drawing.Size(901, 630);
             this.groupBox12.TabIndex = 15;
             this.groupBox12.TabStop = false;
             // 
@@ -1871,7 +1881,7 @@
             series7.Name = "电流";
             series7.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Time;
             this.eleChart4.Series.Add(series7);
-            this.eleChart4.Size = new System.Drawing.Size(841, 286);
+            this.eleChart4.Size = new System.Drawing.Size(899, 286);
             this.eleChart4.TabIndex = 1;
             this.eleChart4.Text = "chart3";
             // 
@@ -1892,7 +1902,7 @@
             series8.Name = "电压";
             series8.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Time;
             this.volChart4.Series.Add(series8);
-            this.volChart4.Size = new System.Drawing.Size(841, 304);
+            this.volChart4.Size = new System.Drawing.Size(904, 304);
             this.volChart4.TabIndex = 0;
             this.volChart4.Text = "chart4";
             // 
@@ -1904,7 +1914,7 @@
             this.tabPage5.Controls.Add(this.groupBox15);
             this.tabPage5.Location = new System.Drawing.Point(4, 44);
             this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Size = new System.Drawing.Size(1199, 639);
+            this.tabPage5.Size = new System.Drawing.Size(1252, 639);
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "N6702A电源";
             // 
@@ -2260,7 +2270,7 @@
             this.groupBox15.Controls.Add(this.N6702ATab);
             this.groupBox15.Location = new System.Drawing.Point(351, 4);
             this.groupBox15.Name = "groupBox15";
-            this.groupBox15.Size = new System.Drawing.Size(841, 630);
+            this.groupBox15.Size = new System.Drawing.Size(901, 630);
             this.groupBox15.TabIndex = 18;
             this.groupBox15.TabStop = false;
             // 
@@ -2273,7 +2283,7 @@
             this.N6702ATab.Location = new System.Drawing.Point(3, 9);
             this.N6702ATab.Name = "N6702ATab";
             this.N6702ATab.SelectedIndex = 0;
-            this.N6702ATab.Size = new System.Drawing.Size(837, 623);
+            this.N6702ATab.Size = new System.Drawing.Size(898, 623);
             this.N6702ATab.TabIndex = 2;
             // 
             // tabPage11
@@ -2284,7 +2294,7 @@
             this.tabPage11.Location = new System.Drawing.Point(4, 29);
             this.tabPage11.Name = "tabPage11";
             this.tabPage11.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage11.Size = new System.Drawing.Size(829, 590);
+            this.tabPage11.Size = new System.Drawing.Size(890, 590);
             this.tabPage11.TabIndex = 0;
             this.tabPage11.Text = "通道1";
             // 
@@ -2305,7 +2315,7 @@
             series9.Name = "电压";
             series9.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Time;
             this.volChart51.Series.Add(series9);
-            this.volChart51.Size = new System.Drawing.Size(828, 295);
+            this.volChart51.Size = new System.Drawing.Size(890, 295);
             this.volChart51.TabIndex = 0;
             this.volChart51.Text = "chart4";
             // 
@@ -2327,7 +2337,7 @@
             series10.Name = "电流";
             series10.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Time;
             this.eleChart51.Series.Add(series10);
-            this.eleChart51.Size = new System.Drawing.Size(829, 286);
+            this.eleChart51.Size = new System.Drawing.Size(894, 286);
             this.eleChart51.TabIndex = 1;
             this.eleChart51.Text = "chart3";
             // 
@@ -2338,7 +2348,7 @@
             this.tabPage12.Location = new System.Drawing.Point(4, 29);
             this.tabPage12.Name = "tabPage12";
             this.tabPage12.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage12.Size = new System.Drawing.Size(829, 590);
+            this.tabPage12.Size = new System.Drawing.Size(890, 590);
             this.tabPage12.TabIndex = 1;
             this.tabPage12.Text = "通道2";
             this.tabPage12.UseVisualStyleBackColor = true;
@@ -2360,7 +2370,7 @@
             series11.Name = "电压";
             series11.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Time;
             this.volChart52.Series.Add(series11);
-            this.volChart52.Size = new System.Drawing.Size(828, 295);
+            this.volChart52.Size = new System.Drawing.Size(884, 295);
             this.volChart52.TabIndex = 2;
             this.volChart52.Text = "chart4";
             // 
@@ -2382,41 +2392,20 @@
             series12.Name = "电流";
             series12.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Time;
             this.eleChart52.Series.Add(series12);
-            this.eleChart52.Size = new System.Drawing.Size(829, 286);
+            this.eleChart52.Size = new System.Drawing.Size(890, 286);
             this.eleChart52.TabIndex = 3;
             this.eleChart52.Text = "chart3";
             // 
             // tabPage13
             // 
+            this.tabPage13.BackColor = System.Drawing.Color.WhiteSmoke;
             this.tabPage13.Controls.Add(this.volChart53);
             this.tabPage13.Controls.Add(this.eleChart53);
             this.tabPage13.Location = new System.Drawing.Point(4, 29);
             this.tabPage13.Name = "tabPage13";
-            this.tabPage13.Size = new System.Drawing.Size(829, 590);
+            this.tabPage13.Size = new System.Drawing.Size(890, 590);
             this.tabPage13.TabIndex = 2;
             this.tabPage13.Text = "通道3";
-            this.tabPage13.UseVisualStyleBackColor = true;
-            // 
-            // volChart53
-            // 
-            this.volChart53.BackColor = System.Drawing.Color.WhiteSmoke;
-            chartArea13.Name = "ChartArea1";
-            this.volChart53.ChartAreas.Add(chartArea13);
-            legend13.DockedToChartArea = "ChartArea1";
-            legend13.Name = "Legend1";
-            this.volChart53.Legends.Add(legend13);
-            this.volChart53.Location = new System.Drawing.Point(0, 2);
-            this.volChart53.Name = "volChart53";
-            series13.BorderWidth = 3;
-            series13.ChartArea = "ChartArea1";
-            series13.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series13.Legend = "Legend1";
-            series13.Name = "电压";
-            series13.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Time;
-            this.volChart53.Series.Add(series13);
-            this.volChart53.Size = new System.Drawing.Size(828, 295);
-            this.volChart53.TabIndex = 2;
-            this.volChart53.Text = "chart4";
             // 
             // eleChart53
             // 
@@ -2436,20 +2425,20 @@
             series14.Name = "电流";
             series14.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Time;
             this.eleChart53.Series.Add(series14);
-            this.eleChart53.Size = new System.Drawing.Size(829, 286);
+            this.eleChart53.Size = new System.Drawing.Size(887, 286);
             this.eleChart53.TabIndex = 3;
             this.eleChart53.Text = "chart3";
             // 
             // tabPage14
             // 
+            this.tabPage14.BackColor = System.Drawing.Color.WhiteSmoke;
             this.tabPage14.Controls.Add(this.volChart54);
             this.tabPage14.Controls.Add(this.eleChart54);
             this.tabPage14.Location = new System.Drawing.Point(4, 29);
             this.tabPage14.Name = "tabPage14";
-            this.tabPage14.Size = new System.Drawing.Size(829, 590);
+            this.tabPage14.Size = new System.Drawing.Size(890, 590);
             this.tabPage14.TabIndex = 3;
             this.tabPage14.Text = "通道4";
-            this.tabPage14.UseVisualStyleBackColor = true;
             // 
             // volChart54
             // 
@@ -2468,7 +2457,7 @@
             series15.Name = "电压";
             series15.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Time;
             this.volChart54.Series.Add(series15);
-            this.volChart54.Size = new System.Drawing.Size(828, 295);
+            this.volChart54.Size = new System.Drawing.Size(888, 295);
             this.volChart54.TabIndex = 2;
             this.volChart54.Text = "chart4";
             // 
@@ -2490,7 +2479,7 @@
             series16.Name = "电流";
             series16.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Time;
             this.eleChart54.Series.Add(series16);
-            this.eleChart54.Size = new System.Drawing.Size(829, 286);
+            this.eleChart54.Size = new System.Drawing.Size(890, 286);
             this.eleChart54.TabIndex = 3;
             this.eleChart54.Text = "chart3";
             // 
@@ -2502,12 +2491,23 @@
             this.tabPage6.Controls.Add(this.groupBox18);
             this.tabPage6.Location = new System.Drawing.Point(4, 44);
             this.tabPage6.Name = "tabPage6";
-            this.tabPage6.Size = new System.Drawing.Size(1199, 639);
+            this.tabPage6.Size = new System.Drawing.Size(1252, 639);
             this.tabPage6.TabIndex = 5;
             this.tabPage6.Text = "N6705B电源";
             // 
             // groupBox16
             // 
+            this.groupBox16.Controls.Add(this.eleVal64);
+            this.groupBox16.Controls.Add(this.volteVal64);
+            this.groupBox16.Controls.Add(this.eleVal63);
+            this.groupBox16.Controls.Add(this.volteVal63);
+            this.groupBox16.Controls.Add(this.eleVal62);
+            this.groupBox16.Controls.Add(this.volteVal62);
+            this.groupBox16.Controls.Add(this.btnPath64);
+            this.groupBox16.Controls.Add(this.btnPath63);
+            this.groupBox16.Controls.Add(this.label67);
+            this.groupBox16.Controls.Add(this.btnPath62);
+            this.groupBox16.Controls.Add(this.btnPath61);
             this.groupBox16.Controls.Add(this.btnView6);
             this.groupBox16.Controls.Add(this.btnSave6);
             this.groupBox16.Controls.Add(this.btnStop6);
@@ -2515,52 +2515,59 @@
             this.groupBox16.Controls.Add(this.label56);
             this.groupBox16.Controls.Add(this.getPoint6);
             this.groupBox16.Controls.Add(this.label57);
-            this.groupBox16.Controls.Add(this.label58);
-            this.groupBox16.Controls.Add(this.label59);
             this.groupBox16.Controls.Add(this.btnStart6);
             this.groupBox16.Controls.Add(this.closeTime6);
             this.groupBox16.Controls.Add(this.openTime6);
             this.groupBox16.Controls.Add(this.cycleNum6);
-            this.groupBox16.Controls.Add(this.eleVal6);
-            this.groupBox16.Controls.Add(this.volteVal6);
+            this.groupBox16.Controls.Add(this.eleVal61);
+            this.groupBox16.Controls.Add(this.volteVal61);
             this.groupBox16.Controls.Add(this.label60);
             this.groupBox16.Controls.Add(this.label61);
             this.groupBox16.Controls.Add(this.label62);
             this.groupBox16.Controls.Add(this.label63);
             this.groupBox16.Controls.Add(this.label64);
-            this.groupBox16.Location = new System.Drawing.Point(10, 254);
+            this.groupBox16.Location = new System.Drawing.Point(10, 152);
             this.groupBox16.Name = "groupBox16";
-            this.groupBox16.Size = new System.Drawing.Size(337, 377);
+            this.groupBox16.Size = new System.Drawing.Size(376, 479);
             this.groupBox16.TabIndex = 17;
             this.groupBox16.TabStop = false;
             // 
             // btnView6
             // 
-            this.btnView6.Location = new System.Drawing.Point(252, 333);
+            this.btnView6.Image = global::MultiPowersSystem.Properties.Resources.单次;
+            this.btnView6.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnView6.Location = new System.Drawing.Point(266, 404);
             this.btnView6.Name = "btnView6";
-            this.btnView6.Size = new System.Drawing.Size(74, 31);
+            this.btnView6.Size = new System.Drawing.Size(100, 46);
             this.btnView6.TabIndex = 21;
             this.btnView6.Text = "汇总";
+            this.btnView6.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnView6.UseVisualStyleBackColor = true;
             this.btnView6.Click += new System.EventHandler(this.btnView6_Click);
             // 
             // btnSave6
             // 
-            this.btnSave6.Location = new System.Drawing.Point(252, 294);
+            this.btnSave6.Image = global::MultiPowersSystem.Properties.Resources.loop_alt4_24;
+            this.btnSave6.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSave6.Location = new System.Drawing.Point(266, 344);
             this.btnSave6.Name = "btnSave6";
-            this.btnSave6.Size = new System.Drawing.Size(74, 31);
+            this.btnSave6.Size = new System.Drawing.Size(100, 46);
             this.btnSave6.TabIndex = 20;
             this.btnSave6.Text = "保存";
+            this.btnSave6.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnSave6.UseVisualStyleBackColor = true;
             this.btnSave6.Click += new System.EventHandler(this.btnSave6_Click);
             // 
             // btnStop6
             // 
-            this.btnStop6.Location = new System.Drawing.Point(252, 247);
+            this.btnStop6.Image = global::MultiPowersSystem.Properties.Resources.loop_alt4_24__1_;
+            this.btnStop6.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnStop6.Location = new System.Drawing.Point(266, 284);
             this.btnStop6.Name = "btnStop6";
-            this.btnStop6.Size = new System.Drawing.Size(74, 31);
+            this.btnStop6.Size = new System.Drawing.Size(100, 46);
             this.btnStop6.TabIndex = 19;
             this.btnStop6.Text = "停止";
+            this.btnStop6.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnStop6.UseVisualStyleBackColor = true;
             this.btnStop6.Click += new System.EventHandler(this.btnStop6_Click);
             // 
@@ -2571,7 +2578,7 @@
             "小时",
             "分钟",
             "秒"});
-            this.comboUnit6.Location = new System.Drawing.Point(115, 287);
+            this.comboUnit6.Location = new System.Drawing.Point(117, 380);
             this.comboUnit6.Name = "comboUnit6";
             this.comboUnit6.Size = new System.Drawing.Size(121, 27);
             this.comboUnit6.TabIndex = 18;
@@ -2579,7 +2586,7 @@
             // label56
             // 
             this.label56.AutoSize = true;
-            this.label56.Location = new System.Drawing.Point(2, 291);
+            this.label56.Location = new System.Drawing.Point(4, 384);
             this.label56.Name = "label56";
             this.label56.Size = new System.Drawing.Size(109, 19);
             this.label56.TabIndex = 17;
@@ -2587,7 +2594,7 @@
             // 
             // getPoint6
             // 
-            this.getPoint6.Location = new System.Drawing.Point(115, 331);
+            this.getPoint6.Location = new System.Drawing.Point(117, 424);
             this.getPoint6.Maximum = new decimal(new int[] {
             10000,
             0,
@@ -2605,43 +2612,29 @@
             // label57
             // 
             this.label57.AutoSize = true;
-            this.label57.Location = new System.Drawing.Point(21, 336);
+            this.label57.Location = new System.Drawing.Point(23, 429);
             this.label57.Name = "label57";
             this.label57.Size = new System.Drawing.Size(89, 19);
             this.label57.TabIndex = 15;
             this.label57.Text = "采样点：";
             // 
-            // label58
-            // 
-            this.label58.AutoSize = true;
-            this.label58.Location = new System.Drawing.Point(243, 81);
-            this.label58.Name = "label58";
-            this.label58.Size = new System.Drawing.Size(20, 19);
-            this.label58.TabIndex = 11;
-            this.label58.Text = "A";
-            // 
-            // label59
-            // 
-            this.label59.AutoSize = true;
-            this.label59.Location = new System.Drawing.Point(243, 29);
-            this.label59.Name = "label59";
-            this.label59.Size = new System.Drawing.Size(20, 19);
-            this.label59.TabIndex = 6;
-            this.label59.Text = "V";
-            // 
             // btnStart6
             // 
-            this.btnStart6.Location = new System.Drawing.Point(252, 201);
+            this.btnStart6.Image = global::MultiPowersSystem.Properties.Resources.循环;
+            this.btnStart6.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnStart6.Location = new System.Drawing.Point(266, 224);
             this.btnStart6.Name = "btnStart6";
-            this.btnStart6.Size = new System.Drawing.Size(74, 31);
+            this.btnStart6.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.btnStart6.Size = new System.Drawing.Size(100, 46);
             this.btnStart6.TabIndex = 10;
             this.btnStart6.Text = "执行";
+            this.btnStart6.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnStart6.UseVisualStyleBackColor = true;
             this.btnStart6.Click += new System.EventHandler(this.btnStart6_Click);
             // 
             // closeTime6
             // 
-            this.closeTime6.Location = new System.Drawing.Point(115, 239);
+            this.closeTime6.Location = new System.Drawing.Point(117, 332);
             this.closeTime6.Maximum = new decimal(new int[] {
             10000,
             0,
@@ -2653,7 +2646,7 @@
             // 
             // openTime6
             // 
-            this.openTime6.Location = new System.Drawing.Point(115, 186);
+            this.openTime6.Location = new System.Drawing.Point(117, 279);
             this.openTime6.Maximum = new decimal(new int[] {
             10000,
             0,
@@ -2665,7 +2658,7 @@
             // 
             // cycleNum6
             // 
-            this.cycleNum6.Location = new System.Drawing.Point(115, 130);
+            this.cycleNum6.Location = new System.Drawing.Point(117, 223);
             this.cycleNum6.Maximum = new decimal(new int[] {
             100000,
             0,
@@ -2675,37 +2668,39 @@
             this.cycleNum6.Size = new System.Drawing.Size(120, 29);
             this.cycleNum6.TabIndex = 7;
             // 
-            // eleVal6
+            // eleVal61
             // 
-            this.eleVal6.DecimalPlaces = 1;
-            this.eleVal6.Location = new System.Drawing.Point(117, 75);
-            this.eleVal6.Maximum = new decimal(new int[] {
+            this.eleVal61.BackColor = System.Drawing.Color.PaleGoldenrod;
+            this.eleVal61.DecimalPlaces = 1;
+            this.eleVal61.Location = new System.Drawing.Point(83, 129);
+            this.eleVal61.Maximum = new decimal(new int[] {
             15,
             0,
             0,
             0});
-            this.eleVal6.Name = "eleVal6";
-            this.eleVal6.Size = new System.Drawing.Size(120, 29);
-            this.eleVal6.TabIndex = 6;
+            this.eleVal61.Name = "eleVal61";
+            this.eleVal61.Size = new System.Drawing.Size(66, 29);
+            this.eleVal61.TabIndex = 6;
             // 
-            // volteVal6
+            // volteVal61
             // 
-            this.volteVal6.DecimalPlaces = 2;
-            this.volteVal6.Increment = new decimal(new int[] {
+            this.volteVal61.BackColor = System.Drawing.Color.PaleGoldenrod;
+            this.volteVal61.DecimalPlaces = 2;
+            this.volteVal61.Increment = new decimal(new int[] {
             1,
             0,
             0,
             65536});
-            this.volteVal6.Location = new System.Drawing.Point(117, 23);
-            this.volteVal6.Name = "volteVal6";
-            this.volteVal6.Size = new System.Drawing.Size(120, 29);
-            this.volteVal6.TabIndex = 5;
-            this.volteVal6.ValueChanged += new System.EventHandler(this.volteVal6_ValueChanged);
+            this.volteVal61.Location = new System.Drawing.Point(83, 77);
+            this.volteVal61.Name = "volteVal61";
+            this.volteVal61.Size = new System.Drawing.Size(66, 29);
+            this.volteVal61.TabIndex = 5;
+            this.volteVal61.ValueChanged += new System.EventHandler(this.volteVal6_ValueChanged);
             // 
             // label60
             // 
             this.label60.AutoSize = true;
-            this.label60.Location = new System.Drawing.Point(4, 244);
+            this.label60.Location = new System.Drawing.Point(6, 337);
             this.label60.Name = "label60";
             this.label60.Size = new System.Drawing.Size(109, 19);
             this.label60.TabIndex = 4;
@@ -2714,7 +2709,7 @@
             // label61
             // 
             this.label61.AutoSize = true;
-            this.label61.Location = new System.Drawing.Point(4, 191);
+            this.label61.Location = new System.Drawing.Point(6, 284);
             this.label61.Name = "label61";
             this.label61.Size = new System.Drawing.Size(109, 19);
             this.label61.TabIndex = 3;
@@ -2723,7 +2718,7 @@
             // label62
             // 
             this.label62.AutoSize = true;
-            this.label62.Location = new System.Drawing.Point(4, 133);
+            this.label62.Location = new System.Drawing.Point(6, 226);
             this.label62.Name = "label62";
             this.label62.Size = new System.Drawing.Size(109, 19);
             this.label62.TabIndex = 2;
@@ -2732,7 +2727,7 @@
             // label63
             // 
             this.label63.AutoSize = true;
-            this.label63.Location = new System.Drawing.Point(44, 81);
+            this.label63.Location = new System.Drawing.Point(10, 135);
             this.label63.Name = "label63";
             this.label63.Size = new System.Drawing.Size(69, 19);
             this.label63.TabIndex = 1;
@@ -2741,7 +2736,7 @@
             // label64
             // 
             this.label64.AutoSize = true;
-            this.label64.Location = new System.Drawing.Point(44, 25);
+            this.label64.Location = new System.Drawing.Point(10, 79);
             this.label64.Name = "label64";
             this.label64.Size = new System.Drawing.Size(69, 19);
             this.label64.TabIndex = 0;
@@ -2749,70 +2744,16 @@
             // 
             // groupBox17
             // 
-            this.groupBox17.Controls.Add(this.btnPath64);
-            this.groupBox17.Controls.Add(this.btnPath63);
-            this.groupBox17.Controls.Add(this.label67);
-            this.groupBox17.Controls.Add(this.btnPath62);
-            this.groupBox17.Controls.Add(this.btnPath61);
             this.groupBox17.Controls.Add(this.btnOpen6);
             this.groupBox17.Controls.Add(this.label65);
             this.groupBox17.Controls.Add(this.ipAddress6);
             this.groupBox17.Controls.Add(this.label66);
             this.groupBox17.Location = new System.Drawing.Point(7, 5);
             this.groupBox17.Name = "groupBox17";
-            this.groupBox17.Size = new System.Drawing.Size(337, 243);
+            this.groupBox17.Size = new System.Drawing.Size(377, 141);
             this.groupBox17.TabIndex = 16;
             this.groupBox17.TabStop = false;
             this.groupBox17.Text = "N6705A配置";
-            // 
-            // btnPath64
-            // 
-            this.btnPath64.Location = new System.Drawing.Point(258, 154);
-            this.btnPath64.Name = "btnPath64";
-            this.btnPath64.Size = new System.Drawing.Size(39, 32);
-            this.btnPath64.TabIndex = 10;
-            this.btnPath64.Text = "4";
-            this.btnPath64.UseVisualStyleBackColor = true;
-            this.btnPath64.Click += new System.EventHandler(this.btnPath4_Click);
-            // 
-            // btnPath63
-            // 
-            this.btnPath63.Location = new System.Drawing.Point(207, 154);
-            this.btnPath63.Name = "btnPath63";
-            this.btnPath63.Size = new System.Drawing.Size(39, 32);
-            this.btnPath63.TabIndex = 9;
-            this.btnPath63.Text = "3";
-            this.btnPath63.UseVisualStyleBackColor = true;
-            this.btnPath63.Click += new System.EventHandler(this.btnPath3_Click);
-            // 
-            // label67
-            // 
-            this.label67.AutoSize = true;
-            this.label67.Location = new System.Drawing.Point(33, 161);
-            this.label67.Name = "label67";
-            this.label67.Size = new System.Drawing.Size(49, 19);
-            this.label67.TabIndex = 8;
-            this.label67.Text = "通道";
-            // 
-            // btnPath62
-            // 
-            this.btnPath62.Location = new System.Drawing.Point(159, 154);
-            this.btnPath62.Name = "btnPath62";
-            this.btnPath62.Size = new System.Drawing.Size(39, 32);
-            this.btnPath62.TabIndex = 7;
-            this.btnPath62.Text = "2";
-            this.btnPath62.UseVisualStyleBackColor = true;
-            this.btnPath62.Click += new System.EventHandler(this.btnPath2_Click);
-            // 
-            // btnPath61
-            // 
-            this.btnPath61.Location = new System.Drawing.Point(114, 154);
-            this.btnPath61.Name = "btnPath61";
-            this.btnPath61.Size = new System.Drawing.Size(39, 32);
-            this.btnPath61.TabIndex = 6;
-            this.btnPath61.Text = "1";
-            this.btnPath61.UseVisualStyleBackColor = true;
-            this.btnPath61.Click += new System.EventHandler(this.btnPath1_Click);
             // 
             // btnOpen6
             // 
@@ -2856,9 +2797,9 @@
             // groupBox18
             // 
             this.groupBox18.Controls.Add(this.N6705ATab);
-            this.groupBox18.Location = new System.Drawing.Point(351, 4);
+            this.groupBox18.Location = new System.Drawing.Point(392, 4);
             this.groupBox18.Name = "groupBox18";
-            this.groupBox18.Size = new System.Drawing.Size(841, 630);
+            this.groupBox18.Size = new System.Drawing.Size(864, 630);
             this.groupBox18.TabIndex = 18;
             this.groupBox18.TabStop = false;
             // 
@@ -2868,10 +2809,10 @@
             this.N6705ATab.Controls.Add(this.tabPage8);
             this.N6705ATab.Controls.Add(this.tabPage9);
             this.N6705ATab.Controls.Add(this.tabPage10);
-            this.N6705ATab.Location = new System.Drawing.Point(7, 17);
+            this.N6705ATab.Location = new System.Drawing.Point(6, 17);
             this.N6705ATab.Name = "N6705ATab";
             this.N6705ATab.SelectedIndex = 0;
-            this.N6705ATab.Size = new System.Drawing.Size(834, 610);
+            this.N6705ATab.Size = new System.Drawing.Size(858, 610);
             this.N6705ATab.TabIndex = 2;
             // 
             // tabPage7
@@ -2882,7 +2823,7 @@
             this.tabPage7.Location = new System.Drawing.Point(4, 29);
             this.tabPage7.Name = "tabPage7";
             this.tabPage7.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage7.Size = new System.Drawing.Size(826, 577);
+            this.tabPage7.Size = new System.Drawing.Size(850, 577);
             this.tabPage7.TabIndex = 0;
             this.tabPage7.Text = "通道1";
             // 
@@ -2904,7 +2845,7 @@
             series17.Name = "电压";
             series17.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Time;
             this.volChart61.Series.Add(series17);
-            this.volChart61.Size = new System.Drawing.Size(814, 288);
+            this.volChart61.Size = new System.Drawing.Size(836, 288);
             this.volChart61.TabIndex = 0;
             this.volChart61.Text = "chart4";
             // 
@@ -2928,7 +2869,7 @@
             series18.Name = "电流";
             series18.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Time;
             this.eleChart61.Series.Add(series18);
-            this.eleChart61.Size = new System.Drawing.Size(814, 280);
+            this.eleChart61.Size = new System.Drawing.Size(848, 280);
             this.eleChart61.TabIndex = 1;
             this.eleChart61.Text = "chart3";
             // 
@@ -2940,7 +2881,7 @@
             this.tabPage8.Location = new System.Drawing.Point(4, 29);
             this.tabPage8.Name = "tabPage8";
             this.tabPage8.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage8.Size = new System.Drawing.Size(826, 577);
+            this.tabPage8.Size = new System.Drawing.Size(850, 577);
             this.tabPage8.TabIndex = 1;
             this.tabPage8.Text = "通道2";
             // 
@@ -2997,7 +2938,7 @@
             this.tabPage9.Controls.Add(this.eleChart63);
             this.tabPage9.Location = new System.Drawing.Point(4, 29);
             this.tabPage9.Name = "tabPage9";
-            this.tabPage9.Size = new System.Drawing.Size(826, 577);
+            this.tabPage9.Size = new System.Drawing.Size(850, 577);
             this.tabPage9.TabIndex = 2;
             this.tabPage9.Text = "通道3";
             // 
@@ -3049,14 +2990,14 @@
             // 
             // tabPage10
             // 
+            this.tabPage10.BackColor = System.Drawing.Color.WhiteSmoke;
             this.tabPage10.Controls.Add(this.volChart64);
             this.tabPage10.Controls.Add(this.eleChart64);
             this.tabPage10.Location = new System.Drawing.Point(4, 29);
             this.tabPage10.Name = "tabPage10";
-            this.tabPage10.Size = new System.Drawing.Size(826, 577);
+            this.tabPage10.Size = new System.Drawing.Size(850, 577);
             this.tabPage10.TabIndex = 3;
             this.tabPage10.Text = "通道4";
-            this.tabPage10.UseVisualStyleBackColor = true;
             // 
             // volChart64
             // 
@@ -3076,7 +3017,7 @@
             series23.Name = "电压";
             series23.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Time;
             this.volChart64.Series.Add(series23);
-            this.volChart64.Size = new System.Drawing.Size(814, 288);
+            this.volChart64.Size = new System.Drawing.Size(842, 288);
             this.volChart64.TabIndex = 2;
             this.volChart64.Text = "chart4";
             // 
@@ -3100,7 +3041,7 @@
             series24.Name = "电流";
             series24.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Time;
             this.eleChart64.Series.Add(series24);
-            this.eleChart64.Size = new System.Drawing.Size(814, 280);
+            this.eleChart64.Size = new System.Drawing.Size(841, 280);
             this.eleChart64.TabIndex = 3;
             this.eleChart64.Text = "chart3";
             // 
@@ -3121,7 +3062,7 @@
             this.toolStripStatusLabel1});
             this.statusStrip1.Location = new System.Drawing.Point(0, 686);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(1344, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(1397, 22);
             this.statusStrip1.TabIndex = 3;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -3149,11 +3090,165 @@
             this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
             this.imageList1.Images.SetKeyName(0, "N5772A.jpg");
             // 
+            // btnPath64
+            // 
+            this.btnPath64.Location = new System.Drawing.Point(314, 18);
+            this.btnPath64.Name = "btnPath64";
+            this.btnPath64.Size = new System.Drawing.Size(39, 32);
+            this.btnPath64.TabIndex = 31;
+            this.btnPath64.Text = "4";
+            this.btnPath64.UseVisualStyleBackColor = true;
+            this.btnPath64.Click += new System.EventHandler(this.btnPath64_Click);
+            // 
+            // btnPath63
+            // 
+            this.btnPath63.Location = new System.Drawing.Point(236, 18);
+            this.btnPath63.Name = "btnPath63";
+            this.btnPath63.Size = new System.Drawing.Size(39, 32);
+            this.btnPath63.TabIndex = 30;
+            this.btnPath63.Text = "3";
+            this.btnPath63.UseVisualStyleBackColor = true;
+            this.btnPath63.Click += new System.EventHandler(this.btnPath63_Click);
+            // 
+            // label67
+            // 
+            this.label67.AutoSize = true;
+            this.label67.Location = new System.Drawing.Point(9, 25);
+            this.label67.Name = "label67";
+            this.label67.Size = new System.Drawing.Size(49, 19);
+            this.label67.TabIndex = 29;
+            this.label67.Text = "通道";
+            // 
+            // btnPath62
+            // 
+            this.btnPath62.Location = new System.Drawing.Point(166, 19);
+            this.btnPath62.Name = "btnPath62";
+            this.btnPath62.Size = new System.Drawing.Size(39, 32);
+            this.btnPath62.TabIndex = 28;
+            this.btnPath62.Text = "2";
+            this.btnPath62.UseVisualStyleBackColor = true;
+            this.btnPath62.Click += new System.EventHandler(this.btnPath62_Click);
+            // 
+            // btnPath61
+            // 
+            this.btnPath61.Location = new System.Drawing.Point(90, 18);
+            this.btnPath61.Name = "btnPath61";
+            this.btnPath61.Size = new System.Drawing.Size(39, 32);
+            this.btnPath61.TabIndex = 27;
+            this.btnPath61.Text = "1";
+            this.btnPath61.UseVisualStyleBackColor = true;
+            this.btnPath61.Click += new System.EventHandler(this.btnPath61_Click);
+            // 
+            // eleVal62
+            // 
+            this.eleVal62.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.eleVal62.DecimalPlaces = 1;
+            this.eleVal62.Location = new System.Drawing.Point(160, 129);
+            this.eleVal62.Maximum = new decimal(new int[] {
+            15,
+            0,
+            0,
+            0});
+            this.eleVal62.Name = "eleVal62";
+            this.eleVal62.Size = new System.Drawing.Size(66, 29);
+            this.eleVal62.TabIndex = 33;
+            // 
+            // volteVal62
+            // 
+            this.volteVal62.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.volteVal62.DecimalPlaces = 2;
+            this.volteVal62.Increment = new decimal(new int[] {
+            1,
+            0,
+            0,
+            65536});
+            this.volteVal62.Location = new System.Drawing.Point(160, 77);
+            this.volteVal62.Name = "volteVal62";
+            this.volteVal62.Size = new System.Drawing.Size(66, 29);
+            this.volteVal62.TabIndex = 32;
+            // 
+            // eleVal63
+            // 
+            this.eleVal63.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.eleVal63.DecimalPlaces = 1;
+            this.eleVal63.Location = new System.Drawing.Point(232, 129);
+            this.eleVal63.Maximum = new decimal(new int[] {
+            15,
+            0,
+            0,
+            0});
+            this.eleVal63.Name = "eleVal63";
+            this.eleVal63.Size = new System.Drawing.Size(66, 29);
+            this.eleVal63.TabIndex = 35;
+            // 
+            // volteVal63
+            // 
+            this.volteVal63.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.volteVal63.DecimalPlaces = 2;
+            this.volteVal63.Increment = new decimal(new int[] {
+            1,
+            0,
+            0,
+            65536});
+            this.volteVal63.Location = new System.Drawing.Point(232, 77);
+            this.volteVal63.Name = "volteVal63";
+            this.volteVal63.Size = new System.Drawing.Size(66, 29);
+            this.volteVal63.TabIndex = 34;
+            // 
+            // eleVal64
+            // 
+            this.eleVal64.BackColor = System.Drawing.Color.Violet;
+            this.eleVal64.DecimalPlaces = 1;
+            this.eleVal64.Location = new System.Drawing.Point(308, 129);
+            this.eleVal64.Maximum = new decimal(new int[] {
+            15,
+            0,
+            0,
+            0});
+            this.eleVal64.Name = "eleVal64";
+            this.eleVal64.Size = new System.Drawing.Size(66, 29);
+            this.eleVal64.TabIndex = 37;
+            // 
+            // volteVal64
+            // 
+            this.volteVal64.BackColor = System.Drawing.Color.Violet;
+            this.volteVal64.DecimalPlaces = 2;
+            this.volteVal64.Increment = new decimal(new int[] {
+            1,
+            0,
+            0,
+            65536});
+            this.volteVal64.Location = new System.Drawing.Point(308, 77);
+            this.volteVal64.Name = "volteVal64";
+            this.volteVal64.Size = new System.Drawing.Size(66, 29);
+            this.volteVal64.TabIndex = 36;
+            // 
+            // volChart53
+            // 
+            this.volChart53.BackColor = System.Drawing.Color.WhiteSmoke;
+            chartArea13.Name = "ChartArea1";
+            this.volChart53.ChartAreas.Add(chartArea13);
+            legend13.DockedToChartArea = "ChartArea1";
+            legend13.Name = "Legend1";
+            this.volChart53.Legends.Add(legend13);
+            this.volChart53.Location = new System.Drawing.Point(0, 2);
+            this.volChart53.Name = "volChart53";
+            series13.BorderWidth = 3;
+            series13.ChartArea = "ChartArea1";
+            series13.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series13.Legend = "Legend1";
+            series13.Name = "电压";
+            series13.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Time;
+            this.volChart53.Series.Add(series13);
+            this.volChart53.Size = new System.Drawing.Size(888, 295);
+            this.volChart53.TabIndex = 2;
+            this.volChart53.Text = "chart4";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1344, 708);
+            this.ClientSize = new System.Drawing.Size(1397, 708);
             this.Controls.Add(this.listViewMenu);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.button1);
@@ -3241,7 +3336,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.volChart52)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.eleChart52)).EndInit();
             this.tabPage13.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.volChart53)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.eleChart53)).EndInit();
             this.tabPage14.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.volChart54)).EndInit();
@@ -3253,8 +3347,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.closeTime6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.openTime6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cycleNum6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.eleVal6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.volteVal6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.eleVal61)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.volteVal61)).EndInit();
             this.groupBox17.ResumeLayout(false);
             this.groupBox17.PerformLayout();
             this.groupBox18.ResumeLayout(false);
@@ -3273,6 +3367,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.eleChart64)).EndInit();
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.eleVal62)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.volteVal62)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.eleVal63)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.volteVal63)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.eleVal64)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.volteVal64)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.volChart53)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -3439,14 +3540,12 @@
         private System.Windows.Forms.Label label56;
         private System.Windows.Forms.NumericUpDown getPoint6;
         private System.Windows.Forms.Label label57;
-        private System.Windows.Forms.Label label58;
-        private System.Windows.Forms.Label label59;
         private System.Windows.Forms.Button btnStart6;
         private System.Windows.Forms.NumericUpDown closeTime6;
         private System.Windows.Forms.NumericUpDown openTime6;
         private System.Windows.Forms.NumericUpDown cycleNum6;
-        private System.Windows.Forms.NumericUpDown eleVal6;
-        private System.Windows.Forms.NumericUpDown volteVal6;
+        private System.Windows.Forms.NumericUpDown eleVal61;
+        private System.Windows.Forms.NumericUpDown volteVal61;
         private System.Windows.Forms.Label label60;
         private System.Windows.Forms.Label label61;
         private System.Windows.Forms.Label label62;
@@ -3466,11 +3565,6 @@
         private System.Windows.Forms.Button btnView2;
         private System.Windows.Forms.Button btnView3;
         private System.Windows.Forms.Button btnView4;
-        private System.Windows.Forms.Label label67;
-        private System.Windows.Forms.Button btnPath62;
-        private System.Windows.Forms.Button btnPath61;
-        private System.Windows.Forms.Button btnPath64;
-        private System.Windows.Forms.Button btnPath63;
         private System.Windows.Forms.TabControl N6705ATab;
         private System.Windows.Forms.TabPage tabPage7;
         private System.Windows.Forms.TabPage tabPage8;
@@ -3488,7 +3582,6 @@
         private System.Windows.Forms.DataVisualization.Charting.Chart volChart52;
         private System.Windows.Forms.DataVisualization.Charting.Chart eleChart52;
         private System.Windows.Forms.TabPage tabPage13;
-        private System.Windows.Forms.DataVisualization.Charting.Chart volChart53;
         private System.Windows.Forms.DataVisualization.Charting.Chart eleChart53;
         private System.Windows.Forms.TabPage tabPage14;
         private System.Windows.Forms.DataVisualization.Charting.Chart volChart54;
@@ -3500,6 +3593,18 @@
         private System.Windows.Forms.Button btnPath51;
         private System.Windows.Forms.ComboBox comboStyle1;
         private System.Windows.Forms.Label label69;
+        private System.Windows.Forms.NumericUpDown eleVal64;
+        private System.Windows.Forms.NumericUpDown volteVal64;
+        private System.Windows.Forms.NumericUpDown eleVal63;
+        private System.Windows.Forms.NumericUpDown volteVal63;
+        private System.Windows.Forms.NumericUpDown eleVal62;
+        private System.Windows.Forms.NumericUpDown volteVal62;
+        private System.Windows.Forms.Button btnPath64;
+        private System.Windows.Forms.Button btnPath63;
+        private System.Windows.Forms.Label label67;
+        private System.Windows.Forms.Button btnPath62;
+        private System.Windows.Forms.Button btnPath61;
+        private System.Windows.Forms.DataVisualization.Charting.Chart volChart53;
     }
 }
 

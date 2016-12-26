@@ -92,10 +92,40 @@ namespace MultiPowersSystem
             eleChart51.ChartAreas[0].AxisX.LabelStyle.Format = "mm:ss";
             eleChart51.ChartAreas[0].AxisX.ScaleView.Size = 20;
 
+            volChart52.ChartAreas[0].AxisX.LabelStyle.Format = "mm:ss";
+            volChart52.ChartAreas[0].AxisX.ScaleView.Size = 20;
+            eleChart52.ChartAreas[0].AxisX.LabelStyle.Format = "mm:ss";
+            eleChart52.ChartAreas[0].AxisX.ScaleView.Size = 20;
+
+            volChart53.ChartAreas[0].AxisX.LabelStyle.Format = "mm:ss";
+            volChart53.ChartAreas[0].AxisX.ScaleView.Size = 20;
+            eleChart53.ChartAreas[0].AxisX.LabelStyle.Format = "mm:ss";
+            eleChart53.ChartAreas[0].AxisX.ScaleView.Size = 20;
+
+            volChart54.ChartAreas[0].AxisX.LabelStyle.Format = "mm:ss";
+            volChart54.ChartAreas[0].AxisX.ScaleView.Size = 20;
+            eleChart54.ChartAreas[0].AxisX.LabelStyle.Format = "mm:ss";
+            eleChart54.ChartAreas[0].AxisX.ScaleView.Size = 20;
+
             volChart61.ChartAreas[0].AxisX.LabelStyle.Format = "mm:ss";
             volChart61.ChartAreas[0].AxisX.ScaleView.Size = 20;
             eleChart61.ChartAreas[0].AxisX.LabelStyle.Format = "mm:ss";
             eleChart61.ChartAreas[0].AxisX.ScaleView.Size = 20;
+
+            volChart62.ChartAreas[0].AxisX.LabelStyle.Format = "mm:ss";
+            volChart62.ChartAreas[0].AxisX.ScaleView.Size = 20;
+            eleChart62.ChartAreas[0].AxisX.LabelStyle.Format = "mm:ss";
+            eleChart62.ChartAreas[0].AxisX.ScaleView.Size = 20;
+
+            volChart63.ChartAreas[0].AxisX.LabelStyle.Format = "mm:ss";
+            volChart63.ChartAreas[0].AxisX.ScaleView.Size = 20;
+            eleChart63.ChartAreas[0].AxisX.LabelStyle.Format = "mm:ss";
+            eleChart63.ChartAreas[0].AxisX.ScaleView.Size = 20;
+
+            volChart64.ChartAreas[0].AxisX.LabelStyle.Format = "mm:ss";
+            volChart64.ChartAreas[0].AxisX.ScaleView.Size = 20;
+            eleChart64.ChartAreas[0].AxisX.LabelStyle.Format = "mm:ss";
+            eleChart64.ChartAreas[0].AxisX.ScaleView.Size = 20;
         }
 
         private void volteVal1_ValueChanged(object sender, EventArgs e)
@@ -992,29 +1022,38 @@ namespace MultiPowersSystem
         private void TestProcess6(object obj)
         {          
             int chipId = Convert.ToInt32(obj.ToString());
+            double vlo =0 ;
+            double ele =0;
             switch (chipId) {
                 case 1:
                     volChart61.Series[0].Points.Clear();
                     eleChart61.Series[0].Points.Clear();
+                     vlo = (double)volteVal61.Value;
+                     ele = (double)eleVal61.Value;
                     break;
                 case 2:
                     volChart62.Series[0].Points.Clear();
                     eleChart62.Series[0].Points.Clear();
+                    vlo = (double)volteVal62.Value;
+                    ele = (double)eleVal62.Value;
                     break;
                 case 3:
                     volChart63.Series[0].Points.Clear();
                     eleChart63.Series[0].Points.Clear();
+                    vlo = (double)volteVal63.Value;
+                    ele = (double)eleVal63.Value;
                     break;
                 case 4:
                     volChart64.Series[0].Points.Clear();
                     eleChart64.Series[0].Points.Clear();
+                    vlo = (double)volteVal63.Value;
+                    ele = (double)eleVal63.Value;
                     break;
                 default:break;
             }
            
 
-            double vlo = (double)volteVal6.Value;
-            double ele = (double)eleVal6.Value;
+           
             var cyc = cycleNum6.Value;
             var open = openTime6.Value;
             var close = closeTime6.Value;
@@ -1204,72 +1243,72 @@ namespace MultiPowersSystem
             }
         }
 
-        private void btnPath1_Click(object sender, EventArgs e)
+        private void btnPath61_Click(object sender, EventArgs e)
         {
             if (btnPath61.BackColor == Color.WhiteSmoke)
             {
                 //打开通道
-                comPathClick(CGloabal.g_N6705AModule.nHandle, 0, 1);
+               // comPathClick(CGloabal.g_N6705AModule.nHandle, 0, 1);
                 //改变颜色
                 btnPath61.BackColor = Color.LightGreen;
             }
             else {
                 //关闭通道
-                comPathClick(CGloabal.g_N6705AModule.nHandle, 1, 1);
+               // comPathClick(CGloabal.g_N6705AModule.nHandle, 1, 1);
                 //改变颜色
                 btnPath61.BackColor = Color.WhiteSmoke;
             }
         }
 
-        private void btnPath2_Click(object sender, EventArgs e)
+        private void btnPath62_Click(object sender, EventArgs e)
         {
             if (btnPath62.BackColor == Color.WhiteSmoke)
             {
                 //打开通道
-                comPathClick(CGloabal.g_N6705AModule.nHandle, 0, 2);
+              //  comPathClick(CGloabal.g_N6705AModule.nHandle, 0, 2);
                 //改变颜色
                 btnPath62.BackColor = Color.LightGreen;
             }
             else
             {
                 //关闭通道
-                comPathClick(CGloabal.g_N6705AModule.nHandle, 1, 2);
+             //   comPathClick(CGloabal.g_N6705AModule.nHandle, 1, 2);
                 //改变颜色
                 btnPath62.BackColor = Color.WhiteSmoke;
             }
         }
 
-        private void btnPath3_Click(object sender, EventArgs e)
+        private void btnPath63_Click(object sender, EventArgs e)
         {            
             if (btnPath63.BackColor == Color.WhiteSmoke)
             {
                 //打开通道
-                comPathClick(CGloabal.g_N6705AModule.nHandle, 0, 3);
+              //  comPathClick(CGloabal.g_N6705AModule.nHandle, 0, 3);
                 //改变颜色
                 btnPath63.BackColor = Color.LightGreen;
             }
             else
             {
                 //关闭通道
-                comPathClick(CGloabal.g_N6705AModule.nHandle, 1, 3);
+             //   comPathClick(CGloabal.g_N6705AModule.nHandle, 1, 3);
                 //改变颜色
                 btnPath63.BackColor = Color.WhiteSmoke;
             }
         }
 
-        private void btnPath4_Click(object sender, EventArgs e)
+        private void btnPath64_Click(object sender, EventArgs e)
         {           
             if (btnPath64.BackColor == Color.WhiteSmoke)
             {
                 //打开通道
-                comPathClick(CGloabal.g_N6705AModule.nHandle, 0, 4);
+             //   comPathClick(CGloabal.g_N6705AModule.nHandle, 0, 4);
                 //改变颜色
                 btnPath64.BackColor = Color.LightGreen;
             }
             else
             {
                 //关闭通道
-                comPathClick(CGloabal.g_N6705AModule.nHandle, 1, 4);
+              //  comPathClick(CGloabal.g_N6705AModule.nHandle, 1, 4);
                 //改变颜色
                 btnPath64.BackColor = Color.WhiteSmoke;
             }
@@ -1279,63 +1318,63 @@ namespace MultiPowersSystem
         {
             if (btnPath64.BackColor == Color.WhiteSmoke)
             {    //打开通道
-                comPathClick(CGloabal.g_N6702AModule.nHandle, 0, 1);
+               // comPathClick(CGloabal.g_N6702AModule.nHandle, 0, 1);
                 //改变颜色
-                btnPath64.BackColor = Color.LightGreen;
+                btnPath51.BackColor = Color.LightGreen;
             }
             else
             {   //关闭通道
-                comPathClick(CGloabal.g_N6702AModule.nHandle, 1, 1);
+             //   comPathClick(CGloabal.g_N6702AModule.nHandle, 1, 1);
                 //改变颜色
-                btnPath64.BackColor = Color.WhiteSmoke;
+                btnPath51.BackColor = Color.WhiteSmoke;
             }
         }
 
         private void btnPath52_Click(object sender, EventArgs e)
         {
-            if (btnPath64.BackColor == Color.WhiteSmoke)
+            if (btnPath52.BackColor == Color.WhiteSmoke)
             {    //打开通道
-                comPathClick(CGloabal.g_N6702AModule.nHandle, 0, 2);
+              //  comPathClick(CGloabal.g_N6702AModule.nHandle, 0, 2);
                 //改变颜色
-                btnPath64.BackColor = Color.LightGreen;
+                btnPath52.BackColor = Color.LightGreen;
             }
             else
             {   //关闭通道
-                comPathClick(CGloabal.g_N6702AModule.nHandle, 1, 2);
+             //   comPathClick(CGloabal.g_N6702AModule.nHandle, 1, 2);
                 //改变颜色
-                btnPath64.BackColor = Color.WhiteSmoke;
+                btnPath52.BackColor = Color.WhiteSmoke;
             }
         }
 
         private void btnPath53_Click(object sender, EventArgs e)
         {
-            if (btnPath64.BackColor == Color.WhiteSmoke)
+            if (btnPath53.BackColor == Color.WhiteSmoke)
             {    //打开通道
-                comPathClick(CGloabal.g_N6702AModule.nHandle, 0, 3);
+               // comPathClick(CGloabal.g_N6702AModule.nHandle, 0, 3);
                 //改变颜色
-                btnPath64.BackColor = Color.LightGreen;
+                btnPath53.BackColor = Color.LightGreen;
             }
             else
-            {   //关闭通道
-                comPathClick(CGloabal.g_N6702AModule.nHandle, 1, 3);
+            { //  //关闭通道
+              //  comPathClick(CGloabal.g_N6702AModule.nHandle, 1, 3);
                 //改变颜色
-                btnPath64.BackColor = Color.WhiteSmoke;
+                btnPath53.BackColor = Color.WhiteSmoke;
             }
         }
 
         private void btnPath54_Click(object sender, EventArgs e)
         {           
-            if (btnPath64.BackColor == Color.WhiteSmoke)
+            if (btnPath54.BackColor == Color.WhiteSmoke)
             {    //打开通道
                 comPathClick(CGloabal.g_N6702AModule.nHandle, 0, 4);
                 //改变颜色
-                btnPath64.BackColor = Color.LightGreen;
+                btnPath54.BackColor = Color.LightGreen;
             }
             else
             {   //关闭通道
                 comPathClick(CGloabal.g_N6702AModule.nHandle, 1, 4);
                 //改变颜色
-                btnPath64.BackColor = Color.WhiteSmoke;
+                btnPath54.BackColor = Color.WhiteSmoke;
             }
         }
 
@@ -1380,5 +1419,7 @@ namespace MultiPowersSystem
                 eleVal1.ReadOnly = false;
             }
         }
+
+        
     }
 }

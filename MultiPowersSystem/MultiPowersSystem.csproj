@@ -88,6 +88,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="ViewForm.resx">
       <DependentUpon>ViewForm.cs</DependentUpon>
@@ -102,6 +103,54 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\58PIC5F58PICbDH.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\人员管理.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\通行.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\循环.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ks1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\loop_alt4_24 %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\loop_alt4_24 %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\loop_alt4_24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\save.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\stop.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Stop1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\stop2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\单次.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\禁止.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\启动.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
