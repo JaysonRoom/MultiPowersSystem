@@ -310,6 +310,8 @@
             this.groupBox18 = new System.Windows.Forms.GroupBox();
             this.N6705ATab = new System.Windows.Forms.TabControl();
             this.tabPage7 = new System.Windows.Forms.TabPage();
+            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.volChart61 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.eleChart61 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.tabPage8 = new System.Windows.Forms.TabPage();
@@ -416,6 +418,8 @@
             this.groupBox18.SuspendLayout();
             this.N6705ATab.SuspendLayout();
             this.tabPage7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.volChart61)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.eleChart61)).BeginInit();
             this.tabPage8.SuspendLayout();
@@ -500,7 +504,6 @@
             chartArea2.Name = "ChartArea1";
             this.volChart1.ChartAreas.Add(chartArea2);
             legend2.BorderWidth = 3;
-            legend2.DockedToChartArea = "ChartArea1";
             legend2.Name = "Legend1";
             this.volChart1.Legends.Add(legend2);
             this.volChart1.Location = new System.Drawing.Point(1, 17);
@@ -1159,7 +1162,7 @@
             this.eleChart2.Name = "eleChart2";
             series3.BorderWidth = 3;
             series3.ChartArea = "ChartArea1";
-            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
             series3.Color = System.Drawing.Color.Red;
             series3.Legend = "Legend1";
             series3.Name = "电流";
@@ -1181,7 +1184,7 @@
             this.volChart2.Name = "volChart2";
             series4.BorderWidth = 3;
             series4.ChartArea = "ChartArea1";
-            series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
             series4.Legend = "Legend1";
             series4.Name = "电压";
             series4.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Time;
@@ -1517,7 +1520,7 @@
             this.eleChart3.Name = "eleChart3";
             series5.BorderWidth = 3;
             series5.ChartArea = "ChartArea1";
-            series5.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series5.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
             series5.Color = System.Drawing.Color.Red;
             series5.Legend = "Legend1";
             series5.Name = "电流";
@@ -1539,7 +1542,7 @@
             this.volChart3.Name = "volChart3";
             series6.BorderWidth = 3;
             series6.ChartArea = "ChartArea1";
-            series6.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series6.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
             series6.Legend = "Legend1";
             series6.Name = "电压";
             series6.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Time;
@@ -1875,7 +1878,7 @@
             this.eleChart4.Name = "eleChart4";
             series7.BorderWidth = 3;
             series7.ChartArea = "ChartArea1";
-            series7.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series7.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
             series7.Color = System.Drawing.Color.Red;
             series7.Legend = "Legend1";
             series7.Name = "电流";
@@ -1897,7 +1900,7 @@
             this.volChart4.Name = "volChart4";
             series8.BorderWidth = 3;
             series8.ChartArea = "ChartArea1";
-            series8.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series8.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
             series8.Legend = "Legend1";
             series8.Name = "电压";
             series8.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Time;
@@ -2972,6 +2975,8 @@
             // tabPage7
             // 
             this.tabPage7.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.tabPage7.Controls.Add(this.numericUpDown2);
+            this.tabPage7.Controls.Add(this.numericUpDown1);
             this.tabPage7.Controls.Add(this.volChart61);
             this.tabPage7.Controls.Add(this.eleChart61);
             this.tabPage7.Location = new System.Drawing.Point(4, 29);
@@ -2980,6 +2985,33 @@
             this.tabPage7.Size = new System.Drawing.Size(850, 577);
             this.tabPage7.TabIndex = 0;
             this.tabPage7.Text = "通道1";
+            // 
+            // numericUpDown2
+            // 
+            this.numericUpDown2.DecimalPlaces = 1;
+            this.numericUpDown2.Increment = new decimal(new int[] {
+            1,
+            0,
+            0,
+            65536});
+            this.numericUpDown2.Location = new System.Drawing.Point(11, 361);
+            this.numericUpDown2.Name = "numericUpDown2";
+            this.numericUpDown2.Size = new System.Drawing.Size(52, 29);
+            this.numericUpDown2.TabIndex = 7;
+            // 
+            // numericUpDown1
+            // 
+            this.numericUpDown1.DecimalPlaces = 1;
+            this.numericUpDown1.Increment = new decimal(new int[] {
+            1,
+            0,
+            0,
+            65536});
+            this.numericUpDown1.Location = new System.Drawing.Point(6, 202);
+            this.numericUpDown1.Name = "numericUpDown1";
+            this.numericUpDown1.Size = new System.Drawing.Size(52, 29);
+            this.numericUpDown1.TabIndex = 6;
+            this.numericUpDown1.ValueChanged += new System.EventHandler(this.numericUpDown1_ValueChanged);
             // 
             // volChart61
             // 
@@ -2990,7 +3022,7 @@
             legend17.DockedToChartArea = "ChartArea1";
             legend17.Name = "Legend1";
             this.volChart61.Legends.Add(legend17);
-            this.volChart61.Location = new System.Drawing.Point(6, 0);
+            this.volChart61.Location = new System.Drawing.Point(69, 0);
             this.volChart61.Name = "volChart61";
             series17.BorderWidth = 3;
             series17.ChartArea = "ChartArea1";
@@ -2999,7 +3031,7 @@
             series17.Name = "电压";
             series17.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Time;
             this.volChart61.Series.Add(series17);
-            this.volChart61.Size = new System.Drawing.Size(836, 288);
+            this.volChart61.Size = new System.Drawing.Size(773, 288);
             this.volChart61.TabIndex = 0;
             this.volChart61.Text = "chart4";
             // 
@@ -3013,7 +3045,7 @@
             legend18.DockedToChartArea = "ChartArea1";
             legend18.Name = "Legend1";
             this.eleChart61.Legends.Add(legend18);
-            this.eleChart61.Location = new System.Drawing.Point(6, 294);
+            this.eleChart61.Location = new System.Drawing.Point(69, 294);
             this.eleChart61.Name = "eleChart61";
             series18.BorderWidth = 3;
             series18.ChartArea = "ChartArea1";
@@ -3023,7 +3055,7 @@
             series18.Name = "电流";
             series18.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Time;
             this.eleChart61.Series.Add(series18);
-            this.eleChart61.Size = new System.Drawing.Size(848, 280);
+            this.eleChart61.Size = new System.Drawing.Size(785, 280);
             this.eleChart61.TabIndex = 1;
             this.eleChart61.Text = "chart3";
             // 
@@ -3216,7 +3248,7 @@
             this.toolStripStatusLabel1});
             this.statusStrip1.Location = new System.Drawing.Point(0, 686);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(1397, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(1362, 22);
             this.statusStrip1.TabIndex = 3;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -3248,7 +3280,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1397, 708);
+            this.ClientSize = new System.Drawing.Size(1362, 708);
             this.Controls.Add(this.listViewMenu);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.button1);
@@ -3361,6 +3393,8 @@
             this.groupBox18.ResumeLayout(false);
             this.N6705ATab.ResumeLayout(false);
             this.tabPage7.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.volChart61)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.eleChart61)).EndInit();
             this.tabPage8.ResumeLayout(false);
@@ -3605,6 +3639,8 @@
         private System.Windows.Forms.Button btnPath62;
         private System.Windows.Forms.Button btnPath61;
         private System.Windows.Forms.DataVisualization.Charting.Chart volChart53;
+        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.NumericUpDown numericUpDown2;
     }
 }
 
