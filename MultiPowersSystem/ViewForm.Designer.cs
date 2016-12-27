@@ -42,11 +42,14 @@
             // 
             // eChart1
             // 
+            chartArea1.AxisX.Title = "时间（秒）";
+            chartArea1.AxisX.TitleAlignment = System.Drawing.StringAlignment.Far;
             chartArea1.AxisY.LogarithmBase = 5D;
+            chartArea1.AxisY.Title = "电流（A）";
+            chartArea1.AxisY.TitleAlignment = System.Drawing.StringAlignment.Far;
             chartArea1.Name = "ChartArea1";
             this.eChart1.ChartAreas.Add(chartArea1);
             legend1.BorderWidth = 3;
-            legend1.DockedToChartArea = "ChartArea1";
             legend1.Name = "Legend1";
             this.eChart1.Legends.Add(legend1);
             this.eChart1.Location = new System.Drawing.Point(21, 309);
@@ -58,16 +61,19 @@
             series1.Legend = "Legend1";
             series1.Name = "电流";
             this.eChart1.Series.Add(series1);
-            this.eChart1.Size = new System.Drawing.Size(802, 300);
+            this.eChart1.Size = new System.Drawing.Size(918, 300);
             this.eChart1.TabIndex = 3;
             this.eChart1.Text = "chart1";
             // 
             // vchart1
             // 
+            chartArea2.AxisX.Title = "时间（秒）";
+            chartArea2.AxisX.TitleAlignment = System.Drawing.StringAlignment.Far;
+            chartArea2.AxisY.Title = "电压（V）";
+            chartArea2.AxisY.TitleAlignment = System.Drawing.StringAlignment.Far;
             chartArea2.Name = "ChartArea1";
             this.vchart1.ChartAreas.Add(chartArea2);
             legend2.BorderWidth = 3;
-            legend2.DockedToChartArea = "ChartArea1";
             legend2.Name = "Legend1";
             this.vchart1.Legends.Add(legend2);
             this.vchart1.Location = new System.Drawing.Point(21, 3);
@@ -78,7 +84,7 @@
             series2.Legend = "Legend1";
             series2.Name = "电压";
             this.vchart1.Series.Add(series2);
-            this.vchart1.Size = new System.Drawing.Size(802, 300);
+            this.vchart1.Size = new System.Drawing.Size(918, 300);
             this.vchart1.TabIndex = 2;
             this.vchart1.Text = "chart1";
             // 
@@ -86,14 +92,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(846, 625);
+            this.ClientSize = new System.Drawing.Size(951, 625);
             this.Controls.Add(this.eChart1);
             this.Controls.Add(this.vchart1);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "ViewForm";
             this.ShowIcon = false;
-            this.Text = "电压电流汇总";
+            this.Text = "汇总视图";
             ((System.ComponentModel.ISupportInitialize)(this.eChart1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vchart1)).EndInit();
             this.ResumeLayout(false);

@@ -60,9 +60,6 @@ namespace MultiPowersSystem
 
             ipAddress5.Text = CGloabal.g_N6702AModule.ipAdress;
             ipAddress6.Text = CGloabal.g_N6705AModule.ipAdress;
-
-            comboStyle1.SelectedIndex = 0;
-
         }
 
         private void initChart()
@@ -779,11 +776,6 @@ namespace MultiPowersSystem
             }
         }
 
-        private void volteVal5_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnStart_Click(object sender, EventArgs e)
         { //通道数组
             int[] pathArr = new int[4] { 0, 0, 0, 0 };
@@ -813,30 +805,38 @@ namespace MultiPowersSystem
         private void TestProcess5(object obj)
         {
             int chipId = Convert.ToInt32(obj.ToString());
-
+            double vlo=0;
+            double ele=0;
             switch (chipId)
             {
                 case 1:
                     volChart51.Series[0].Points.Clear();
                     eleChart51.Series[0].Points.Clear();
+                    vlo = (double)volteVal51.Value;
+                    ele = (double)eleVal51.Value;
                     break;
                 case 2:
                     volChart52.Series[0].Points.Clear();
                     eleChart52.Series[0].Points.Clear();
+                    vlo = (double)volteVal52.Value;
+                    ele = (double)eleVal52.Value;
                     break;
                 case 3:
                     volChart53.Series[0].Points.Clear();
                     eleChart53.Series[0].Points.Clear();
+                    vlo = (double)volteVal52.Value;
+                    ele = (double)eleVal52.Value;
                     break;
                 case 4:
                     volChart54.Series[0].Points.Clear();
                     eleChart54.Series[0].Points.Clear();
+                    vlo = (double)volteVal53.Value;
+                    ele = (double)eleVal53.Value;
                     break;
                 default: break;
             }
 
-            double vlo = (double)volteVal5.Value;
-            double ele = (double)eleVal5.Value;
+         
             var cyc = cycleNum5.Value;
             var open = openTime5.Value;
             var close = closeTime5.Value;
@@ -1176,24 +1176,24 @@ namespace MultiPowersSystem
 
         private void btnView1_Click(object sender, EventArgs e)
         {
-            ViewForm VF = new ViewForm(volChart1, eleChart1);
+            ViewForm VF = new ViewForm(volChart1, eleChart1, "N5769A");
             VF.ShowDialog();
         }
         private void btnView2_Click(object sender, EventArgs e)
         {
-            ViewForm VF = new ViewForm(volChart2, eleChart2);
+            ViewForm VF = new ViewForm(volChart2, eleChart2, "N5751A");
             VF.ShowDialog();
         }
 
         private void btnView3_Click(object sender, EventArgs e)
         {
-            ViewForm VF = new ViewForm(volChart3, eleChart3);
+            ViewForm VF = new ViewForm(volChart3, eleChart3, "N5752A");
             VF.ShowDialog();
         }
 
         private void btnView4_Click(object sender, EventArgs e)
         {
-            ViewForm VF = new ViewForm(volChart4, eleChart4);
+            ViewForm VF = new ViewForm(volChart4, eleChart4, "N5772A");
             VF.ShowDialog();
         }
 
@@ -1201,44 +1201,44 @@ namespace MultiPowersSystem
         {
             if (N6702ATab.SelectedTab.Text == "通道1")
             {
-                ViewForm VF = new ViewForm(volChart51, eleChart51);
+                ViewForm VF = new ViewForm(volChart51, eleChart51, "N6702A通道1");
                 VF.ShowDialog();
             }
             else if (N6702ATab.SelectedTab.Text == "通道2")
             {
-                ViewForm VF = new ViewForm(volChart52, eleChart52);
+                ViewForm VF = new ViewForm(volChart52, eleChart52, "N6702A通道2");
                 VF.ShowDialog();
             }
             else if (N6702ATab.SelectedTab.Text == "通道3")
             {
-                ViewForm VF = new ViewForm(volChart53, eleChart53);
+                ViewForm VF = new ViewForm(volChart53, eleChart53, "N6702A通道3");
                 VF.ShowDialog();
             }
             else if (N6702ATab.SelectedTab.Text == "通道4")
             {
-                ViewForm VF = new ViewForm(volChart54, eleChart54);
+                ViewForm VF = new ViewForm(volChart54, eleChart54, "N6702A通道4");
                 VF.ShowDialog();
             }
         }
         private void btnView6_Click(object sender, EventArgs e)
         {
             if (N6705ATab.SelectedTab.Text == "通道1") {
-                ViewForm VF = new ViewForm(volChart61, eleChart61);
+                ViewForm VF = new ViewForm(volChart61, eleChart61, "N6705B通道1");
                 VF.ShowDialog();
             }
             else if (N6705ATab.SelectedTab.Text == "通道2")
             {
-                ViewForm VF = new ViewForm(volChart62, eleChart62);
+                ViewForm VF = new ViewForm(volChart62, eleChart62, "N6705B通道2");
                 VF.ShowDialog();
             }
             else if (N6705ATab.SelectedTab.Text == "通道3")
             {
-                ViewForm VF = new ViewForm(volChart63, eleChart63);
+                ViewForm VF = new ViewForm(volChart63, eleChart63,"N6705B通道3");
                 VF.ShowDialog();
             }
             else if (N6705ATab.SelectedTab.Text == "通道4")
             {
-                ViewForm VF = new ViewForm(volChart64, eleChart64);
+                ViewForm VF = new ViewForm(volChart64, eleChart64,"N6705B通道4");
                 VF.ShowDialog();
             }
         }
@@ -1401,28 +1401,126 @@ namespace MultiPowersSystem
                     break;
                 default:break;
             }
+        }       
+       
+
+        private void maxVol1_ValueChanged(object sender, EventArgs e)
+        {
+            volChart1.ChartAreas[0].AxisY.Maximum =(double) maxVol1.Value;
         }
 
-        private void comboStyle1_SelectedIndexChanged(object sender, EventArgs e)
+        private void maxEle1_ValueChanged(object sender, EventArgs e)
         {
-            if (comboStyle1.Text == "恒压")
-            {
-                eleVal1.Value = 15;
-               // eleVal1.ReadOnly = true;
-                volteVal1.Value = 0;
-                volteVal1.ReadOnly = false;
-            }
-            else {
-                volteVal1.Value = 100;
-               // volteVal1.ReadOnly = true;
-                eleVal1.Value = 0;
-                eleVal1.ReadOnly = false;
-            }
+            eleChart1.ChartAreas[0].AxisY.Maximum = (double)maxEle1.Value;
         }
 
-        private void numericUpDown1_ValueChanged(object sender, EventArgs e)
+        private void maxVol2_ValueChanged(object sender, EventArgs e)
         {
-            volChart61.ChartAreas[0].AxisY.Maximum =(double)numericUpDown1.Value;
+            volChart2.ChartAreas[0].AxisY.Maximum = (double)maxVol2.Value;
+        }
+
+        private void maxEle2_ValueChanged(object sender, EventArgs e)
+        {
+            eleChart2.ChartAreas[0].AxisY.Maximum = (double)maxEle2.Value;
+        }
+
+        private void maxVol3_ValueChanged(object sender, EventArgs e)
+        {
+            volChart3.ChartAreas[0].AxisY.Maximum = (double)maxVol3.Value;
+        }
+
+        private void maxEle3_ValueChanged(object sender, EventArgs e)
+        {
+            eleChart3.ChartAreas[0].AxisY.Maximum = (double)maxEle3.Value;
+        }
+
+        private void maxVol4_ValueChanged(object sender, EventArgs e)
+        {
+            volChart4.ChartAreas[0].AxisY.Maximum = (double)maxVol4.Value;
+        }
+
+        private void maxEle4_ValueChanged(object sender, EventArgs e)
+        {
+            eleChart4.ChartAreas[0].AxisY.Maximum = (double)maxEle4.Value;
+        }    
+
+        private void maxVol51_ValueChanged(object sender, EventArgs e)
+        {
+            volChart51.ChartAreas[0].AxisY.Maximum = (double)maxVol51.Value;
+        }
+
+        private void maxEle51_ValueChanged(object sender, EventArgs e)
+        {
+            eleChart51.ChartAreas[0].AxisY.Maximum = (double)maxEle51.Value;
+        }
+        private void maxVol52_ValueChanged(object sender, EventArgs e)
+        {
+            volChart52.ChartAreas[0].AxisY.Maximum = (double)maxVol52.Value;
+        }
+
+        private void maxEle52_ValueChanged(object sender, EventArgs e)
+        {
+            eleChart52.ChartAreas[0].AxisY.Maximum = (double)maxEle52.Value;
+        }
+
+        private void maxVol53_ValueChanged(object sender, EventArgs e)
+        {
+            volChart53.ChartAreas[0].AxisY.Maximum = (double)maxVol53.Value;
+        }
+
+        private void maxEle53_ValueChanged(object sender, EventArgs e)
+        {
+            eleChart53.ChartAreas[0].AxisY.Maximum = (double)maxEle53.Value;
+        }
+
+        private void maxVol54_ValueChanged(object sender, EventArgs e)
+        {
+            volChart54.ChartAreas[0].AxisY.Maximum = (double)maxVol54.Value;
+        }
+
+        private void maxEle54_ValueChanged(object sender, EventArgs e)
+        {
+            eleChart54.ChartAreas[0].AxisY.Maximum = (double)maxEle54.Value;
+        }
+
+        private void maxVol61_ValueChanged(object sender, EventArgs e)
+        {
+            volChart61.ChartAreas[0].AxisY.Maximum = (double)maxVol61.Value;
+        }
+
+        private void maxEle61_ValueChanged(object sender, EventArgs e)
+        {
+            eleChart61.ChartAreas[0].AxisY.Maximum = (double)maxEle61.Value;
+        }
+
+        private void maxVol62_ValueChanged(object sender, EventArgs e)
+        {
+            volChart62.ChartAreas[0].AxisY.Maximum = (double)maxVol62.Value;
+        }
+
+        private void maxEle62_ValueChanged(object sender, EventArgs e)
+        {
+            eleChart62.ChartAreas[0].AxisY.Maximum = (double)maxEle62.Value;
+        }
+
+        private void maxVol63_ValueChanged(object sender, EventArgs e)
+        {
+            volChart63.ChartAreas[0].AxisY.Maximum = (double)maxVol63.Value;
+        }
+
+        private void maxEle63_ValueChanged(object sender, EventArgs e)
+        {
+            eleChart63.ChartAreas[0].AxisY.Maximum = (double)maxEle63.Value;
+        }
+
+        private void maxVol64_ValueChanged(object sender, EventArgs e)
+        {
+            volChart64.ChartAreas[0].AxisY.Maximum = (double)maxVol64.Value;
+        }
+
+        private void maxEle64_ValueChanged(object sender, EventArgs e)
+        {
+            eleChart64.ChartAreas[0].AxisY.Maximum = (double)maxEle64.Value;
         }
     }
 }
