@@ -1,5 +1,6 @@
 ﻿using MultiPowersSystem.DAL;
 using MultiPowersSystem.DriverCommon;
+using MultiPowersSystem.Properties;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -20,12 +21,12 @@ namespace MultiPowersSystem
             InitializeComponent();
             Control.CheckForIllegalCrossThreadCalls = false;
 
-            listViewMenu.Items.Add("N5769A", "N5769A",0);
-            listViewMenu.Items.Add("N5751A", "N5751A",0);
-            listViewMenu.Items.Add("N5752A", "N5752A",0);
-            listViewMenu.Items.Add("N5772A", "N5772A",0);
-            listViewMenu.Items.Add("N6702A", "N6702A", 0);
-            listViewMenu.Items.Add("N6705B", "N6705B", 0);
+            listViewMenu.Items.Add("N5769A", "N5769A", 0);
+            listViewMenu.Items.Add("N5751A", "N5751A", 1);
+            listViewMenu.Items.Add("N5752A", "N5752A", 2);
+            listViewMenu.Items.Add("N5772A", "N5772A", 3);
+            listViewMenu.Items.Add("N6702A", "N6702A", 4);
+            listViewMenu.Items.Add("N6705B", "N6705B", 5);
 
             comboUnit1.SelectedIndex = 1;
             comboUnit2.SelectedIndex = 1;
@@ -36,10 +37,10 @@ namespace MultiPowersSystem
 
             listViewMenu.Items[0].Selected = true;
 
-            initChart();
+            initChartAndButton();
 
             mainTab.TabPages.Clear();
-            mainTab.TabPages.Add(tabPage1);
+            mainTab.TabPages.Add(tabPage1);            
 
         }
 
@@ -62,8 +63,62 @@ namespace MultiPowersSystem
             ipAddress6.Text = CGloabal.g_N6705AModule.ipAdress;
         }
 
-        private void initChart()
+        private void initChartAndButton()
         {
+            btnStart1.Image = Resources.开始;
+            btnStart1.ImageAlign = ContentAlignment.MiddleLeft;
+            btnStop1.Image = Resources.停止;
+            btnStop1.ImageAlign = ContentAlignment.MiddleLeft;
+            btnSave1.Image = Resources.保存;
+            btnSave1.ImageAlign = ContentAlignment.MiddleLeft;
+            btnView1.Image = Resources.汇总;
+            btnView1.ImageAlign = ContentAlignment.MiddleLeft;
+
+            btnStart2.Image = Resources.开始;
+            btnStart2.ImageAlign = ContentAlignment.MiddleLeft;
+            btnStop2.Image = Resources.停止;
+            btnStop2.ImageAlign = ContentAlignment.MiddleLeft;
+            btnSave2.Image = Resources.保存;
+            btnSave2.ImageAlign = ContentAlignment.MiddleLeft;
+            btnView2.Image = Resources.汇总;
+            btnView2.ImageAlign = ContentAlignment.MiddleLeft;
+
+            btnStart3.Image = Resources.开始;
+            btnStart3.ImageAlign = ContentAlignment.MiddleLeft;
+            btnStop3.Image = Resources.停止;
+            btnStop3.ImageAlign = ContentAlignment.MiddleLeft;
+            btnSave3.Image = Resources.保存;
+            btnSave3.ImageAlign = ContentAlignment.MiddleLeft;
+            btnView3.Image = Resources.汇总;
+            btnView3.ImageAlign = ContentAlignment.MiddleLeft;
+
+            btnStart4.Image = Resources.开始;
+            btnStart4.ImageAlign = ContentAlignment.MiddleLeft;
+            btnStop4.Image = Resources.停止;
+            btnStop4.ImageAlign = ContentAlignment.MiddleLeft;
+            btnSave4.Image = Resources.保存;
+            btnSave4.ImageAlign = ContentAlignment.MiddleLeft;
+            btnView4.Image = Resources.汇总;
+            btnView4.ImageAlign = ContentAlignment.MiddleLeft;
+           
+            btnStart.Image = Resources.开始;
+            btnStart.ImageAlign = ContentAlignment.MiddleLeft;
+            btnStop.Image = Resources.停止;
+            btnStop.ImageAlign = ContentAlignment.MiddleLeft;
+            btnSave5.Image = Resources.保存;
+            btnSave5.ImageAlign = ContentAlignment.MiddleLeft;
+            btnView5.Image = Resources.汇总;
+            btnView5.ImageAlign = ContentAlignment.MiddleLeft;
+
+            btnStart6.Image = Resources.开始;
+            btnStart6.ImageAlign = ContentAlignment.MiddleLeft;
+            btnStop6.Image = Resources.停止;
+            btnStop6.ImageAlign = ContentAlignment.MiddleLeft;
+            btnSave6.Image = Resources.保存;
+            btnSave6.ImageAlign = ContentAlignment.MiddleLeft;
+            btnView6.Image = Resources.汇总;
+            btnView6.ImageAlign = ContentAlignment.MiddleLeft;
+
             volChart1.ChartAreas[0].AxisX.LabelStyle.Format = "mm:ss";
             volChart1.ChartAreas[0].AxisX.ScaleView.Size = 20;
             eleChart1.ChartAreas[0].AxisX.LabelStyle.Format = "mm:ss";
@@ -939,7 +994,7 @@ namespace MultiPowersSystem
 
         private void btnStop_Click(object sender, EventArgs e)
         {
-
+            OutSign5 = true;
         }
 
         private void btnSave5_Click(object sender, EventArgs e)

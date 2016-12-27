@@ -105,9 +105,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\人员管理.gif" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\循环.png" />
   </ItemGroup>
   <ItemGroup>
