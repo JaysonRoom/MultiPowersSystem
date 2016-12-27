@@ -53,11 +53,11 @@ namespace MultiPowersSystem
 
             //首先要从ini文件读取仪器的参数信息
             CommonMethod.GetAlltheInstumentsParasFromIniFile();
-            ipAddress1.Text = CGloabal.g_N5769AModule.ipAdress;
-            //port.Value = CGloabal.g_InstrPowerModule.port;
+            ipAddress1.Text = CGloabal.g_N5769AModule.ipAdress;  
+            ipAddress2.Text = CGloabal.g_N5751AModule.ipAdress;           
+            ipAddress3.Text = CGloabal.g_N5752AModule.ipAdress;
+            ipAddress4.Text = CGloabal.g_N5772AModule.ipAdress;
 
-            ipAddress2.Text = CGloabal.g_N5751AModule.ipAdress;
-            //port2.Value = CGloabal.g_InstrPowerModule2.port;
             ipAddress5.Text = CGloabal.g_N6702AModule.ipAdress;
             ipAddress6.Text = CGloabal.g_N6705AModule.ipAdress;
 
@@ -348,16 +348,16 @@ namespace MultiPowersSystem
 
         private void volteVal2_ValueChanged(object sender, EventArgs e)
         {
-
+            volChart2.ChartAreas[0].AxisY.Maximum = (double)volteVal2.Value;
         }
 
         private void btnStart2_Click(object sender, EventArgs e)
         {
             x2Time = DateTime.Now;
             OutSign2 = false;
-            Thread t = new Thread(new ThreadStart(TestProcess2));
-            t.IsBackground = true;
-            t.Start();
+            Thread t2 = new Thread(new ThreadStart(TestProcess2));
+            t2.IsBackground = true;
+            t2.Start();
         }
         bool OutSign2 = false;
         DateTime x2Time;
@@ -393,7 +393,7 @@ namespace MultiPowersSystem
             {                
                 cyc--;
                 //打开命令
-                error = N5769ADriver.SetOpenCommand(CGloabal.g_N5751AModule.nHandle, strErrMsg);
+                error = N5751ADriver.SetOpenCommand(CGloabal.g_N5751AModule.nHandle, strErrMsg);
                 if (error < 0)
                 {
                     CommonMethod.ShowHintInfor(eHintInfoType.error, strErrMsg);
@@ -403,7 +403,7 @@ namespace MultiPowersSystem
                 {
                     if (OutSign2)
                     {//为true时则终止测试
-                        error = N5769ADriver.SetCloseCommand(CGloabal.g_N5751AModule.nHandle, strErrMsg);
+                        error = N5751ADriver.SetCloseCommand(CGloabal.g_N5751AModule.nHandle, strErrMsg);
                         return;
                     }
 
@@ -412,13 +412,13 @@ namespace MultiPowersSystem
                     TimeSpan ts = DateTime.Now - x2Time;
                     string xOpenVal2 = ts.Minutes + ":" + ts.Seconds;
 
-                    N5769ADriver.ReadVolAndEleCommand(CGloabal.g_N5751AModule.nHandle, ref reVlote, ref reElect);
+                    N5751ADriver.ReadVolAndEleCommand(CGloabal.g_N5751AModule.nHandle, ref reVlote, ref reElect);
                     volChart2.Series[0].Points.AddXY(xOpenVal2, reVlote);
                     eleChart2.Series[0].Points.AddXY(xOpenVal2, reElect);
                 }
 
                 //发送关闭指令
-                error = N5769ADriver.SetCloseCommand(CGloabal.g_N5751AModule.nHandle, strErrMsg);
+                error = N5751ADriver.SetCloseCommand(CGloabal.g_N5751AModule.nHandle, strErrMsg);
                 if (error < 0)
                 {
                     CommonMethod.ShowHintInfor(eHintInfoType.error, strErrMsg);
@@ -428,7 +428,7 @@ namespace MultiPowersSystem
                 {
                     if (OutSign2)
                     {//为true时则终止测试
-                        error = N5769ADriver.SetCloseCommand(CGloabal.g_N5751AModule.nHandle, strErrMsg);
+                        error = N5751ADriver.SetCloseCommand(CGloabal.g_N5751AModule.nHandle, strErrMsg);
                         return;
                     }
 
@@ -436,7 +436,7 @@ namespace MultiPowersSystem
                     TimeSpan ts = DateTime.Now - x2Time;
                     string xCloseVal2 = ts.Minutes + ":" + ts.Seconds;
                     //读取电压和电流        
-                    N5769ADriver.ReadVolAndEleCommand(CGloabal.g_N5751AModule.nHandle, ref reVlote, ref reElect);
+                    N5751ADriver.ReadVolAndEleCommand(CGloabal.g_N5751AModule.nHandle, ref reVlote, ref reElect);
                     volChart2.Series[0].Points.AddXY(xCloseVal2, reVlote);
                     eleChart2.Series[0].Points.AddXY(xCloseVal2, reElect);
                 }
@@ -494,16 +494,16 @@ namespace MultiPowersSystem
 
         private void volteVal3_ValueChanged(object sender, EventArgs e)
         {
-
+            volChart2.ChartAreas[0].AxisY.Maximum = (double)volteVal3.Value;
         }
 
         private void btnStart3_Click(object sender, EventArgs e)
         {
             x3Time = System.DateTime.Now;
             OutSign3 = false;
-            Thread t = new Thread(new ThreadStart(TestProcess3));
-            t.IsBackground = true;
-            t.Start();
+            Thread t3 = new Thread(new ThreadStart(TestProcess3));
+            t3.IsBackground = true;
+            t3.Start();
         }
         bool OutSign3 = false;
         DateTime x3Time;
@@ -524,7 +524,7 @@ namespace MultiPowersSystem
             double reVlote = 0, reElect = 0;
 
             //设置电压和电流
-            error = N5751ADriver.SetVolAndEle(CGloabal.g_N5752AModule.nHandle, vlo, ele, strErrMsg);
+            error = N5752ADriver.SetVolAndEle(CGloabal.g_N5752AModule.nHandle, vlo, ele, strErrMsg);
             if (error < 0)
             {
                 CommonMethod.ShowHintInfor(eHintInfoType.error, strErrMsg);
@@ -539,7 +539,7 @@ namespace MultiPowersSystem
             {               
                 cyc--;
                 //打开命令
-                error = N5769ADriver.SetOpenCommand(CGloabal.g_N5752AModule.nHandle, strErrMsg);
+                error = N5752ADriver.SetOpenCommand(CGloabal.g_N5752AModule.nHandle, strErrMsg);
                 if (error < 0)
                 {
                     CommonMethod.ShowHintInfor(eHintInfoType.error, strErrMsg);
@@ -549,20 +549,20 @@ namespace MultiPowersSystem
                 {
                     if (OutSign3)
                     {//为true时则终止测试
-                        error = N5769ADriver.SetCloseCommand(CGloabal.g_N5752AModule.nHandle, strErrMsg);
+                        error = N5752ADriver.SetCloseCommand(CGloabal.g_N5752AModule.nHandle, strErrMsg);
                         return;
                     }
                     Thread.Sleep(OpenReadtimer);
                     TimeSpan ts = DateTime.Now - x3Time;
                     string xOpenVal3 = ts.Minutes + ":" + ts.Seconds;
                     //读取电压和电流        
-                    N5769ADriver.ReadVolAndEleCommand(CGloabal.g_N5752AModule.nHandle, ref reVlote, ref reElect);
+                    N5752ADriver.ReadVolAndEleCommand(CGloabal.g_N5752AModule.nHandle, ref reVlote, ref reElect);
                     volChart3.Series[0].Points.AddXY(xOpenVal3, reVlote);
                     eleChart3.Series[0].Points.AddXY(xOpenVal3, reElect);
                 }
 
                 //发送关闭指令
-                error = N5769ADriver.SetCloseCommand(CGloabal.g_N5752AModule.nHandle, strErrMsg);
+                error = N5752ADriver.SetCloseCommand(CGloabal.g_N5752AModule.nHandle, strErrMsg);
                 if (error < 0)
                 {
                     CommonMethod.ShowHintInfor(eHintInfoType.error, strErrMsg);
@@ -572,14 +572,14 @@ namespace MultiPowersSystem
                 {
                     if (OutSign3)
                     {//为true时则终止测试
-                        error = N5769ADriver.SetCloseCommand(CGloabal.g_N5752AModule.nHandle, strErrMsg);
+                        error = N5752ADriver.SetCloseCommand(CGloabal.g_N5752AModule.nHandle, strErrMsg);
                         return;
                     }
                     Thread.Sleep(CloseReadTimer);
                     TimeSpan ts = DateTime.Now - x3Time;
                     string xCloseVal3 = ts.Minutes + ":" + ts.Seconds;
                     //读取电压和电流        
-                    N5769ADriver.ReadVolAndEleCommand(CGloabal.g_N5752AModule.nHandle, ref reVlote, ref reElect);
+                    N5752ADriver.ReadVolAndEleCommand(CGloabal.g_N5752AModule.nHandle, ref reVlote, ref reElect);
                     volChart3.Series[0].Points.AddXY(xCloseVal3, reVlote);
                     eleChart3.Series[0].Points.AddXY(xCloseVal3, reElect);
                 }
@@ -1408,18 +1408,21 @@ namespace MultiPowersSystem
             if (comboStyle1.Text == "恒压")
             {
                 eleVal1.Value = 15;
-                eleVal1.ReadOnly = true;
+               // eleVal1.ReadOnly = true;
                 volteVal1.Value = 0;
                 volteVal1.ReadOnly = false;
             }
             else {
                 volteVal1.Value = 100;
-                volteVal1.ReadOnly = true;
+               // volteVal1.ReadOnly = true;
                 eleVal1.Value = 0;
                 eleVal1.ReadOnly = false;
             }
         }
 
-        
+        private void numericUpDown1_ValueChanged(object sender, EventArgs e)
+        {
+            volChart61.ChartAreas[0].AxisY.Maximum =(double)numericUpDown1.Value;
+        }
     }
 }
