@@ -20,6 +20,7 @@ namespace MultiPowersSystem
         {
             InitializeComponent();
             Control.CheckForIllegalCrossThreadCalls = false;
+            listViewMenu.LargeImageList = imageList2;
 
             listViewMenu.Items.Add("N5769A", "N5769A", 0);
             listViewMenu.Items.Add("N5751A", "N5751A", 1);
